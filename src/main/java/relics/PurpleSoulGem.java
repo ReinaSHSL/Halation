@@ -17,8 +17,6 @@ import powers.RestartDamagePower;
 
 public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:PurpleSoulGem";
-    private boolean cardSelected = true;
-    private AbstractCard card = null;
 
     public PurpleSoulGem()
     {
@@ -27,9 +25,11 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        this.counter++;
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new PurpleSoulGemReviveAction());
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            this.counter++;
+            flash();
+            AbstractDungeon.actionManager.addToBottom(new PurpleSoulGemReviveAction());
+        }
     }
 
     @Override
@@ -57,7 +57,6 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
         System.out.println("Remaking combat vs " + AbstractDungeon.lastCombatMetricKey);
         AbstractRoom room = AbstractDungeon.getCurrRoom();
 
-        // Clear
         AbstractDungeon.fadeIn();
         AbstractDungeon.player.resetControllerValues();
         AbstractDungeon.effectList.clear();
@@ -81,12 +80,9 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
         AbstractDungeon.player.damagedThisCombat = 0;
         GameActionManager.turn = 1;
 
-        // Stop any currently attack monsters
         AbstractDungeon.actionManager.monsterQueue.clear();
-        // Make sure monsters don't try to requeue attacks
         AbstractDungeon.actionManager.monsterAttacksQueued = true;
 
-        // Don't reset RNG, so fight isn't identical
 
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             r.onEnterRoom(room);
