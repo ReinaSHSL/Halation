@@ -5,6 +5,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import relics.BlueSoulGem;
 import relics.BottledLove;
 import relics.PurpleSoulGem;
 
@@ -26,6 +27,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     public void receiveEditRelics() {
         BaseMod.addRelic(new BottledLove(), RelicType.SHARED);
         BaseMod.addRelic(new PurpleSoulGem(), RelicType.SHARED);
+        BaseMod.addRelic(new BlueSoulGem(), RelicType.SHARED);
     }
 
     @Override
