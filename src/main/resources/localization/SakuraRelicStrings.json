@@ -1,0 +1,11 @@
+{
+  "sakura:BottledLove": {
+    "NAME": "Bottled Love",
+    "DESCRIPTION": [
+      "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by 1 for the combat..",
+      "Choose a card for ",
+      " will increase in damage by 1 upon taking damage."
+    ],
+    "FLAVOR": "The world outside is filled with impurities. People I hate. People in my way. Liars. Dirty people. I need to exterminate all risks."
+  }
+}
