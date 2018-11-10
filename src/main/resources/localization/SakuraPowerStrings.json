@@ -1,0 +1,9 @@
+{
+  "sakura:RestartDamagePower": {
+    "NAME": "Damage Boost",
+    "DESCRIPTION": [
+      "This enemy does ",
+      "times more damage."
+    ]
+  }
+}

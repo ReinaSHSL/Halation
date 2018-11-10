@@ -10,34 +10,38 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import relics.PurpleSoulGem;
+import tools.TextureLoader;
 
 public class RestartDamagePower extends AbstractPower {
     public static final String POWER_ID = "sakura:RestartDamagePower";
     private static final PowerStrings  powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;;
-    private boolean justApplied = false;
 
-    public RestartDamagePower(AbstractCreature owner) {
+    public RestartDamagePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.owner = owner;
         this.updateDescription();
         this.type = AbstractPower.PowerType.BUFF;
+        this.img = TextureLoader.getTexture("SakuraImages/powers/RestartDamagePower.png");
+        this.amount = amount;
     }
 
     public void updateDescription() {
-       this.description = DESCRIPTIONS[0];
+       this.description = DESCRIPTIONS[0] + this.amount * 1.20F + DESCRIPTIONS[1];
     }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
         float modifier = 1.20F;
         if (AbstractDungeon.player.hasRelic(PurpleSoulGem.ID)) {
-            modifier = 1.20F * (float)AbstractDungeon.player.getRelic(PurpleSoulGem.ID).counter;
+            modifier = 1.20F * (float)this.amount;
         }
         return type == DamageInfo.DamageType.NORMAL ? damage * modifier : damage;
     }
 
-    static {
-
+    @Override
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
     }
 }

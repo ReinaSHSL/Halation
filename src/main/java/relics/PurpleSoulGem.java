@@ -102,7 +102,7 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
             m.showHealthBar();
             m.usePreBattleAction();
             m.useUniversalPreBattleAction();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RestartDamagePower(m)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RestartDamagePower(m, 1), 1));
         }
 
         AbstractDungeon.player.preBattlePrep();
