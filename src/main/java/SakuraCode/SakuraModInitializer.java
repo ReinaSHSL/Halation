@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import java.util.ArrayList;
 
 @SpireInitializer
-public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
+public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber {
     private static final String MODNAME = "Sakura";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -56,5 +56,14 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
+    }
+
+    @Override
+    public void receiveStartAct() {
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r instanceof Convergence) {
+                Convergence.updateStats();
+            }
+        }
     }
 }
