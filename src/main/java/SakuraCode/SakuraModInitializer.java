@@ -1,6 +1,6 @@
 package SakuraCode;
 
-import SakuraCode.relics.BottledLove;
+import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madoka.*;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
