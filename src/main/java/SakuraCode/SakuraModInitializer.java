@@ -1,5 +1,6 @@
 package SakuraCode;
 
+import SakuraCode.relics.RedSoulGem;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditRelicsSubscriber;
@@ -30,6 +31,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new BottledLove(), RelicType.SHARED);
         BaseMod.addRelic(new PurpleSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new BlueSoulGem(), RelicType.SHARED);
+        BaseMod.addRelic(new RedSoulGem(), RelicType.SHARED);
     }
 
     @Override

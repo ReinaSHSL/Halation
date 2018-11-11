@@ -21,5 +21,12 @@
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Take no damage this combat and reduce your Max Health to #r10%. Cannot be used in boss combats. Can only be used twice."
     ],
     "FLAVOR": "I didn’t want this power so I could fight witches. I wanted it so I’d have the strength to do what’s right and protect the ones I love."
-  }
+  },
+  "sakura:RedSoulGem": {
+    "NAME": "Red Soul Gem",
+    "DESCRIPTION": [
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #y10 Strength. You may no longer use Skills this combat."
+    ]
+  },
+  "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
 }

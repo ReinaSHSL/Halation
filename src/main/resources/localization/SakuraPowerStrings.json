@@ -11,5 +11,11 @@
     "DESCRIPTION": [
       "Take no damage this combat."
     ]
+  },
+  "sakura:NoSkillsPower": {
+    "NAME": "No Restraint",
+    "DESCRIPTION": [
+      "You may not play skills."
+    ]
   }
 }
