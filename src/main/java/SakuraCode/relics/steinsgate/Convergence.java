@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.DungeonTransitionScreen;
@@ -36,30 +37,24 @@ public class Convergence extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
-            ArrayList<String> emptyList = new ArrayList<String>();
-            switch (AbstractDungeon.id) {
-                case Exordium.ID:
-                    new Exordium(AbstractDungeon.player, emptyList);
-                    AbstractDungeon.scene.fadeOutAmbiance();
-                    AbstractDungeon.dungeonMapScreen.open(true);
-                    AbstractDungeon.player.maxHealth -= 20;
-                    break;
-                case TheCity.ID:
-                    AbstractDungeon.scene.fadeOutAmbiance();
-                    new TheCity(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
-                    AbstractDungeon.dungeonMapScreen.open(true);
-                    AbstractDungeon.player.maxHealth -= 20;
-                    break;
-                case TheBeyond.ID:
-                    AbstractDungeon.scene.fadeOutAmbiance();
-                    new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
-                    AbstractDungeon.dungeonMapScreen.open(true);
-                    AbstractDungeon.player.maxHealth -= 20;
-                    break;
-                default:
-                    break;
-            }
+        ArrayList<String> emptyList = new ArrayList<String>();
+        switch (AbstractDungeon.id) {
+            case TheCity.ID:
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                AbstractDungeon.scene.fadeOutAmbiance();
+                new TheCity(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                AbstractDungeon.dungeonMapScreen.open(false);
+                AbstractDungeon.player.decreaseMaxHealth(20);
+                break;
+            case TheBeyond.ID:
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                AbstractDungeon.scene.fadeOutAmbiance();
+                new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                AbstractDungeon.dungeonMapScreen.open(false);
+                AbstractDungeon.player.decreaseMaxHealth(20);
+                break;
+            default:
+                break;
         }
     }
 }
