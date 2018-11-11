@@ -35,5 +35,12 @@
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal 15 damage to ALL enemies. Apply 99 Vulnerable to yourself. Can only be used once per combat and only up to 8 times."
     ],
     "FLAVOR": "If you’re not 100% sure why you’re doing it, you’ll most certainly regret it later."
+  },
+  "sakura:PinkSoulGem": {
+    "NAME": "Pink Soul Gem",
+    "DESCRIPTION": [
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal damage equal to the charges on this relic. Gain charges equal to twice the damage you take."
+    ],
+    "FLAVOR": "If anyone ever tells me it’s a mistake to have hope, well then, I’ll just tell them they’re wrong. And I’ll keep telling them till they believe. No matter how many times it takes."
   }
 }

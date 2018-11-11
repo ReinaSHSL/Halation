@@ -31,6 +31,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new BlueSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new RedSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new YellowSoulGem(), RelicType.SHARED);
+        BaseMod.addRelic(new PinkSoulGem(), RelicType.SHARED);
     }
 
     @Override
