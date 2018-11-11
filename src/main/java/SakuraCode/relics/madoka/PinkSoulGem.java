@@ -14,7 +14,7 @@ public class PinkSoulGem extends AbstractSakuraRelic implements ClickableRelic, 
     public static final String ID = "sakura:PinkSoulGem";
 
     public PinkSoulGem() {
-        super(ID, "PinkSoulGem.png", RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, "PinkSoulGem.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

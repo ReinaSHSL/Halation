@@ -19,7 +19,7 @@ public class PurpleSoulGem extends AbstractSakuraRelic implements ClickableRelic
 
     public PurpleSoulGem()
     {
-        super(ID, "purpleSoulGem.png", AbstractRelic.RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, "purpleSoulGem.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override
