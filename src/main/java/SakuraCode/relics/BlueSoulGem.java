@@ -26,11 +26,17 @@ public class BlueSoulGem extends AbstractSakuraRelic implements ClickableRelic {
     }
 
     @Override
+    public void onEquip() {
+        this.counter = 2;
+    }
+
+    @Override
     public void onRightClick() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
-                && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
+                && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) && this.counter != 0) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,
                     AbstractDungeon.player, new InevitabilityPower(AbstractDungeon.player, 1), 1));
+            this.counter--;
         }
     }
 }

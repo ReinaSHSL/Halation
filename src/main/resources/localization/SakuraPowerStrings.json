@@ -5,5 +5,11 @@
       "This enemy does ",
       "times more damage."
     ]
+  },
+  "sakura:InevitabilityPower": {
+    "NAME": "Borrowed Time",
+    "DESCRIPTION": [
+      "Take no damage this combat."
+    ]
   }
 }
