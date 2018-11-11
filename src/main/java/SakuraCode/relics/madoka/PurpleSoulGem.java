@@ -1,8 +1,9 @@
 package SakuraCode.relics.madoka;
 
 import SakuraCode.powers.RestartDamagePower;
-import SakuraCode.relics.AbstractSakuraRelic;
+import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -14,12 +15,13 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
 
-public class PurpleSoulGem extends AbstractSakuraRelic implements ClickableRelic {
+public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:PurpleSoulGem";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/purpleSoulGem.png");
 
     public PurpleSoulGem()
     {
-        super(ID, "purpleSoulGem.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

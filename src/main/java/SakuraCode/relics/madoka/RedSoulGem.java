@@ -1,7 +1,9 @@
 package SakuraCode.relics.madoka;
 
 import SakuraCode.powers.NoSkillsPower;
-import SakuraCode.relics.AbstractSakuraRelic;
+import SakuraCode.tools.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,11 +12,12 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class RedSoulGem extends AbstractSakuraRelic implements ClickableRelic {
+public class RedSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:RedSoulGem";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/RedSoulGem.png");
 
     public RedSoulGem() {
-        super(ID, "RedSoulGem.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

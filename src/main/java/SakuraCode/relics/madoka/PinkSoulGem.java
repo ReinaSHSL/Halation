@@ -1,6 +1,8 @@
 package SakuraCode.relics.madoka;
 
-import SakuraCode.relics.AbstractSakuraRelic;
+import SakuraCode.tools.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,11 +12,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class PinkSoulGem extends AbstractSakuraRelic implements ClickableRelic, BetterOnLoseHpRelic {
+public class PinkSoulGem extends CustomRelic implements ClickableRelic, BetterOnLoseHpRelic {
     public static final String ID = "sakura:PinkSoulGem";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/PinkSoulGem.png");
 
     public PinkSoulGem() {
-        super(ID, "PinkSoulGem.png", RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

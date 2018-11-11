@@ -1,7 +1,9 @@
 package SakuraCode.relics.steinsgate;
 
 import SakuraCode.SakuraModInitializer;
-import SakuraCode.relics.AbstractSakuraRelic;
+import SakuraCode.tools.TextureLoader;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
@@ -11,11 +13,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 
-public class Convergence extends AbstractSakuraRelic implements ClickableRelic {
+public class Convergence extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:Convergence";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/Convergence.png");
 
     public Convergence() {
-        super(ID, "Convergence.png", AbstractRelic.RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, IMG, AbstractRelic.RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package SakuraCode.relics.hsl;
 
-import SakuraCode.relics.AbstractSakuraRelic;
+import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomBottleRelic;
+import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,14 +16,15 @@ import SakuraCode.patches.BottledLovePatch;
 
 import java.util.function.Predicate;
 
-public class BottledLove extends AbstractSakuraRelic implements CustomBottleRelic, CustomSavable<Integer> {
+public class BottledLove extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     public static final String ID = "sakura:BottledLove";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/BottledLove.png");
     private boolean cardSelected = true;
     private AbstractCard card = null;
 
     public BottledLove()
     {
-        super(ID, "bottledLove.png", AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
+        super(ID, IMG, AbstractRelic.RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
     }
 
     @Override

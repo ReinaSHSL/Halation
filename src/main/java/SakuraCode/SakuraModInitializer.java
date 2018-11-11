@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/SakuraPowerStrings.json");
-        BaseMod.loadCustomStringsFile(CardStrings.class, "localization/SakuraRelicStrings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/SakuraRelicStrings.json");
     }
 
     @Override

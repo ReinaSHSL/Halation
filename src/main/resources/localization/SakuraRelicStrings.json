@@ -1,7 +1,7 @@
 {
   "sakura:BottledLove": {
     "NAME": "Bottled Love",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by 1 for the combat..",
       "Choose a card for ",
       " will increase in damage by 1 upon taking damage."
@@ -10,42 +10,42 @@
   },
   "sakura:PurpleSoulGem": {
     "NAME": "Purple Soul Gem",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies deal 20% more damage."
     ],
     "FLAVOR": "If…If it’s for your sake…I don’t mind being locked in this eternal maze."
   },
   "sakura:BlueSoulGem": {
     "NAME": "Blue Soul Gem",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Take no damage this combat and reduce your Max Health to #r10%. Cannot be used in boss combats. Can only be used twice."
     ],
     "FLAVOR": "I didn’t want this power so I could fight witches. I wanted it so I’d have the strength to do what’s right and protect the ones I love."
   },
   "sakura:RedSoulGem": {
     "NAME": "Red Soul Gem",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #y10 Strength. You may no longer use Skills this combat. Can only be used on turn one"
     ],
     "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
   },
   "sakura:YellowSoulGem": {
     "NAME": "Yellow Soul Gem",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal 15 damage to ALL enemies. Apply 99 Vulnerable to yourself. Can only be used once per combat and only up to 8 times."
     ],
     "FLAVOR": "If you’re not 100% sure why you’re doing it, you’ll most certainly regret it later."
   },
   "sakura:PinkSoulGem": {
     "NAME": "Pink Soul Gem",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal damage equal to the charges on this relic. Gain charges equal to twice the damage you take."
     ],
     "FLAVOR": "If anyone ever tells me it’s a mistake to have hope, well then, I’ll just tell them they’re wrong. And I’ll keep telling them till they believe. No matter how many times it takes."
   },
   "sakura:Convergence": {
     "NAME": "Convergence",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck and relics to what they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
     ],
     "FLAVOR": "I will never lose, not to you, nor to fate! For that is my choice!"
