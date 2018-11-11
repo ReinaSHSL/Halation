@@ -26,9 +26,6 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     private static final String MODNAME = "Sakura";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
-    public static int startActHealth;
-    public static CardGroup startActDeck;
-    public static ArrayList<AbstractRelic> startActRelics;
 
     public SakuraModInitializer() {
         BaseMod.subscribe(this);
@@ -53,7 +50,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/SakuraPowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/SakuraRelicStrings.json");
-        BaseMod.loadCustomStrings(EventStrings.class, "localization/SakuraEventStrings.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "localization/SakuraEventStrings.json");
     }
 
     @Override

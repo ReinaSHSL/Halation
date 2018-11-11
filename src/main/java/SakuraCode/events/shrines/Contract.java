@@ -42,7 +42,7 @@ public class Contract extends AbstractImageEvent {
                         }
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 1:
@@ -55,7 +55,7 @@ public class Contract extends AbstractImageEvent {
                         }
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 2:
@@ -68,7 +68,7 @@ public class Contract extends AbstractImageEvent {
                         }
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 3:
@@ -81,7 +81,7 @@ public class Contract extends AbstractImageEvent {
                         }
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 4:
@@ -94,13 +94,13 @@ public class Contract extends AbstractImageEvent {
                         }
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 5:
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        imageEventText.updateDialogOption(0, OPTIONS[2]);
+                        imageEventText.updateDialogOption(0, OPTIONS[5]);
                         imageEventText.clearRemainingOptions();
                         break;
                 }
