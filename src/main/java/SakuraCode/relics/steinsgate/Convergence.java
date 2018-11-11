@@ -5,11 +5,14 @@ import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.DungeonTransitionScreen;
 
 import java.util.ArrayList;
 
@@ -33,31 +36,30 @@ public class Convergence extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        ArrayList<String> emptyList = new ArrayList<String>();
-        switch (AbstractDungeon.id) {
-            case Exordium.ID:
-                new Exordium(AbstractDungeon.player, emptyList);
-                AbstractDungeon.player.currentHealth = SakuraModInitializer.startActHealth;
-                AbstractDungeon.player.masterDeck = SakuraModInitializer.startActDeck;
-                AbstractDungeon.player.relics = SakuraModInitializer.startActRelics;
-                AbstractDungeon.player.maxHealth -= 20;
-                break;
-            case TheCity.ID:
-                new TheCity(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
-                AbstractDungeon.player.currentHealth = SakuraModInitializer.startActHealth;
-                AbstractDungeon.player.masterDeck = SakuraModInitializer.startActDeck;
-                AbstractDungeon.player.relics = SakuraModInitializer.startActRelics;
-                AbstractDungeon.player.maxHealth -= 20;
-                break;
-            case TheBeyond.ID:
-                new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
-                AbstractDungeon.player.currentHealth = SakuraModInitializer.startActHealth;
-                AbstractDungeon.player.masterDeck = SakuraModInitializer.startActDeck;
-                AbstractDungeon.player.relics = SakuraModInitializer.startActRelics;
-                AbstractDungeon.player.maxHealth -= 20;
-                break;
-            default:
-                break;
+        if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+            ArrayList<String> emptyList = new ArrayList<String>();
+            switch (AbstractDungeon.id) {
+                case Exordium.ID:
+                    new Exordium(AbstractDungeon.player, emptyList);
+                    AbstractDungeon.scene.fadeOutAmbiance();
+                    AbstractDungeon.dungeonMapScreen.open(true);
+                    AbstractDungeon.player.maxHealth -= 20;
+                    break;
+                case TheCity.ID:
+                    AbstractDungeon.scene.fadeOutAmbiance();
+                    new TheCity(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                    AbstractDungeon.dungeonMapScreen.open(true);
+                    AbstractDungeon.player.maxHealth -= 20;
+                    break;
+                case TheBeyond.ID:
+                    AbstractDungeon.scene.fadeOutAmbiance();
+                    new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                    AbstractDungeon.dungeonMapScreen.open(true);
+                    AbstractDungeon.player.maxHealth -= 20;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

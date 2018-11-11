@@ -2,7 +2,7 @@
   "sakura:BottledLove": {
     "NAME": "Bottled Love",
     "DESCRIPTIONS": [
-      "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by 1 for the combat..",
+      "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by 1 for the combat.",
       "Choose a card for ",
       " will increase in damage by 1 upon taking damage."
     ],
@@ -46,7 +46,7 @@
   "sakura:Convergence": {
     "NAME": "Convergence",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck and relics to what they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
     ],
     "FLAVOR": "I will never lose, not to you, nor to fate! For that is my choice!"
   }
