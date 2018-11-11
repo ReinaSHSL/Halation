@@ -25,8 +25,15 @@
   "sakura:RedSoulGem": {
     "NAME": "Red Soul Gem",
     "DESCRIPTION": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #y10 Strength. You may no longer use Skills this combat."
-    ]
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #y10 Strength. You may no longer use Skills this combat. Can only be used on turn one"
+    ],
+    "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
   },
-  "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
+  "sakura:YellowSoulGem": {
+    "NAME": "Yellow Soul Gem",
+    "DESCRIPTION": [
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal 15 damage to ALL enemies. Apply 99 Vulnerable to yourself. Can only be used once per combat and only up to 8 times."
+    ],
+    "FLAVOR": "If you’re not 100% sure why you’re doing it, you’ll most certainly regret it later."
+  }
 }

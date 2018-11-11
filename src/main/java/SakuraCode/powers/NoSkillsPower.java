@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 public class NoSkillsPower extends AbstractPower{
     public static final String POWER_ID = "sakura:NoSkillsPower";
     private static final PowerStrings  powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;;
 
     public NoSkillsPower(final AbstractCreature owner) {
@@ -31,6 +30,6 @@ public class NoSkillsPower extends AbstractPower{
 
     @Override
     public void updateDescription() {
-        this.description = EntanglePower.DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[0];
     }
 }
