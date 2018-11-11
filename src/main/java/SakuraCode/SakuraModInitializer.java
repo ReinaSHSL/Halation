@@ -1,3 +1,5 @@
+package SakuraCode;
+
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditRelicsSubscriber;
@@ -5,9 +7,9 @@ import basemod.interfaces.EditStringsSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import relics.BlueSoulGem;
-import relics.BottledLove;
-import relics.PurpleSoulGem;
+import SakuraCode.relics.BlueSoulGem;
+import SakuraCode.relics.BottledLove;
+import SakuraCode.relics.PurpleSoulGem;
 
 @SpireInitializer
 public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber {

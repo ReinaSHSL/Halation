@@ -1,4 +1,4 @@
-package relics;
+package SakuraCode.relics;
 
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 

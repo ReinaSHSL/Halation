@@ -1,7 +1,6 @@
-package relics;
+package SakuraCode.relics;
 
 import basemod.abstracts.CustomBottleRelic;
-import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -10,7 +9,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import patches.BottledLovePatch;
+import SakuraCode.patches.BottledLovePatch;
 
 import java.util.function.Predicate;
 

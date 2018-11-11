@@ -1,4 +1,4 @@
-package tools;
+package SakuraCode.tools;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
@@ -23,7 +23,7 @@ public class TextureLoader {
                 loadTexture(textureString);
             } catch (GdxRuntimeException e) {
                 logger.error("Could not find texture: " + textureString);
-                return getTexture("SakuraImages/tools/missingTexture.png");
+                return getTexture("SakuraImages/SakuraCode.tools/missingTexture.png");
             }
         }
         return textures.get(textureString);
