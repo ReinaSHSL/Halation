@@ -1,6 +1,7 @@
 package SakuraCode.relics.madoka;
 
 import SakuraCode.powers.RestartDamagePower;
+import SakuraCode.relics.AbstractSakuraRelic;
 import basemod.abstracts.CustomRelic;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
 
-public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
+public class PurpleSoulGem extends AbstractSakuraRelic implements ClickableRelic {
     public static final String ID = "sakura:PurpleSoulGem";
 
     public PurpleSoulGem()
