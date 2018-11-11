@@ -1,12 +1,12 @@
 package SakuraCode.relics;
 
+import SakuraCode.powers.InevitabilityPower;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import powers.InevitabilityPower;
 
 public class BlueSoulGem extends AbstractSakuraRelic implements ClickableRelic {
     public static final String ID = "sakura:BlueSoulGem";

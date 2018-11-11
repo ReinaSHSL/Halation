@@ -1,5 +1,6 @@
 package SakuraCode.relics;
 
+import SakuraCode.powers.RestartDamagePower;
 import basemod.abstracts.CustomRelic;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -11,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
-import powers.RestartDamagePower;
 
 public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:PurpleSoulGem";
