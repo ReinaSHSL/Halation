@@ -46,8 +46,8 @@
   "sakura:Convergence": {
     "NAME": "Convergence",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck, gold, relics and potions to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
     ],
-    "FLAVOR": "I will never lose, not to you, nor to fate! For that is my choice!"
+    "FLAVOR": "I will never lose, not to you, nor to fate! That is my choice."
   }
 }

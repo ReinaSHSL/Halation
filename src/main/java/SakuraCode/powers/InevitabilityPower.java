@@ -1,13 +1,12 @@
 package SakuraCode.powers;
 
+import SakuraCode.tools.TextureLoader;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import SakuraCode.tools.TextureLoader;
 
 public class InevitabilityPower extends AbstractPower {
     public static final String POWER_ID = "sakura:InevitabilityPower";

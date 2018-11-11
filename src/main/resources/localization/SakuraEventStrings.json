@@ -7,10 +7,10 @@
       "What a shame. If you ever want to risk your life for the fate of the universe, give me a call."
     ],
     "OPTIONS": [
-      "[Accept Calmly] #gObtain [#c487eb]Purple Soul Gem[]",
-      "[Accept Rashly] #gObtain [#87ebe7]Blue Soul Gem[]",
-      "[Accept Aggressively] #gObtain #rRed Soul Gem[]",
-      "[Accept Desperately] #gObtain #yYellow Soul Gem[]",
+      "[Accept Calmly] #gObtain #pPurple Soul Gem",
+      "[Accept Rashly] #gObtain #bBlue Soul Gem",
+      "[Accept Aggressively] #gObtain #rRed Soul Gem",
+      "[Accept Desperately] #gObtain #yYellow Soul Gem",
       "[Accept Reluctantly] #gObtain [#e8a2ef]Pink Soul Gem[]",
       "Leave"
     ]

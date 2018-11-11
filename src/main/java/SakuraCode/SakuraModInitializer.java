@@ -11,15 +11,9 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import basemod.interfaces.StartActSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-import java.util.ArrayList;
 
 @SpireInitializer
 public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber {
@@ -60,10 +54,6 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
 
     @Override
     public void receiveStartAct() {
-        for (AbstractRelic r : AbstractDungeon.player.relics) {
-            if (r instanceof Convergence) {
-                Convergence.updateStats();
-            }
-        }
+        Convergence.updateStats();
     }
 }
