@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -52,6 +53,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/SakuraPowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/SakuraRelicStrings.json");
+        BaseMod.loadCustomStrings(EventStrings.class, "localization/SakuraEventStrings.json");
     }
 
     @Override
