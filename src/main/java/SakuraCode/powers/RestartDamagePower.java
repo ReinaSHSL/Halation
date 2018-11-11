@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import SakuraCode.relics.PurpleSoulGem;
+import SakuraCode.relics.madoka.PurpleSoulGem;
 import SakuraCode.tools.TextureLoader;
 
 public class RestartDamagePower extends AbstractPower {

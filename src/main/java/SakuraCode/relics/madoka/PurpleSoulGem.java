@@ -1,4 +1,4 @@
-package SakuraCode.relics;
+package SakuraCode.relics.madoka;
 
 import SakuraCode.powers.RestartDamagePower;
 import basemod.abstracts.CustomRelic;

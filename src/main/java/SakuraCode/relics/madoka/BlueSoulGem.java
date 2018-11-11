@@ -1,6 +1,7 @@
-package SakuraCode.relics;
+package SakuraCode.relics.madoka;
 
 import SakuraCode.powers.InevitabilityPower;
+import SakuraCode.relics.AbstractSakuraRelic;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

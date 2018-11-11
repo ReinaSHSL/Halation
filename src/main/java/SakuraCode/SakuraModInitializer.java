@@ -1,6 +1,7 @@
 package SakuraCode;
 
-import SakuraCode.relics.*;
+import SakuraCode.relics.BottledLove;
+import SakuraCode.relics.madoka.*;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditRelicsSubscriber;
