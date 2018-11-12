@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -22,6 +23,8 @@ public class Convergence extends CustomRelic implements ClickableRelic{
     private static int startHp = 0;
     private static CardGroup startDeck = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     private static ArrayList<AbstractRelic> startRelics = new ArrayList<>();
+    private static int startGold = 0;
+    private static ArrayList<AbstractPotion> startPotions = new ArrayList<>();
 
     public Convergence() {
         super(ID, IMG, AbstractRelic.RelicTier.BOSS, LandingSound.FLAT);
@@ -39,6 +42,7 @@ public class Convergence extends CustomRelic implements ClickableRelic{
 
     @Override
     public void onRightClick() {
+        setPlayerStats();
         ArrayList<String> emptyList = new ArrayList<String>();
         switch (AbstractDungeon.id) {
             case TheCity.ID:
@@ -46,53 +50,42 @@ public class Convergence extends CustomRelic implements ClickableRelic{
                 AbstractDungeon.scene.fadeOutAmbiance();
                 new TheCity(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
                 AbstractDungeon.dungeonMapScreen.open(false);
-                AbstractDungeon.player.maxHealth -= 20;
-                if (AbstractDungeon.player.maxHealth <= 1) {
-                    AbstractDungeon.player.maxHealth = 1;
-                }
-
-                if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth) {
-                    AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
-                }
                 break;
             case TheBeyond.ID:
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                 AbstractDungeon.scene.fadeOutAmbiance();
                 new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
                 AbstractDungeon.dungeonMapScreen.open(false);
-                if (AbstractDungeon.player.maxHealth <= 1) {
-                    AbstractDungeon.player.maxHealth = 1;
-                }
-
-                if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth) {
-                    AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
-                }
-                AbstractDungeon.player.currentHealth = startHp;
-                AbstractDungeon.player.relics = startRelics;
                 break;
             default:
                 break;
         }
-        setPlayerStats();
     }
 
     public static void updateStats() {
-        System.out.println(AbstractDungeon.player.masterDeck.group);
+        startRelics.clear();
+        startDeck.clear();
+        startPotions.clear();
         startHp = Integer.valueOf(AbstractDungeon.player.currentHealth);
+        startGold = Integer.valueOf(AbstractDungeon.player.gold);
         startRelics.addAll(AbstractDungeon.player.relics);
+        startPotions.addAll(AbstractDungeon.player.potions);
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             startDeck.addToTop(c.makeStatEquivalentCopy());
         }
-        System.out.println("SHIT'S HAPPENING HERE " + startHp + " " + startRelics + " " + startDeck);
     }
 
     private static void setPlayerStats() {
+        AbstractDungeon.player.masterDeck.clear();
+        AbstractDungeon.player.potions.clear();
         AbstractDungeon.player.currentHealth = startHp;
         AbstractDungeon.player.relics = startRelics;
-        AbstractDungeon.player.masterDeck.removeTopCard();
+        AbstractDungeon.player.gold = startGold;
+        AbstractDungeon.player.potions = startPotions;
         for (AbstractCard c : startDeck.group) {
-            startDeck.addToBottom(c);
+            AbstractDungeon.player.masterDeck.addToBottom(c);
         }
+        AbstractDungeon.player.decreaseMaxHealth(20);
     }
 
 //    @Override
