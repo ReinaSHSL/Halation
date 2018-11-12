@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Convergence extends CustomRelic implements ClickableRelic{
     public static final String ID = "sakura:Convergence";
@@ -65,11 +66,9 @@ public class Convergence extends CustomRelic implements ClickableRelic{
     public static void updateStats() {
         startRelics.clear();
         startDeck.clear();
-        startPotions.clear();
         startHp = Integer.valueOf(AbstractDungeon.player.currentHealth);
         startGold = Integer.valueOf(AbstractDungeon.player.gold);
         startRelics.addAll(AbstractDungeon.player.relics);
-        startPotions.addAll(AbstractDungeon.player.potions);
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             startDeck.addToTop(c.makeStatEquivalentCopy());
         }
@@ -77,11 +76,10 @@ public class Convergence extends CustomRelic implements ClickableRelic{
 
     private static void setPlayerStats() {
         AbstractDungeon.player.masterDeck.clear();
-        AbstractDungeon.player.potions.clear();
         AbstractDungeon.player.currentHealth = startHp;
-        AbstractDungeon.player.relics = startRelics;
         AbstractDungeon.player.gold = startGold;
         AbstractDungeon.player.potions = startPotions;
+
         for (AbstractCard c : startDeck.group) {
             AbstractDungeon.player.masterDeck.addToBottom(c);
         }
