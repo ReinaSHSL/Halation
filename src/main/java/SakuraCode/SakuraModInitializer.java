@@ -6,17 +6,16 @@ import SakuraCode.relics.madoka.*;
 import SakuraCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
-import basemod.interfaces.StartActSubscriber;
+import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
-public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber {
+public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
+        PostUpdateSubscriber {
     private static final String MODNAME = "Sakura";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -55,5 +54,10 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receiveStartAct() {
         Convergence.updateStats();
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        Convergence.relicBullshit();
     }
 }

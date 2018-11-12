@@ -4,6 +4,7 @@ import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
@@ -26,6 +28,8 @@ public class Convergence extends CustomRelic implements ClickableRelic{
     private static ArrayList<AbstractRelic> startRelics = new ArrayList<>();
     private static int startGold = 0;
     private static ArrayList<AbstractPotion> startPotions = new ArrayList<>();
+    private static boolean relicChange = false;
+    private static boolean normalActChange = true;
 
     public Convergence() {
         super(ID, IMG, AbstractRelic.RelicTier.BOSS, LandingSound.FLAT);
@@ -43,6 +47,7 @@ public class Convergence extends CustomRelic implements ClickableRelic{
 
     @Override
     public void onRightClick() {
+        normalActChange = false;
         setPlayerStats();
         ArrayList<String> emptyList = new ArrayList<String>();
         switch (AbstractDungeon.id) {
@@ -64,13 +69,15 @@ public class Convergence extends CustomRelic implements ClickableRelic{
     }
 
     public static void updateStats() {
-        startRelics.clear();
-        startDeck.clear();
-        startHp = Integer.valueOf(AbstractDungeon.player.currentHealth);
-        startGold = Integer.valueOf(AbstractDungeon.player.gold);
-        startRelics.addAll(AbstractDungeon.player.relics);
-        for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            startDeck.addToTop(c.makeStatEquivalentCopy());
+        if (normalActChange) {
+            startRelics.clear();
+            startDeck.clear();
+            startHp = Integer.valueOf(AbstractDungeon.player.currentHealth);
+            startGold = Integer.valueOf(AbstractDungeon.player.gold);
+            startRelics.addAll(AbstractDungeon.player.relics);
+            for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
+                startDeck.addToTop(c.makeStatEquivalentCopy());
+            }
         }
     }
 
@@ -78,12 +85,25 @@ public class Convergence extends CustomRelic implements ClickableRelic{
         AbstractDungeon.player.masterDeck.clear();
         AbstractDungeon.player.currentHealth = startHp;
         AbstractDungeon.player.gold = startGold;
-        AbstractDungeon.player.potions = startPotions;
-
+        relicChange = true;
         for (AbstractCard c : startDeck.group) {
             AbstractDungeon.player.masterDeck.addToBottom(c);
         }
         AbstractDungeon.player.decreaseMaxHealth(20);
+    }
+
+    public static void relicBullshit() {
+        if (relicChange) {
+            AbstractDungeon.player.relics.clear();
+            for (AbstractRelic r : startRelics) {
+                r.obtain();
+            }
+            System.out.println("shit is HERE!!!" + AbstractDungeon.player.relics);
+            System.out.println("shit is HERE!!!" + startRelics);
+            relicChange = false;
+            normalActChange = true;
+            updateStats();
+        }
     }
 
 //    @Override
