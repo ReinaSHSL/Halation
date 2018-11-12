@@ -45,6 +45,8 @@ public class Convergence extends CustomRelic implements ClickableRelic{
         return new Convergence();
     }
 
+    //TODO SUPPORT NEOW ROOM AND SAVE AND LOAD LOGIC!
+
     @Override
     public void onRightClick() {
         normalActChange = false;

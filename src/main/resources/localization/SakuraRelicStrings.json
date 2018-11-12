@@ -49,5 +49,11 @@
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck, gold, and relics to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
     ],
     "FLAVOR": "I will never lose, not to you, nor to fate! That is my choice."
+  },
+  "sakura:Yufonium": {
+    "NAME": "Yufonium",
+    "DESCRIPTIONS": [
+      "Every attack you draw has its cost lowered by #y1. Deal #rhalf damage with attacks. You can only play up to #y20 cards a turn."
+    ]
   }
 }

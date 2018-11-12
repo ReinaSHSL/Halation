@@ -1,21 +1,27 @@
 {
   "sakura:RestartDamagePower": {
     "NAME": "Damage Boost",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "This enemy does ",
       "times more damage."
     ]
   },
   "sakura:InevitabilityPower": {
     "NAME": "Borrowed Time",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "Take no damage this combat."
     ]
   },
   "sakura:NoSkillsPower": {
     "NAME": "No Restraint",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "You may not play skills."
+    ]
+  },
+  "sakura:HalveDamagePower": {
+    "NAME": "Half Damage",
+    "DESCRIPTION": [
+      "Deal half damage with attacks."
     ]
   }
 }

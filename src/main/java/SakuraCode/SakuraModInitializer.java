@@ -1,6 +1,7 @@
 package SakuraCode;
 
 import SakuraCode.events.shrines.Contract;
+import SakuraCode.relics.hibike.Yufonium;
 import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madoka.*;
 import SakuraCode.relics.steinsgate.Convergence;
@@ -9,13 +10,15 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
 public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber, PostDrawSubscriber {
     private static final String MODNAME = "Sakura";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -37,6 +40,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new YellowSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new PinkSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new Convergence(), RelicType.SHARED);
+        BaseMod.addRelic(new Yufonium(), RelicType.SHARED);
     }
 
     @Override
@@ -59,5 +63,12 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receivePostUpdate() {
         Convergence.relicBullshit();
+    }
+
+    @Override
+    public void receivePostDraw(AbstractCard abstractCard) {
+        if (AbstractDungeon.player.hasRelic(Yufonium.ID)) {
+            Yufonium.onDraw(abstractCard);
+        }
     }
 }
