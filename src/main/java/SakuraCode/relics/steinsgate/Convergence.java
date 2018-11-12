@@ -98,8 +98,6 @@ public class Convergence extends CustomRelic implements ClickableRelic{
             for (AbstractRelic r : startRelics) {
                 r.obtain();
             }
-            System.out.println("shit is HERE!!!" + AbstractDungeon.player.relics);
-            System.out.println("shit is HERE!!!" + startRelics);
             relicChange = false;
             normalActChange = true;
             updateStats();
