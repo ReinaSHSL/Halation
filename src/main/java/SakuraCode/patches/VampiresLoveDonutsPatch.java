@@ -4,6 +4,7 @@ import SakuraCode.relics.monogatari.TwoAmDonut;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.blue.Strike_Blue;
 import com.megacrit.cardcrawl.cards.colorless.Bite;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.BloodVial;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 import java.util.Iterator;
@@ -42,30 +44,37 @@ public class VampiresLoveDonutsPatch {
 
     @SpirePatch(clz = Vampires.class, method = "buttonEffect")
     public static class ButtonEffect {
-        public static void Prefix(Vampires __instance, @ByRef int[] buttonPressed) {
-            if ((int) ReflectionHacks.getPrivate(__instance, Vampires.class, "screenNum") == 0 && AbstractDungeon.player.hasRelic(TwoAmDonut.ID) && AbstractDungeon.player.hasRelic(BloodVial.ID)) {
-                if (buttonPressed[0] == 2) {
-                    __instance.imageEventText.updateBodyText(DESCRIPTIONS[0]);
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[1]);
-                    __instance.imageEventText.clearRemainingOptions();
-                    replaceAttacks();
-                    AbstractDungeon.player.loseRelic(TwoAmDonut.ID);
-                    ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
-                } else if (buttonPressed[0] == 3) {
-                    buttonPressed[0] = 2;
-                }
-            } else {
-                if (buttonPressed[0] == 1) {
-                    __instance.imageEventText.updateBodyText(DESCRIPTIONS[0]);
-                    __instance.imageEventText.updateDialogOption(0, OPTIONS[1]);
-                    __instance.imageEventText.clearRemainingOptions();
-                    replaceAttacks();
-                    AbstractDungeon.player.loseRelic(TwoAmDonut.ID);
-                    ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
-                } else if (buttonPressed[0] == 2) {
-                    buttonPressed[0] = 1;
+        public static SpireReturn Prefix(Vampires __instance, @ByRef int[] buttonPressed) {
+            if ((int) ReflectionHacks.getPrivate(__instance, Vampires.class, "screenNum") == 0 && AbstractDungeon.player.hasRelic(TwoAmDonut.ID)) {
+                if (AbstractDungeon.player.hasRelic(BloodVial.ID)) {
+                    if (buttonPressed[0] == 2) {
+                        replaceAttacks();
+                        AbstractDungeon.player.loseRelic(TwoAmDonut.ID);
+                        UPDATEBODYTEXT(__instance);
+                        ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
+                        return SpireReturn.Return(null);
+                    } else if (buttonPressed[0] == 3) {
+                        buttonPressed[0] = 2;
+                    }
+                } else {
+                    if (buttonPressed[0] == 1) {
+                        replaceAttacks();
+                        AbstractDungeon.player.loseRelic(TwoAmDonut.ID);
+                        UPDATEBODYTEXT(__instance);
+                        ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
+                        return SpireReturn.Return(null);
+                    } else if (buttonPressed[0] == 2) {
+                        buttonPressed[0] = 1;
+                    }
                 }
             }
+            return SpireReturn.Continue();
+        }
+
+        private static void UPDATEBODYTEXT(Vampires __instance) {
+            __instance.imageEventText.updateBodyText(DESCRIPTIONS[0]);
+            __instance.imageEventText.updateDialogOption(0, OPTIONS[1]);
+            __instance.imageEventText.clearRemainingOptions();
         }
 
         private static void replaceAttacks() {

@@ -19,7 +19,7 @@ public class TwoAmDonut extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public TwoAmDonut() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.HEAVY);
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     @Override
