@@ -77,5 +77,13 @@
       "Upon pickup, gain #y3 max health. Occasionally run into more Eternal Fortunes."
     ],
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
+  },
+  "sakura:WeightlessCrab": {
+    "NAME": "Weightless Crab",
+    "DESCRIPTIONS": [
+      "For every #y3 Curses you draw, gain #y1 Intangible."
+    ],
+    "FLAVOR": "I am not a friend of justice. I am an enemy of evil."
   }
+
 }

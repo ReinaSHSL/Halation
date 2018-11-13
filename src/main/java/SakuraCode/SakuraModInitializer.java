@@ -8,6 +8,7 @@ import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madeinabyss.EternalFortune;
 import SakuraCode.relics.madeinabyss.StarCompass;
 import SakuraCode.relics.madoka.*;
+import SakuraCode.relics.monogatari.WeightlessCrab;
 import SakuraCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
@@ -77,6 +78,9 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     public void receivePostDraw(AbstractCard abstractCard) {
         if (AbstractDungeon.player.hasRelic(Yufonium.ID)) {
             Yufonium.onDraw(abstractCard);
+        }
+        if (AbstractDungeon.player.hasRelic(WeightlessCrab.ID)) {
+            WeightlessCrab.onDraw(abstractCard);
         }
     }
 }
