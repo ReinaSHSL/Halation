@@ -70,5 +70,12 @@
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Holds the deepest secrets of the Spire. Perhaps if you are worthy...?"
     ],
     "FLAVOR": "A compass that always seems to point up no matter your orientation. Maybe it holds a dark secret."
+  },
+  "sakura:EternalFortune": {
+    "NAME": "Eternal Fortune",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #y3 max health. Occasionally run into more Eternal Fortunes."
+    ],
+    "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   }
 }

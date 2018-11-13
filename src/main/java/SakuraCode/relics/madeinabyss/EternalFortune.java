@@ -27,4 +27,22 @@ public class EternalFortune extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new EternalFortune();
     }
+
+    @Override
+    public void onEquip() {
+        p.increaseMaxHp(3, true);
+    }
+
+    public void increment() {
+        this.counter++;
+        p.increaseMaxHp(3, true);
+    }
+
+    @Override
+    public void onVictory() {
+        int roll = AbstractDungeon.relicRng.random(0, 99);
+        if (roll < 100) {
+            AbstractDungeon.getCurrRoom().addRelicToRewards(this);
+        }
+    }
 }
