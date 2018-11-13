@@ -63,6 +63,7 @@ public class FieldOfFlowers extends AbstractImageEvent {
                         imageEventText.clearRemainingOptions();
                         break;
                 }
+                break;
             case 1:
                 switch (i) {
                     default:
