@@ -1,12 +1,59 @@
 package SakuraCode.relics.hibike;
 
-public class Trompette {
-    private static Trompette ourInstance = new Trompette();
+import SakuraCode.tools.TextureLoader;
+import basemod.ReflectionHacks;
+import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-    public static Trompette getInstance() {
-        return ourInstance;
+public class Trompette extends CustomRelic {
+    public static final String ID = "sakura:Trompette";
+    private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/Trompette.png");
+
+    public Trompette() {
+        super(ID, IMG, RelicTier.RARE, LandingSound.CLINK);
     }
 
-    private Trompette() {
+    @Override
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0];
+    }
+
+    @Override
+    public AbstractRelic makeCopy() {
+        return new Trompette();
+    }
+
+    @Override
+    public void atPreBattle()
+    {
+        flash();
+        if (!pulse) {
+            beginPulse();
+            pulse = true;
+        }
+    }
+
+    public void onUseCard(AbstractCard c, UseCardAction a) {
+        if (c.type != AbstractCard.CardType.ATTACK) {
+            pulse = false;
+        }
+    }
+
+    @Override
+    public void onVictory()
+    {
+        if (pulse) {
+            AbstractDungeon.player.heal(10);
+        }
+        pulse = false;
     }
 }

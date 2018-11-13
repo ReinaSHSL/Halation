@@ -54,6 +54,14 @@
     "NAME": "Yufonium",
     "DESCRIPTIONS": [
       "Every attack you draw has its cost lowered by #y1. Deal #rhalf damage with attacks. You can only play up to #y20 cards a turn."
-    ]
+    ],
+    "FLAVOR": "Don't give up. not until you've done everything in your power!"
+  },
+  "sakura:Trompette": {
+    "NAME": "Trompette",
+    "DESCRIPTIONS": [
+      "If you play only attacks in a combat, heal 10 health."
+    ],
+    "FLAVOR": "You really do have an awful personality."
   }
 }

@@ -20,7 +20,7 @@
   },
   "sakura:HalveDamagePower": {
     "NAME": "Half Damage",
-    "DESCRIPTION": [
+    "DESCRIPTIONS": [
       "Deal half damage with attacks."
     ]
   }

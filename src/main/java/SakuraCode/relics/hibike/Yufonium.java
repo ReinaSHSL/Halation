@@ -5,10 +5,12 @@ import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class Yufonium extends CustomRelic {
@@ -33,11 +35,35 @@ public class Yufonium extends CustomRelic {
     public void atBattleStart() {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 new HalveDamagePower(AbstractDungeon.player)));
+        this.counter = 0;
     }
 
     public static void onDraw(AbstractCard c) {
-        if (c.type == AbstractCard.CardType.ATTACK && c.cost < 0) {
-            c.modifyCostForCombat(-1);
+        if (c.type == AbstractCard.CardType.ATTACK && c.cost > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(c.uuid, 1));
         }
+    }
+
+    @Override
+    public void atTurnStart() {
+        this.counter = 0;
+    }
+
+    @Override
+    public void onPlayCard(final AbstractCard card, final AbstractMonster m) {
+        if (this.counter < 20 && card.type != AbstractCard.CardType.CURSE) {
+            ++this.counter;
+            if (this.counter >= 20) {
+                this.flash();
+            }
+        }
+    }
+
+    @Override
+    public boolean canPlay(final AbstractCard card) {
+        if (this.counter >= 20 && card.type != AbstractCard.CardType.CURSE) {
+            return false;
+        }
+        return true;
     }
 }

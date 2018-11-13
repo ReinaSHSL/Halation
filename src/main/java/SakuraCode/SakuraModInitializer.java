@@ -1,6 +1,7 @@
 package SakuraCode;
 
 import SakuraCode.events.shrines.Contract;
+import SakuraCode.relics.hibike.Trompette;
 import SakuraCode.relics.hibike.Yufonium;
 import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madoka.*;
@@ -41,6 +42,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new PinkSoulGem(), RelicType.SHARED);
         BaseMod.addRelic(new Convergence(), RelicType.SHARED);
         BaseMod.addRelic(new Yufonium(), RelicType.SHARED);
+        BaseMod.addRelic(new Trompette(), RelicType.SHARED);
     }
 
     @Override
