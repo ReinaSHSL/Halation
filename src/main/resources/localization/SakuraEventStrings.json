@@ -3,16 +3,30 @@
     "NAME": "Contract?",
     "DESCRIPTIONS": [
       "Would you like to form a contract with me?",
-      "A contract has been @formed@. Have fun with your new found powers!",
+      "A contract has been #rformed. Have fun with your new found powers!",
       "What a shame. If you ever want to risk your life for the fate of the universe, give me a call."
     ],
     "OPTIONS": [
-      "[Accept Calmly] #gObtain #pPurple Soul Gem",
-      "[Accept Rashly] #gObtain #bBlue Soul Gem",
-      "[Accept Aggressively] #gObtain #rRed Soul Gem",
-      "[Accept Desperately] #gObtain #yYellow Soul Gem",
-      "[Accept Reluctantly] #gObtain [#e8a2ef]Pink Soul Gem[]",
+      "[Accept Calmly] #gObtain #pPurple #pSoul #pGem",
+      "[Accept Rashly] #gObtain #bBlue #bSoul #bGem",
+      "[Accept Aggressively] #gObtain #rRed #rSoul #rGem",
+      "[Accept Desperately] #gObtain #yYellow #ySoul #yGem",
+      "[Accept Reluctantly] #gObtain #rPink #rSoul #rGem",
       "Leave"
+    ]
+  },
+  "sakura:FieldOfFlowers": {
+    "NAME": "Field of Flowers",
+    "DESCRIPTIONS": [
+      "While looking for a place to rest after your latest battle, you find yourself amongst a field of flowers in full bloom. There appears to be a shiny object just out of reach. Maybe if you tried really hard you could grab it?",
+      "Exerting all your effort, you stretch your arm as far as it will go. At the cusp of pulling a muscle, you feel a hard, metal object. You grab it and make off with the fruits of your labor.",
+      "You're too tired from your adventures to exert yourself any further. A small break amongst the flowers is just what you needed before endangering your life further.",
+      "Eager to see what lies next, you barge past the field of flowers."
+    ],
+    "OPTIONS": [
+      "[Reach] #gObtain a #yStar #yCompass.",
+      "[Rest] #gObtain an #yEternal #yFortune",
+      "[Leave]"
     ]
   }
 }
