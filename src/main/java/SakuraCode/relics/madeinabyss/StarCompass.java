@@ -22,7 +22,7 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
     private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/StarCompass.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
-    private static boolean potentialReached = false;
+    public static boolean potentialReached = false;
     private static boolean loseRelic = false;
 
     public StarCompass() {
@@ -60,16 +60,40 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
                             unknown++;
                         }
                     }
-                    float x = AbstractDungeon.player.gold;
+                    float x = p.gold;
                     float xhalf = 0.5f * x;
                     int i = Float.floatToIntBits(x);
                     i = 0x5f3759df - (i >> 1);
                     x = Float.intBitsToFloat(i);
                     x *= (1.5f - xhalf * x * x);
+                    {long ___;long _____[]=new long[0x10];
+                        {_____[0]=System.nanoTime();
+                            ___=System.nanoTime()%9223372036854773232L;
+                            for(int _______=0;_______<0x10;++_______)
+                            {_____[_______]=(9223372036854773232L*_____[_______]+___&Long.MAX_VALUE)%9223372036854775807L;
+                                ___=9223372036854773232L*_____[_______]+___;}}
+                        int ______=0;long _______=0;long ________=0;
+                        for(;________<0xFFFFFFL;++________)
+                        {long _________=(9223372036854773232L*_____[______]+___&Long.MAX_VALUE)%9223372036854775807L;
+                            ___=9223372036854773232L*_____[______]+___;
+                            _____[______]=_________;
+                            double __________=(double)_____[______]/Long.MAX_VALUE;
+                            ++______;
+                            if(______>=0x10)
+                            {______=0;}
+                            _________=(9223372036854773232L*_____[______]+___&Long.MAX_VALUE)%9223372036854775807L;
+                            ___=9223372036854773232L*_____[______]+___;
+                            _____[______]=_________;
+                            double ___________=(double)_____[______]/Long.MAX_VALUE;
+                            ++______;
+                            if(______>=0x10)
+                            {______=0;}
+                            if(Math.sqrt(__________*__________+___________*___________)<=1)
+                            {++_______;}}
+                        System.out.println(x*_______/________);}
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             } else {
                 AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f, "Oops, I dropped it. Oh well.", true));
                 loseRelic = true;
