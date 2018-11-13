@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 public class RedSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:RedSoulGem";
     private static final Texture IMG = TextureLoader.getTexture("SakuraImages/relics/RedSoulGem.png");
+    private boolean used = false;
 
     public RedSoulGem() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -31,12 +32,18 @@ public class RedSoulGem extends CustomRelic implements ClickableRelic {
     }
 
     @Override
+    public void atBattleStart() {
+        this.used = false;
+    }
+
+    @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && GameActionManager.turn == 1) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && GameActionManager.turn == 1 && !this.used) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new StrengthPower(AbstractDungeon.player, 10)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new NoSkillsPower(AbstractDungeon.player)));
+            this.used = true;
         }
     }
 }

@@ -11,7 +11,7 @@
   "sakura:PurpleSoulGem": {
     "NAME": "Purple Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies deal 20% more damage."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain 2 Strength."
     ],
     "FLAVOR": "If…If it’s for your sake…I don’t mind being locked in this eternal maze."
   },
@@ -67,7 +67,7 @@
   "sakura:StarCompass": {
     "NAME": "Star Compass",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Holds the deepest secrets of the Spire. Perhaps if you are worthy...?"
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Holds the deepest secrets of the Spire. Perhaps if you are worthy...?"
     ],
     "FLAVOR": "A compass that always seems to point up no matter your orientation. Maybe it holds a dark secret."
   },

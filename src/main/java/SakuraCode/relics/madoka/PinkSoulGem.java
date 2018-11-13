@@ -41,7 +41,10 @@ public class PinkSoulGem extends CustomRelic implements ClickableRelic, BetterOn
 
     @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
-        this.counter = damageAmount * 2;
+        if (this.counter == -1) {
+            this.counter = 0;
+        }
+        this.counter += damageAmount * 2;
         return damageAmount;
     }
 }

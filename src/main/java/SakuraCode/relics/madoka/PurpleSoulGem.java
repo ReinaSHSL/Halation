@@ -1,5 +1,6 @@
 package SakuraCode.relics.madoka;
 
+import SakuraCode.powers.HalveDamagePower;
 import SakuraCode.powers.RestartDamagePower;
 import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
@@ -27,6 +30,9 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     @Override
     public void onRightClick() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            if (this.counter == -1) {
+                this.counter = 0;
+            }
             this.counter++;
             flash();
             AbstractDungeon.actionManager.addToBottom(new PurpleSoulGemReviveAction());
@@ -48,6 +54,10 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
             flash();
             restartCombat();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, PurpleSoulGem.this));
+            for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(mo, PurpleSoulGem.this));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new StrengthPower(mo, PurpleSoulGem.this.counter*2), PurpleSoulGem.this.counter*2));
+            }
             isDone = true;
         }
     }
@@ -99,7 +109,6 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
             m.showHealthBar();
             m.usePreBattleAction();
             m.useUniversalPreBattleAction();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new RestartDamagePower(m, 1), 1));
         }
 
         AbstractDungeon.player.preBattlePrep();
@@ -127,7 +136,6 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     {
         flash();
         this.counter = 0;
-
     }
 
     @Override

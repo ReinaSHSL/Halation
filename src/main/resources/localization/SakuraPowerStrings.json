@@ -2,8 +2,8 @@
   "sakura:RestartDamagePower": {
     "NAME": "Damage Boost",
     "DESCRIPTIONS": [
-      "This enemy does ",
-      "times more damage."
+      "This enemy does #y",
+      "% more damage."
     ]
   },
   "sakura:InevitabilityPower": {
