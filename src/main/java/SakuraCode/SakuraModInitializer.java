@@ -8,6 +8,7 @@ import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madeinabyss.EternalFortune;
 import SakuraCode.relics.madeinabyss.StarCompass;
 import SakuraCode.relics.madoka.*;
+import SakuraCode.relics.monogatari.TwoAmDonut;
 import SakuraCode.relics.monogatari.WeightlessCrab;
 import SakuraCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
@@ -48,6 +49,8 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new Trompette(), RelicType.SHARED);
         BaseMod.addRelic(new StarCompass(), RelicType.SHARED);
         BaseMod.addRelic(new EternalFortune(), RelicType.SHARED);
+        BaseMod.addRelic(new WeightlessCrab(), RelicType.SHARED);
+        BaseMod.addRelic(new TwoAmDonut(), RelicType.SHARED);
     }
 
     @Override
