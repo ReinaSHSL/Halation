@@ -45,4 +45,44 @@ public class EternalFortune extends CustomRelic {
             AbstractDungeon.getCurrRoom().addRelicToRewards(this);
         }
     }
+
+    @Override
+    public void instantObtain()
+    {
+        if (AbstractDungeon.player.hasRelic(EternalFortune.ID)) {
+            EternalFortune EternalFortune = (EternalFortune) AbstractDungeon.player.getRelic(ID);
+            EternalFortune.increment();
+            EternalFortune.flash();
+        } else {
+            super.instantObtain();
+        }
+    }
+
+    @Override
+    public void instantObtain(AbstractPlayer p, int slot, boolean callOnEquip)
+    {
+        if (AbstractDungeon.player.hasRelic(EternalFortune.ID)) {
+            EternalFortune EternalFortune = (EternalFortune) AbstractDungeon.player.getRelic(ID);
+            EternalFortune.increment();
+            EternalFortune.flash();
+
+            isDone = true;
+            isObtained = true;
+            discarded = true;
+        } else {
+            super.instantObtain(p, slot, callOnEquip);
+        }
+    }
+
+    @Override
+    public void obtain()
+    {
+        if (AbstractDungeon.player.hasRelic(EternalFortune.ID)) {
+            EternalFortune EternalFortune = (EternalFortune) AbstractDungeon.player.getRelic(ID);
+            EternalFortune.increment();
+            EternalFortune.flash();
+        } else {
+            super.obtain();
+        }
+    }
 }

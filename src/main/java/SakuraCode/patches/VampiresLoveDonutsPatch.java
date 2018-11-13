@@ -53,7 +53,6 @@ public class VampiresLoveDonutsPatch {
                     ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
                 } else if (buttonPressed[0] == 3) {
                     buttonPressed[0] = 2;
-                    return;
                 }
             } else {
                 if (buttonPressed[0] == 1) {
@@ -65,7 +64,6 @@ public class VampiresLoveDonutsPatch {
                     ReflectionHacks.setPrivate(__instance, Vampires.class, "screenNum", 1);
                 } else if (buttonPressed[0] == 2) {
                     buttonPressed[0] = 1;
-                    return;
                 }
             }
         }
