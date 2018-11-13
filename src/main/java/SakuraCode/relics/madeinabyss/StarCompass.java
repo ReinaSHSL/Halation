@@ -2,11 +2,9 @@ package SakuraCode.relics.madeinabyss;
 
 import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,7 +19,6 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 
 public class StarCompass extends CustomRelic implements ClickableRelic {
     public static final String ID = "sakura:StarCompass";
