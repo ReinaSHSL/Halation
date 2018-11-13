@@ -7,10 +7,16 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
+import com.megacrit.cardcrawl.vfx.FadeWipeParticle;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
 
 import java.io.ByteArrayOutputStream;
@@ -66,7 +72,7 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
                     i = 0x5f3759df - (i >> 1);
                     x = Float.intBitsToFloat(i);
                     x *= (1.5f - xhalf * x * x);
-                    {long ___;long _____[]=new long[0x10];
+                    long ___;long _____[]=new long[0x10];
                         {_____[0]=System.nanoTime();
                             ___=System.nanoTime()%9223372036854773232L;
                             for(int _______=0;_______<0x10;++_______)
@@ -89,8 +95,20 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
                             if(______>=0x10)
                             {______=0;}
                             if(Math.sqrt(__________*__________+___________*___________)<=1)
-                            {++_______;}}
+                            {++_______;}
                         System.out.println(x*_______/________);}
+                        DamageInfo info = new DamageInfo(p, (int)x, DamageInfo.DamageType.NORMAL);
+                        am.addToBottom(new DamageAction(p, info));
+                        p.gainGold(magic[4]);
+                    AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                    final MapRoomNode node = new MapRoomNode(-1, 15);
+                    node.room = new MonsterRoomBoss();
+                    AbstractDungeon.nextRoom = node;
+                    CardCrawlGame.music.fadeOutTempBGM();
+                    AbstractDungeon.pathX.add((int)___);
+                    AbstractDungeon.pathY.add((int)_____[0] * (int)x);
+                    AbstractDungeon.topLevelEffects.add(new FadeWipeParticle());
+                    AbstractDungeon.nextRoomTransitionStart();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
