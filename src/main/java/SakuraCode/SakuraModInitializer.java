@@ -1,6 +1,7 @@
 package SakuraCode;
 
 import SakuraCode.events.shrines.Contract;
+import SakuraCode.events.shrines.FieldOfFlowers;
 import SakuraCode.relics.hibike.Trompette;
 import SakuraCode.relics.hibike.Yufonium;
 import SakuraCode.relics.hsl.BottledLove;
@@ -59,6 +60,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
+        BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
     }
 
     @Override
