@@ -28,5 +28,15 @@
       "[Harvest] #gObtain #yEternal #yFortune",
       "[Leave]"
     ]
+  },
+  "sakura:VampireDonuts": {
+    "NAME": "Vampires",
+    "DESCRIPTIONS": [
+      "\"Is...Is that a donut?\" NL The vampires leap towards you. \"Donut! Everybody, this guy has a donut!\" You find yourself surrounded by a horde of vampires all chanting #g~\"DONUT,~ #g~DONUT,~ #g~DONUT!\"~  NL They #rscratch and #rbite amongst each other clamoring for your attention. You hand your donut to the nearest vampire. NL #g\"VAMPIRES #g@LOVE@ #gDONUTS!!!!\""
+    ],
+    "OPTIONS": [
+      "[Give Donut] #rLose 2AM Donut. #gUpgraded Bites #greplace your Strikes",
+      "[Back Away Cautiously]"
+    ]
   }
 }
