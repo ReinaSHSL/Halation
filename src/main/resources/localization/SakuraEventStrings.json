@@ -24,8 +24,8 @@
       "Eager to see what lies next, you barge past the field of flowers."
     ],
     "OPTIONS": [
-      "[Reach] #gObtain a #yStar #yCompass.",
-      "[Rest] #gObtain an #yEternal #yFortune",
+      "[Reach] #gObtain #yStar #yCompass.",
+      "[Harvest] #gObtain #yEternal #yFortune",
       "[Leave]"
     ]
   }
