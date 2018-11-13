@@ -63,5 +63,12 @@
       "If you play only attacks in a combat, heal 10 health."
     ],
     "FLAVOR": "You really do have an awful personality."
+  },
+  "sakura:StarCompass": {
+    "NAME": "Star Compass",
+    "DESCRIPTIONS": [
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Holds the deepest secrets of the Spire. Perhaps if you are worthy...?"
+    ],
+    "FLAVOR": "A compass that always seems to point up no matter your orientation. Maybe it holds a dark secret."
   }
 }

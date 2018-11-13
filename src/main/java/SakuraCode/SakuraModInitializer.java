@@ -4,6 +4,7 @@ import SakuraCode.events.shrines.Contract;
 import SakuraCode.relics.hibike.Trompette;
 import SakuraCode.relics.hibike.Yufonium;
 import SakuraCode.relics.hsl.BottledLove;
+import SakuraCode.relics.madeinabyss.StarCompass;
 import SakuraCode.relics.madoka.*;
 import SakuraCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
@@ -43,6 +44,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new Convergence(), RelicType.SHARED);
         BaseMod.addRelic(new Yufonium(), RelicType.SHARED);
         BaseMod.addRelic(new Trompette(), RelicType.SHARED);
+        BaseMod.addRelic(new StarCompass(), RelicType.SHARED);
     }
 
     @Override
@@ -65,6 +67,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
     @Override
     public void receivePostUpdate() {
         Convergence.relicBullshit();
+        StarCompass.relicBullshit();
     }
 
     @Override
