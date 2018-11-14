@@ -8,6 +8,7 @@ import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madeinabyss.EternalFortune;
 import SakuraCode.relics.madeinabyss.StarCompass;
 import SakuraCode.relics.madoka.*;
+import SakuraCode.relics.monogatari.HeavySnake;
 import SakuraCode.relics.monogatari.IncompleteEncyclopedia;
 import SakuraCode.relics.monogatari.TwoAmDonut;
 import SakuraCode.relics.monogatari.WeightlessCrab;
@@ -54,6 +55,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new WeightlessCrab(), RelicType.SHARED);
         BaseMod.addRelic(new TwoAmDonut(), RelicType.SHARED);
         BaseMod.addRelic(new IncompleteEncyclopedia(), RelicType.SHARED);
+        BaseMod.addRelic(new HeavySnake(), RelicType.SHARED);
     }
 
     @Override

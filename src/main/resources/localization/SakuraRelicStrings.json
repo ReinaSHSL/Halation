@@ -88,7 +88,7 @@
   "sakura:TwoAmDonut": {
     "NAME": "2 AM Donut",
     "DESCRIPTIONS": [
-      "If you do not play any attacks, at the end of your turn gain #y 1 Strength."
+      "If you do not play any attacks, at the end of your turn gain #y1 Strength."
     ],
     "FLAVOR": "KA KA KA"
   },
@@ -98,5 +98,12 @@
       "Gain [E] at the start of your turn. You can no longer see enemy health."
     ],
     "FLAVOR": "I don't know everything. I just know what I know."
+  },
+  "sakura:HeavySnake": {
+    "NAME": "Heavy Snake",
+    "DESCRIPTIONS": [
+      "Add #y3 random Curses to the bottom of your draw pile at the start of combat. Every time you upgrade a card, upgrade 3 more random cards."
+    ],
+    "FLAVOR": "I only want one thing. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. "
   }
 }
