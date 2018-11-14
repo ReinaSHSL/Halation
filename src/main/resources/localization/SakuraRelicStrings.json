@@ -88,7 +88,7 @@
   "sakura:TwoAmDonut": {
     "NAME": "2 AM Donut",
     "DESCRIPTIONS": [
-      "If you do not play any attacks, at the end of your turn gain #b1 Strength."
+      "If you do not play any attacks, at the end of your turn gain #b2 Strength."
     ],
     "FLAVOR": "KA KA KA"
   },
@@ -114,9 +114,9 @@
     "FLAVOR": "Upon closer inspection, this arm doesn't belong to a monkey at all."
   },
   "sakura:LostSnail": {
-    "NAME": "Lost Snail",
+    "NAME": "No Longer Lost Snail",
     "DESCRIPTIONS": [
-      "Upon entering a ? room, there is a 50% the next room becomes a ? room."
+      "Upon entering a #r? room, there is a #b40% all connected rooms become a #y? room."
     ],
     "FLAVOR": "I'm sure there's a reason that, even after I stopped being lost, I stayed here. I won't leave until I know what that reason is."
   }

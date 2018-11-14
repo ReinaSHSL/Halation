@@ -38,10 +38,12 @@ public class LostSnail extends CustomRelic {
     public void onEnterRoom(final AbstractRoom room) {
         if (room instanceof EventRoom) {
             int roll = AbstractDungeon.mapRng.random(99);
-            if (roll < 100) {
+            if (roll < 39) {
                 ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) ReflectionHacks.getPrivate(AbstractDungeon.dungeonMapScreen, DungeonMapScreen.class, "visibleMapNodes");
                 for (final MapRoomNode n : visibleMapNodes) {
-                    n.setRoom(new EventRoom());
+                    if (n.y == AbstractDungeon.getCurrMapNode().y+1) {
+                        n.setRoom(new EventRoom());
+                    }
                 }
             }
         }

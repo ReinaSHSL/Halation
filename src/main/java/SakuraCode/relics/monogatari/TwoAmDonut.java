@@ -59,7 +59,7 @@ public class TwoAmDonut extends CustomRelic {
 
     public void onPlayerEndTurn() {
         if (pulse) {
-            am.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+            am.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
         }
     }
 }
