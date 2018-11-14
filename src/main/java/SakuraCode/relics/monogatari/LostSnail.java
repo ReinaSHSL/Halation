@@ -49,5 +49,4 @@ public class LostSnail extends CustomRelic {
             }
         }
     }
-
 }

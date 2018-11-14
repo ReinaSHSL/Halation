@@ -119,5 +119,12 @@
       "Upon entering a #r? room, there is a #b40% all connected rooms become a #y? room."
     ],
     "FLAVOR": "I'm sure there's a reason that, even after I stopped being lost, I stayed here. I won't leave until I know what that reason is."
+  },
+  "sakura:NonexistentMirror": {
+    "NAME": "Nonexistent Mirror",
+    "DESCRIPTIONS": [
+      "The next #b2 times you obtain a card, obtain a copy of it."
+    ],
+    "FLAVOR": "\"I saw a strange man outside of Kanbaru's house today.\" NL \"When did they hang up a mirror?\""
   }
 }

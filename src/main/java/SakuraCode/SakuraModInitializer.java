@@ -55,6 +55,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new HeavySnake(), RelicType.SHARED);
         BaseMod.addRelic(new MonkeysPaw(), RelicType.SHARED);
         BaseMod.addRelic(new LostSnail(), RelicType.SHARED);
+        BaseMod.addRelic(new NonexistentMirror(), RelicType.SHARED);
     }
 
     @Override

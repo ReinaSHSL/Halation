@@ -15,7 +15,7 @@ public class PlatinumPhoenix extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public PlatinumPhoenix() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
     }
 
     @Override
