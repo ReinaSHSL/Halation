@@ -91,5 +91,12 @@
       "If you do not play any attacks, at the end of your turn gain #y 1 Strength."
     ],
     "FLAVOR": "KA KA KA"
+  },
+  "sakura:IncompleteEncyclopedia": {
+    "NAME": "Incomplete Encyclopedia",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. You can no longer see enemy health."
+    ],
+    "FLAVOR": "I don't know everything. I just know what I know."
   }
 }

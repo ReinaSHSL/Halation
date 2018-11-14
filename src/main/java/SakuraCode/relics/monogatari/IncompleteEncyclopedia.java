@@ -5,6 +5,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -15,7 +16,7 @@ public class IncompleteEncyclopedia extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public IncompleteEncyclopedia() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override
@@ -26,6 +27,18 @@ public class IncompleteEncyclopedia extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new IncompleteEncyclopedia();
+    }
+
+    @Override
+    public void onEquip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        ++energy.energyMaster;
+    }
+
+    @Override
+    public void onUnequip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        --energy.energyMaster;
     }
 
 }

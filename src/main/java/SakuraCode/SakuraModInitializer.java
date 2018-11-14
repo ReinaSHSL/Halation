@@ -8,12 +8,14 @@ import SakuraCode.relics.hsl.BottledLove;
 import SakuraCode.relics.madeinabyss.EternalFortune;
 import SakuraCode.relics.madeinabyss.StarCompass;
 import SakuraCode.relics.madoka.*;
+import SakuraCode.relics.monogatari.IncompleteEncyclopedia;
 import SakuraCode.relics.monogatari.TwoAmDonut;
 import SakuraCode.relics.monogatari.WeightlessCrab;
 import SakuraCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -51,6 +53,7 @@ public class SakuraModInitializer implements EditRelicsSubscriber, EditStringsSu
         BaseMod.addRelic(new EternalFortune(), RelicType.SHARED);
         BaseMod.addRelic(new WeightlessCrab(), RelicType.SHARED);
         BaseMod.addRelic(new TwoAmDonut(), RelicType.SHARED);
+        BaseMod.addRelic(new IncompleteEncyclopedia(), RelicType.SHARED);
     }
 
     @Override
