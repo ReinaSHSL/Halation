@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.screens.DungeonMapScreen;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class LostSnail extends CustomRelic {
             if (roll < 39) {
                 ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) ReflectionHacks.getPrivate(AbstractDungeon.dungeonMapScreen, DungeonMapScreen.class, "visibleMapNodes");
                 for (final MapRoomNode n : visibleMapNodes) {
-                    if (n.y == AbstractDungeon.getCurrMapNode().y+1) {
+                    if (n.y == AbstractDungeon.getCurrMapNode().y+1 && !(n.room instanceof MonsterRoomBoss)) {
                         n.setRoom(new EventRoom());
                     }
                 }

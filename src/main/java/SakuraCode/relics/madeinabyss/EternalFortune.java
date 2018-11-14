@@ -34,6 +34,9 @@ public class EternalFortune extends CustomRelic {
     }
 
     public void increment() {
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
         this.counter++;
         p.increaseMaxHp(3, true);
     }
@@ -41,7 +44,7 @@ public class EternalFortune extends CustomRelic {
     @Override
     public void onVictory() {
         int roll = AbstractDungeon.relicRng.random(0, 99);
-        if (roll < 10) {
+        if (roll < 9) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(new EternalFortune());
         }
     }

@@ -97,7 +97,7 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. You can no longer see enemy health."
     ],
-    "FLAVOR": "I don't know everything. I just know what I know."
+    "FLAVOR": "I don't know everything. I only know what I know."
   },
   "sakura:HeavySnake": {
     "NAME": "Heavy Snake",
@@ -111,7 +111,7 @@
     "DESCRIPTIONS": [
       "Whenever you play a card, add #b2 copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
     ],
-    "FLAVOR": "Upon closer inspection, this arm doesn't belong to a monkey at all."
+    "FLAVOR": "Upon closer inspection, this isn't a monkey's paw at all."
   },
   "sakura:LostSnail": {
     "NAME": "No Longer Lost Snail",
