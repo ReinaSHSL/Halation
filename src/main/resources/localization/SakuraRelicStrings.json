@@ -11,7 +11,7 @@
   "sakura:PurpleSoulGem": {
     "NAME": "Purple Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain 2 Strength."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain #b2 Strength."
     ],
     "FLAVOR": "If…If it’s for your sake…I don’t mind being locked in this eternal maze."
   },
@@ -25,14 +25,14 @@
   "sakura:RedSoulGem": {
     "NAME": "Red Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #y10 Strength. You may no longer use Skills this combat. Can only be used on turn one"
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #b10 Strength. You may no longer use Skills this combat. Can only be used on turn one"
     ],
     "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
   },
   "sakura:YellowSoulGem": {
     "NAME": "Yellow Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal 15 damage to ALL enemies. Apply 99 Vulnerable to yourself. Can only be used once per combat and only up to 8 times."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal #b15 damage to ALL enemies. Apply #b99 Vulnerable to yourself. Can only be used once per combat and only up to #b8 times overall."
     ],
     "FLAVOR": "If you’re not 100% sure why you’re doing it, you’ll most certainly regret it later."
   },
@@ -46,14 +46,14 @@
   "sakura:Convergence": {
     "NAME": "Convergence",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck, gold, and relics to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #y20 Max Health."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck, gold, and relics to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #b20 Max Health."
     ],
     "FLAVOR": "I will never lose, not to you, nor to fate! That is my choice."
   },
   "sakura:Yufonium": {
     "NAME": "Yufonium",
     "DESCRIPTIONS": [
-      "Every attack you draw has its cost lowered by #y1. Deal #rhalf damage with attacks. You can only play up to #y20 cards a turn."
+      "Every attack you draw has its cost lowered by #b1. Deal #rhalf damage with attacks. You can only play up to #b20 cards a turn."
     ],
     "FLAVOR": "Don't give up. not until you've done everything in your power!"
   },
@@ -81,14 +81,14 @@
   "sakura:WeightlessCrab": {
     "NAME": "Weightless Crab",
     "DESCRIPTIONS": [
-      "For every #y3 Curses you draw, gain #y1 Intangible."
+      "For every #b3 Curses you draw, gain #b1 Intangible."
     ],
     "FLAVOR": "I am not a friend of justice. I am an enemy of evil."
   },
   "sakura:TwoAmDonut": {
     "NAME": "2 AM Donut",
     "DESCRIPTIONS": [
-      "If you do not play any attacks, at the end of your turn gain #y1 Strength."
+      "If you do not play any attacks, at the end of your turn gain #b1 Strength."
     ],
     "FLAVOR": "KA KA KA"
   },
@@ -102,7 +102,7 @@
   "sakura:HeavySnake": {
     "NAME": "Heavy Snake",
     "DESCRIPTIONS": [
-      "Add #y3 random Curses to the bottom of your draw pile at the start of combat. Every time you upgrade a card, upgrade 3 more random cards."
+      "Add #b3 random Curses to the bottom of your draw pile at the start of combat. Every time you smith a card, upgrade #b3 more random cards."
     ],
     "FLAVOR": "I only want one thing. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. "
   }
