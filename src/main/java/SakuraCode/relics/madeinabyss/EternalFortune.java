@@ -41,7 +41,7 @@ public class EternalFortune extends CustomRelic {
     @Override
     public void onVictory() {
         int roll = AbstractDungeon.relicRng.random(0, 99);
-        if (roll < 100) {
+        if (roll < 10) {
             AbstractDungeon.getCurrRoom().addRelicToRewards(new EternalFortune());
         }
     }
