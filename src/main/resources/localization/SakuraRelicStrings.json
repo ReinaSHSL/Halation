@@ -60,7 +60,7 @@
   "sakura:Trompette": {
     "NAME": "Trompette",
     "DESCRIPTIONS": [
-      "If you play only attacks in a combat, heal 10 health."
+      "If you play only attacks in a combat, heal 10 HP."
     ],
     "FLAVOR": "You really do have an awful personality."
   },
@@ -74,7 +74,7 @@
   "sakura:EternalFortune": {
     "NAME": "Eternal Fortune",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by 3. Occasionally run into more Eternal Fortunes."
+      "Upon pickup, raise your Max HP by 3. Occasionally run into more #yEternal #yFortune."
     ],
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   },
