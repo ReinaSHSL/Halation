@@ -112,5 +112,12 @@
       "Whenever you play a card, add #b2 copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
     ],
     "FLAVOR": "Upon closer inspection, this arm doesn't belong to a monkey at all."
+  },
+  "sakura:LostSnail": {
+    "NAME": "Lost Snail",
+    "DESCRIPTIONS": [
+      "Upon entering a ? room, there is a 50% the next room becomes a ? room."
+    ],
+    "FLAVOR": "I'm sure there's a reason that, even after I stopped being lost, I stayed here. I won't leave until I know what that reason is."
   }
 }
