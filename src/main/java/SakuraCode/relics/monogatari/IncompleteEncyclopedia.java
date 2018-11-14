@@ -28,6 +28,4 @@ public class IncompleteEncyclopedia extends CustomRelic {
         return new IncompleteEncyclopedia();
     }
 
-
-
 }

@@ -74,7 +74,7 @@
   "sakura:EternalFortune": {
     "NAME": "Eternal Fortune",
     "DESCRIPTIONS": [
-      "Upon pickup, gain #y3 max health. Occasionally run into more Eternal Fortunes."
+      "Upon pickup, raise your Max HP by 3. Occasionally run into more Eternal Fortunes."
     ],
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   },
