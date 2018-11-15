@@ -1,0 +1,42 @@
+{
+  "halation:Contract": {
+    "NAME": "Contract?",
+    "DESCRIPTIONS": [
+      "Would you like to form a contract with me?",
+      "A contract has been #rformed. Have fun with your new found powers!",
+      "What a shame. If you ever want to risk your life for the fate of the universe, give me a call."
+    ],
+    "OPTIONS": [
+      "[Accept Calmly] #gObtain #pPurple #pSoul #pGem",
+      "[Accept Rashly] #gObtain #bBlue #bSoul #bGem",
+      "[Accept Aggressively] #gObtain #rRed #rSoul #rGem",
+      "[Accept Desperately] #gObtain #yYellow #ySoul #yGem",
+      "[Accept Reluctantly] #gObtain #rPink #rSoul #rGem",
+      "[Leave]"
+    ]
+  },
+  "halation:FieldOfFlowers": {
+    "NAME": "Field of Flowers",
+    "DESCRIPTIONS": [
+      "While looking for a place to rest after your latest battle, you find yourself amongst a field of flowers in full bloom. NL There appears to be a shiny object just out of reach. Maybe if you tried really hard you could grab it?",
+      "Exerting all your effort, you stretch your arm as far as it will go. At the cusp of pulling a muscle, you feel a hard, metal object! You grab it and make off with the fruits of your labor.",
+      "You're too tired from your adventures to exert yourself any further. A small break amongst the flowers is just what you needed before endangering your life further.",
+      "Eager to see what lies next, you barge past the field of flowers."
+    ],
+    "OPTIONS": [
+      "[Reach] #gObtain #yStar #yCompass.",
+      "[Harvest] #gObtain #yEternal #yFortune",
+      "[Leave]"
+    ]
+  },
+  "halation:VampireDonuts": {
+    "NAME": "Vampires",
+    "DESCRIPTIONS": [
+      "\"Is...Is that a donut?\" NL The vampires leap towards you. \"Donut! Everybody, this guy has a donut!\" You find yourself surrounded by a horde of vampires all chanting #g~\"DONUT,~ #g~DONUT,~ #g~DONUT!\"~  NL They #rscratch and #rbite amongst each other clamoring for your attention. You hand your donut to the nearest vampire. NL #g\"VAMPIRES #g@LOVE@ #gDONUTS!!!!\""
+    ],
+    "OPTIONS": [
+      "[Give Donut] #rLose 2 AM Donut. #gUpgraded Bites #greplace your Strikes",
+      "[Back Away Cautiously]"
+    ]
+  }
+}

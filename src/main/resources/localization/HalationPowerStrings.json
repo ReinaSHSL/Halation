@@ -1,0 +1,33 @@
+{
+  "halation:RestartDamagePower": {
+    "NAME": "Damage Boost",
+    "DESCRIPTIONS": [
+      "This enemy does #y",
+      "% more damage."
+    ]
+  },
+  "halation:InevitabilityPower": {
+    "NAME": "Borrowed Time",
+    "DESCRIPTIONS": [
+      "Take no damage this combat."
+    ]
+  },
+  "halation:NoSkillsPower": {
+    "NAME": "No Restraint",
+    "DESCRIPTIONS": [
+      "You may not play skills."
+    ]
+  },
+  "halation:HalveDamagePower": {
+    "NAME": "Half Damage",
+    "DESCRIPTIONS": [
+      "Deal half damage with attacks."
+    ]
+  },
+  "halation:NoDamagePower": {
+    "NAME": "Invincible",
+    "DESCRIPTIONS": [
+      "This turn, all damage taken is reduced to #b0."
+    ]
+  }
+}
