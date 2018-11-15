@@ -41,11 +41,7 @@ public class Toothbrush extends CustomRelic implements OnPlayerLoseBlockRelic {
     @Override
     public DamageInfo onPlayerLoseBlock(DamageInfo i) {
         if (p.currentBlock == 0) {
-            if (am.turnHasEnded) {
-                am.addToBottom(new ApplyPowerAction(p, p, new WeakPower(i.owner, 1, true), 1));
-            } else {
-                am.addToBottom(new ApplyPowerAction(p, p, new WeakPower(i.owner, 1, false), 1));
-            }
+            am.addToBottom(new ApplyPowerAction(p, p, new WeakPower(i.owner, 1, true), 1));
         }
         return i;
     }
