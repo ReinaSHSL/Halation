@@ -60,6 +60,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new TrafficLight(), RelicType.SHARED);
         BaseMod.addRelic(new SelfBoilingWater(), RelicType.SHARED);
         BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
+        BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
     }
 
     @Override

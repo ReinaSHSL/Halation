@@ -161,5 +161,12 @@
       "In Elite combats, you can no longer draw on your first turn. On your first turn, add cards from your deck to your hand equal to the amount of cards you would have drawn."
     ],
     "FLAVOR": "I know everything. There is nothing I don't know."
+  },
+  "halation:ToothBrush": {
+    "NAME": "Toothbrush",
+    "DESCRIPTIONS": [
+      "When an enemy breaks your Block, apply #b1 Weak to them. "
+    ],
+    "FLAVOR": "Get your head out of the gutter."
   }
 }
