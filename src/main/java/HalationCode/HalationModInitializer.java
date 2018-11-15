@@ -1,5 +1,6 @@
 package HalationCode;
 
+import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
 import HalationCode.relics.hibike.Trompette;
@@ -15,6 +16,7 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -74,6 +76,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
         BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
+        BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);
     }
 
     @Override
