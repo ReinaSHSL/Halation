@@ -36,7 +36,8 @@ public class Yufonium extends CustomRelic {
         this.counter = 0;
     }
 
-    public static void onDraw(AbstractCard c) {
+    @Override
+    public void onCardDraw(AbstractCard c) {
         if (c.type == AbstractCard.CardType.ATTACK && c.cost > 0) {
             AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(c.uuid, 1));
         }

@@ -85,13 +85,4 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         StarCompass.relicBullshit();
     }
 
-    @Override
-    public void receivePostDraw(AbstractCard abstractCard) {
-        if (AbstractDungeon.player.hasRelic(Yufonium.ID)) {
-            Yufonium.onDraw(abstractCard);
-        }
-        if (AbstractDungeon.player.hasRelic(WeightlessCrab.ID)) {
-            WeightlessCrab.onDraw(abstractCard);
-        }
-    }
 }

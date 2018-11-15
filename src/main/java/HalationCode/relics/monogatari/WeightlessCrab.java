@@ -36,7 +36,8 @@ public class WeightlessCrab extends CustomRelic {
         this.counter = 0;
     }
 
-    public static void onDraw(AbstractCard c) {
+    @Override
+    public void onCardDraw(AbstractCard c) {
         AbstractRelic r = AbstractDungeon.player.getRelic(WeightlessCrab.ID);
         if (c.type == AbstractCard.CardType.CURSE) {
             r.counter++;
