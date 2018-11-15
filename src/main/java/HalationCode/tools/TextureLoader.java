@@ -37,7 +37,7 @@ public class TextureLoader {
      * @throws GdxRuntimeException
      */
     private static void loadTexture(final String textureString) throws GdxRuntimeException {
-        logger.info("Sakura | Loading Texture: " + textureString);
+        logger.info("Halation | Loading Texture: " + textureString);
         Texture texture = new Texture(textureString);
         texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         textures.put(textureString, texture);

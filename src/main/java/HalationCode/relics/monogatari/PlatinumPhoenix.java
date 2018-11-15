@@ -43,10 +43,10 @@ public class PlatinumPhoenix extends CustomRelic {
     }
 
     public boolean canPlay(AbstractCard card) {
-      if (card.cost >= 2 || card.cost < 1) {
+      if (card.cost != 1) {
           return false;
       } else {
-          return  true;
+          return true;
       }
     }
 

@@ -28,5 +28,4 @@ public class SelfBoilingWater extends CustomRelic {
         return new SelfBoilingWater();
     }
 
-
 }
