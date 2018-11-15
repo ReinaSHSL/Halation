@@ -9,14 +9,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class CharredScrew extends CustomRelic {
-    public static final String ID = "halation:CharredScrew";
-    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/CharredScrew.png");
+public class PapillonHeart extends CustomRelic {
+    public static final String ID = "halation:PapillonHeart";
+    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PapillonHeart.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
 
-    public CharredScrew() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
+    public PapillonHeart() {
+        super(ID, IMG, RelicTier.SPECIAL, LandingSound.CLINK);
     }
 
     @Override
@@ -26,7 +26,7 @@ public class CharredScrew extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new CharredScrew();
+        return new PapillonHeart();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CharredScrew extends CustomRelic {
             this.counter = 0;
         }
         counter++;
-        if (this.counter >= 6) {
+        if (this.counter >= 4) {
             this.counter = 0;
             am.addToBottom(new OrgiaModeAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null,true, AbstractDungeon.monsterRng)));
         }

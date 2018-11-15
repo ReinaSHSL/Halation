@@ -9,14 +9,12 @@ import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
 import HalationCode.relics.monogatari.*;
-import HalationCode.relics.persona.CharredScrew;
+import HalationCode.relics.persona.PapillonHeart;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -62,7 +60,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new SelfBoilingWater(), RelicType.SHARED);
         BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
-        BaseMod.addRelic(new CharredScrew(), RelicType.SHARED);
+        BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
     }
 
     @Override
