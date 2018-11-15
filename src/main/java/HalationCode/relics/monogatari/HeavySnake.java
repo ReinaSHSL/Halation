@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
 
@@ -41,15 +42,14 @@ public class HeavySnake extends CustomRelic {
     }
 
     public void onSmith() {
-        ArrayList<AbstractCard> unupgradedCards = new ArrayList<>();
-        for (AbstractCard c : p.masterDeck.group) {
-            if (!c.upgraded) {
-                unupgradedCards.add(c);
-            }
-        }
+        this.flash();
         for (int i = 0; i < 3; i++) {
-            int r = AbstractDungeon.cardRng.random(unupgradedCards.size()-1);
-            unupgradedCards.get(r).upgrade();
+            if (p.masterDeck.getUpgradableCards().isEmpty()) {
+                return;
+            }
+            AbstractCard c = p.masterDeck.getUpgradableCards().getRandomCard(true);
+            c.upgrade();
+            AbstractDungeon.effectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
         }
     }
 
