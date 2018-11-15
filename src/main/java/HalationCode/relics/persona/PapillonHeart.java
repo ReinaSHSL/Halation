@@ -30,7 +30,7 @@ public class PapillonHeart extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart() {
+    public void atTurnStartPostDraw() {
         if (this.counter < 0) {
             this.counter = 0;
         }
