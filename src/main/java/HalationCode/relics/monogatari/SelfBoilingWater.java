@@ -43,16 +43,20 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
        if (this.counter < 0) {
            this.counter = 0;
        }
-       this.counter++;
+       if (this.counter < 3) {
+           this.counter++;
+       }
     }
 
     @Override
     public void onSkipSingingBowl() {
+        this.flash();
         this.counter = 0;
     }
 
     @Override
     public void onSkipCard() {
+        this.flash();
         this.counter = 0;
     }
 
