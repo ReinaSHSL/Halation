@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
-import java.util.ArrayList;
-
 public class HeavySnake extends CustomRelic {
     public static final String ID = "halation:HeavySnake";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/HeavySnake.png");

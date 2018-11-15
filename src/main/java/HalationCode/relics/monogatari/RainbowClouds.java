@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.BagOfPreparation;
 import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
 import com.megacrit.cardcrawl.relics.SnakeRing;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class RainbowClouds extends CustomRelic {
     public static final String ID = "halation:RainbowClouds";

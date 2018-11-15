@@ -1,6 +1,5 @@
 package HalationCode.events.beyond;
 
-import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.persona.PapillonHeart;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
