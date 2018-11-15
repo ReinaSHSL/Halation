@@ -4,7 +4,9 @@ import SakuraCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
@@ -15,7 +17,7 @@ public class PlatinumPhoenix extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public PlatinumPhoenix() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY);
     }
 
     @Override
@@ -28,5 +30,25 @@ public class PlatinumPhoenix extends CustomRelic {
         return new PlatinumPhoenix();
     }
 
-    //TODO do this too
+    @Override
+    public void onEquip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        ++energy.energyMaster;
+    }
+
+    @Override
+    public void onUnequip() {
+        final EnergyManager energy = AbstractDungeon.player.energy;
+        --energy.energyMaster;
+    }
+
+    public boolean canPlay(AbstractCard card) {
+      if (card.cost >= 2 || card.cost < 1) {
+          return false;
+      } else {
+          return  true;
+      }
+    }
+
+
 }
