@@ -38,6 +38,7 @@ public class MonkeysPaw extends CustomRelic {
         tmp.magicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
         tmp.misc = c.misc/2;
         tmp.block = c.block/2;
+        tmp.cost = c.cost/2;
         am.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
         
     }

@@ -18,7 +18,7 @@ public class PeacePiece extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public PeacePiece() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, RelicTier.SHOP, LandingSound.CLINK);
     }
 
     @Override

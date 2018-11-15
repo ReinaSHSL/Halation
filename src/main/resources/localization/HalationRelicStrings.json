@@ -136,13 +136,13 @@
   },
   "halation:PlatinumPhoenix": {
     "NAME": "Platinum Phoenix",
-    "DESCRIPTIONS": "At the start of your turn, gain [E]. You can #ronly play #b1 cost cards.",
+    "DESCRIPTIONS": "At the start of your turn, gain [E] [E]. You can #ronly play #b1 cost cards.",
     "FLAVOR": "I'm platinum mad at you!"
   },
   "halation:TrafficLight": {
     "NAME": "Traffic Light",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 Strength until the end of the turn and #b1 Frail for every card you play. #rRed #rMode: Gain #b2 Dexterity until the end of the turn and #y1 Weak for every card you play. ",
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 Strength until the end of the turn for every card you play and #b1 Frail for every card you play. #rRed #rMode: Gain #b2 Dexterity until the end of the turn for every card you play and #y1 Weak for every card you play. ",
       "Currently in #gGreen #gMode",
       "Currently in #rRed #rMode."
     ],

@@ -34,11 +34,13 @@ public class PlatinumPhoenix extends CustomRelic {
     public void onEquip() {
         final EnergyManager energy = AbstractDungeon.player.energy;
         ++energy.energyMaster;
+        ++energy.energyMaster;
     }
 
     @Override
     public void onUnequip() {
         final EnergyManager energy = AbstractDungeon.player.energy;
+        --energy.energyMaster;
         --energy.energyMaster;
     }
 

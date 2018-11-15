@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
 public class HalationModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber, PostDrawSubscriber {
+        PostUpdateSubscriber {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";

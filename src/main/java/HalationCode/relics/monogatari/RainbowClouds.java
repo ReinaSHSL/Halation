@@ -15,7 +15,7 @@ public class RainbowClouds extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public RainbowClouds() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override
@@ -27,7 +27,5 @@ public class RainbowClouds extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new RainbowClouds();
     }
-
-    @Override
 
 }
