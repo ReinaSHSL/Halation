@@ -1,12 +1,19 @@
 package HalationCode.relics.monogatari;
 
+import HalationCode.actions.FixHandAction;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.BagOfPreparation;
+import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
+import com.megacrit.cardcrawl.relics.SnakeRing;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class RainbowClouds extends CustomRelic {
     public static final String ID = "halation:RainbowClouds";
@@ -28,4 +35,17 @@ public class RainbowClouds extends CustomRelic {
         return new RainbowClouds();
     }
 
+    @Override
+    public void atBattleStartPreDraw() {
+        if (AbstractDungeon.getCurrRoom().eliteTrigger) {
+            am.addToTop(new ApplyPowerAction(p, p, new NoDrawPower(p)));
+            if (p.hasRelic(BagOfPreparation.ID) || p.hasRelic(SnakeRing.ID)) {
+                am.addToBottom(new FixHandAction(7));
+            } else if (p.hasRelic(RingOfTheSerpent.ID)) {
+                am.addToBottom(new FixHandAction(6));
+            } else {
+                am.addToBottom(new FixHandAction(5));
+            }
+        }
+    }
 }
