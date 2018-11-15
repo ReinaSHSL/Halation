@@ -116,7 +116,7 @@
   "sakura:LostSnail": {
     "NAME": "No Longer Lost Snail",
     "DESCRIPTIONS": [
-      "Upon entering a #r? room, there is a #b40% all connected rooms become a #y? room."
+      "Upon entering a #y? room, there is a #b40% all connected rooms become a #y? room."
     ],
     "FLAVOR": "I'm sure there's a reason that, even after I stopped being lost, I stayed here. I won't leave until I know what that reason is."
   },
@@ -126,5 +126,13 @@
       "The next #b2 times you obtain a card, obtain a copy of it."
     ],
     "FLAVOR": "\"I saw a strange man outside of Kanbaru's house today.\" NL \"When did they hang up a mirror?\""
+  },
+  "sakura:PeacePiece": {
+    "NAME": "Peace Piece",
+    "DESCRIPTIONS": [
+      "Every #b3 turns, at the start of your turn, you and all enemies until the next turn."
+    ],
+    "FLAVOR": "\"Peace Peace\" I said with a posed look."
+
   }
 }

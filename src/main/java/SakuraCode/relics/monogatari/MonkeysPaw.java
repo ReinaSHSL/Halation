@@ -33,10 +33,14 @@ public class MonkeysPaw extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard c, UseCardAction a) {
-        c.damage = c.damage/2;
-        c.magicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
-        c.misc = c.misc/2;
-        c.block = c.block/2;
-        am.addToBottom(new MakeTempCardInDrawPileAction(c, 2, false, false, true));
+        System.out.println("SHIT OVER HERE " + c);
+        AbstractCard tmp = c;
+        tmp.damage = c.damage/2;
+        tmp.magicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
+        tmp.misc = c.misc/2;
+        tmp.block = c.block/2;
+        am.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
+        
     }
+    //TODO FIX THIS
 }

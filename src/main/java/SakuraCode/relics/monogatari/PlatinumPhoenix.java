@@ -27,4 +27,6 @@ public class PlatinumPhoenix extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new PlatinumPhoenix();
     }
+
+    //TODO do this too
 }
