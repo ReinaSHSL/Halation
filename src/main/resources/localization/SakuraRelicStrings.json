@@ -145,6 +145,7 @@
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 Strength until the end of the turn and #b1 Frail for every card you play. #rRed #rMode: Gain #b2 Dexterity until the end of the turn and #y1 Weak for every card you play. ",
       "Currently in #gGreen #gMode",
       "Currently in #rRed #rMode."
-    ]
+    ],
+    "FLAVOR": "When the world is filled with red lights, signalling danger, the world is safer than usual. But when it's filled with green lights signalling safety, it creates a place more dangerous than any other."
   }
 }
