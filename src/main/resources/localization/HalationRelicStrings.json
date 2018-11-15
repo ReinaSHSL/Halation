@@ -158,7 +158,7 @@
   "halation:RainbowClouds": {
     "NAME": "Rainbow Clouds",
     "DESCRIPTIONS": [
-      "In Elite combats, you can no longer draw on your first turn. On your first turn, add cards from your deck to your hand equal to the amount of cards you would have drawn."
+      "In Elite combats, you can no longer draw on your first turn, instead, add cards from your deck to your hand equal to the amount of cards you would have drawn."
     ],
     "FLAVOR": "I know everything. There is nothing I don't know."
   },
