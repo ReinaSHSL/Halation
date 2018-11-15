@@ -9,6 +9,7 @@ import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
 import HalationCode.relics.monogatari.*;
+import HalationCode.relics.persona.CharredScrew;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
@@ -61,6 +62,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new SelfBoilingWater(), RelicType.SHARED);
         BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
+        BaseMod.addRelic(new CharredScrew(), RelicType.SHARED);
     }
 
     @Override

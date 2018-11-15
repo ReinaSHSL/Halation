@@ -1,5 +1,6 @@
 package HalationCode.relics.persona;
 
+import HalationCode.actions.OrgiaModeAction;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,7 +16,7 @@ public class CharredScrew extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public CharredScrew() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
     }
 
     @Override
@@ -26,5 +27,17 @@ public class CharredScrew extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new CharredScrew();
+    }
+
+    @Override
+    public void atTurnStart() {
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
+        counter++;
+        if (this.counter >= 6) {
+            this.counter = 0;
+            am.addToBottom(new OrgiaModeAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null,true, AbstractDungeon.monsterRng)));
+        }
     }
 }

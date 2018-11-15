@@ -168,5 +168,11 @@
       "When an enemy breaks your Block, apply #b1 Weak to them. "
     ],
     "FLAVOR": "Get your head out of the gutter."
+  },
+  "halation:CharredScrew": {
+    "NAME": "Charred Screw",
+    "DESCRIPTIONS": [
+      "Every #b6 turns, at the start of your turn, your entire hand is played at no cost and exhausts. They are played in a random order and target random enemies."
+    ]
   }
 }
