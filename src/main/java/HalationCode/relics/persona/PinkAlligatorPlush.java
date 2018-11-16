@@ -35,12 +35,14 @@ public class PinkAlligatorPlush extends CustomRelic {
     @Override
     public void atTurnStart() {
         if (!this.usedUp) {
+            flash();
             am.addToBottom(new DamageAction(p, new DamageInfo(p, 1, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
     public static void onDeath() {
         if (!AbstractDungeon.player.getRelic(PinkAlligatorPlush.ID).usedUp) {
+            AbstractDungeon.player.getRelic(PinkAlligatorPlush.ID).flash();
             AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth);
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 m.die();

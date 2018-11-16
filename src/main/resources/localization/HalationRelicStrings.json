@@ -175,7 +175,8 @@
     "NAME": "Papillon Heart",
     "DESCRIPTIONS": [
       "Every #b4 turns, at the start of your turn, your entire hand is played at no cost and exhausts. They are played in a random order and target random enemies."
-    ]
+    ],
+    "FLAVOR": "It is precisely because I cannot die, that I can say, I will always be by your side."
   },
   "halation:PinkAlligatorPlush": {
     "NAME": "Pink Alligator Plush",

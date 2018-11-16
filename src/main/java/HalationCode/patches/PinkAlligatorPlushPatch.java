@@ -24,7 +24,7 @@ public class PinkAlligatorPlushPatch
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !__instance.hasRelic(MarkOfTheBloom.ID)) {
             if (__instance.hasRelic(PinkAlligatorPlush.ID)) {
                 PinkAlligatorPlush.onDeath();
-                return SpireReturn.Continue();
+                return SpireReturn.Return(null);
             }
         }
         return SpireReturn.Continue();
