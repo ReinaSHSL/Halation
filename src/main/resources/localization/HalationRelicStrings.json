@@ -136,7 +136,9 @@
   },
   "halation:PlatinumPhoenix": {
     "NAME": "Platinum Phoenix",
-    "DESCRIPTIONS": "At the start of your turn, gain [E] [E]. You can #ronly play #b1 cost cards.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [E] [E]. You can #ronly play #b1 cost cards."
+    ],
     "FLAVOR": "I'm platinum mad at you!"
   },
   "halation:TrafficLight": {
@@ -162,7 +164,7 @@
     ],
     "FLAVOR": "I know everything. There is nothing I don't know."
   },
-  "halation:ToothBrush": {
+  "halation:Toothbrush": {
     "NAME": "Toothbrush",
     "DESCRIPTIONS": [
       "When an enemy breaks your Block, apply #b1 Weak to them. "

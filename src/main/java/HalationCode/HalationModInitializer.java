@@ -87,6 +87,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     public void receivePostUpdate() {
         Convergence.relicBullshit();
         StarCompass.relicBullshit();
+        HeavySnake.cardEffects();
     }
 
 }

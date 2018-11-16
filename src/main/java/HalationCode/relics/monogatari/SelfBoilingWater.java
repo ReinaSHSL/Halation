@@ -34,7 +34,9 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
     }
 
     @Override
-    public void onRemoveCardFromMasterDeck(AbstractCard c) {
+    public void onRemoveCardFromMasterDeck(AbstractCard c)
+    {
+        System.out.println("Master deck fuck");
         this.counter = 0;
     }
 
@@ -50,12 +52,14 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
 
     @Override
     public void onSkipSingingBowl() {
+        System.out.println("Singing Bowl Fuck");
         this.flash();
         this.counter = 0;
     }
 
     @Override
     public void onSkipCard() {
+        System.out.println("Skip fuck");
         this.flash();
         this.counter = 0;
     }
