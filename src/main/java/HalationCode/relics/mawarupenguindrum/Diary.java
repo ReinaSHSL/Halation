@@ -86,7 +86,7 @@ public class Diary extends CustomRelic {
 
     @Override
     public int getPrice() {
-        return AbstractDungeon.cardRng.random(80, 120);
+        return 100;
     }
 
     public static void newAct() {
