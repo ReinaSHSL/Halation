@@ -184,5 +184,12 @@
       "Lose #b1 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce."
     ],
     "FLAVOR": "Everyone is waiting to die if you think about it...Some just have longer to wait than others."
+  },
+  "halation:Diary": {
+    "NAME": "Diary",
+    "DESCRIPTIONS": [
+      "Upon pick up, and at the start of every act, pick the boss of the act."
+    ],
+    "FLAVOR": "DESTIIIIIIIIIIIIIIIINY"
   }
 }

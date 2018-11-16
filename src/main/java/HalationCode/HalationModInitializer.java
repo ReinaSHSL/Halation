@@ -9,6 +9,7 @@ import HalationCode.relics.hsl.BottledLove;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
+import HalationCode.relics.mawarupenguindrum.Diary;
 import HalationCode.relics.monogatari.*;
 import HalationCode.relics.persona.PapillonHeart;
 import HalationCode.relics.steinsgate.Convergence;
@@ -16,6 +17,7 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -63,6 +65,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
+        BaseMod.addRelic(new Diary(), RelicType.SHARED);
     }
 
     @Override
@@ -81,6 +84,9 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     @Override
     public void receiveStartAct() {
         Convergence.updateStats();
+        if (AbstractDungeon.player.hasRelic(Diary.ID)) {
+            Diary.newAct();
+        }
     }
 
     @Override
