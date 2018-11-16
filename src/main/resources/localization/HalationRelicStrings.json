@@ -167,7 +167,7 @@
   "halation:Toothbrush": {
     "NAME": "Toothbrush",
     "DESCRIPTIONS": [
-      "When an enemy breaks your Block, apply #b1 Weak to them. "
+      "Gain #b2 Max HP whenever you remove a card from your deck."
     ],
     "FLAVOR": "Get your head out of the gutter."
   },
