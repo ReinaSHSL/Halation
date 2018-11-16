@@ -167,7 +167,7 @@
   "halation:Toothbrush": {
     "NAME": "Toothbrush",
     "DESCRIPTIONS": [
-      "Gain #b2 Max HP whenever you remove a card from your deck."
+      "Gain #b3 Max HP whenever you remove a card from your deck."
     ],
     "FLAVOR": "Get your head out of the gutter."
   },
@@ -176,5 +176,12 @@
     "DESCRIPTIONS": [
       "Every #b4 turns, at the start of your turn, your entire hand is played at no cost and exhausts. They are played in a random order and target random enemies."
     ]
+  },
+  "halation:PinkAlligatorPlush": {
+    "NAME": "Pink Alligator Plush",
+    "DESCRIPTIONS": [
+      "Lose #b1 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce."
+    ],
+    "FLAVOR": "Everyone is waiting to die if you think about it...Some just have longer to wait than others."
   }
 }

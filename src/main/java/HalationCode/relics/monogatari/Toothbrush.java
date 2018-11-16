@@ -36,6 +36,6 @@ public class Toothbrush extends CustomRelic implements OnRemoveCardFromMasterDec
 
     @Override
     public void onRemoveCardFromMasterDeck(AbstractCard c) {
-        p.increaseMaxHp(2, false);
+        p.increaseMaxHp(3, false);
     }
 }
