@@ -1,13 +1,17 @@
 package HalationCode.patches;
 
+import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.persona.PinkAlligatorPlush;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import javassist.CtBehavior;
+
+import javax.smartcardio.Card;
 
 @SpirePatch(
         clz=AbstractPlayer.class,
@@ -24,6 +28,13 @@ public class PinkAlligatorPlushPatch
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !__instance.hasRelic(MarkOfTheBloom.ID)) {
             if (__instance.hasRelic(PinkAlligatorPlush.ID)) {
                 PinkAlligatorPlush.onDeath();
+                return SpireReturn.Return(null);
+            } else if (__instance.hasRelic(PenguinHat.ID)) {
+                __instance.heal(__instance.maxHealth/10);
+                int r = AbstractDungeon.eventRng.random(CardCrawlGame.characterManager.getAllCharacters().size()-1);
+                AbstractPlayer charToBecome = CardCrawlGame.characterManager.getAllCharacters().get(r);
+                __instance = charToBecome;
+                CardCrawlGame.dungeon.initializeCardPools();
                 return SpireReturn.Return(null);
             }
         }

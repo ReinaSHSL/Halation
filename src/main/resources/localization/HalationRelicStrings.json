@@ -181,7 +181,7 @@
   "halation:PinkAlligatorPlush": {
     "NAME": "Pink Alligator Plush",
     "DESCRIPTIONS": [
-      "Lose #b1 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce."
+      "Lose #b2 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce and stops doing damage once used."
     ],
     "FLAVOR": "Everyone is waiting to die if you think about it...Some just have longer to wait than others."
   },
@@ -191,5 +191,12 @@
       "Upon pick up, and at the start of every act, pick the boss of the act."
     ],
     "FLAVOR": "DESTIIIIIIIIIIIIIIIINY"
+  },
+  "halation:PenguinHat": {
+    "NAME": "Penguin Hat",
+    "DESCRIPTIONS": [
+      "When you would die, revive to 10% HP as a new character. Can only be used #ronce."
+    ],
+    "FLAVOR": "Listen up you low life scums who will accomplish nothing...!"
   }
 }

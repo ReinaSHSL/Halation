@@ -10,6 +10,7 @@ import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
 import HalationCode.relics.mawarupenguindrum.Diary;
+import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.monogatari.*;
 import HalationCode.relics.persona.PapillonHeart;
 import HalationCode.relics.steinsgate.Convergence;
@@ -66,6 +67,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
         BaseMod.addRelic(new Diary(), RelicType.SHARED);
+        BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
     }
 
     @Override
