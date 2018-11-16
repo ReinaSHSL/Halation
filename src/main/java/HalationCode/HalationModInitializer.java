@@ -76,8 +76,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
         BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
-        BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);
-    }
+        BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);}
 
     @Override
     public void receiveStartAct() {
