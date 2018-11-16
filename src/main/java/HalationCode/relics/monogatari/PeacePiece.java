@@ -46,4 +46,9 @@ public class PeacePiece extends CustomRelic {
             this.counter = 0;
         }
     }
+
+    @Override
+    public int getPrice() {
+        return AbstractDungeon.cardRng.random(110, 190);
+    }
 }

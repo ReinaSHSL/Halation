@@ -49,4 +49,9 @@ public class LostSnail extends CustomRelic {
             }
         }
     }
+
+    @Override
+    public int getPrice() {
+        return AbstractDungeon.cardRng.random(60, 80);
+    }
 }

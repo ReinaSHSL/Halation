@@ -84,6 +84,11 @@ public class Diary extends CustomRelic {
         }
     }
 
+    @Override
+    public int getPrice() {
+        return AbstractDungeon.cardRng.random(80, 120);
+    }
+
     public static void newAct() {
         AbstractDungeon.player.getRelic(Diary.ID).onEquip();
     }
