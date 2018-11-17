@@ -14,6 +14,7 @@ public class PenguinHat extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PenguinHat.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    public static AbstractPlayer revivedClass = null;
 
     public PenguinHat() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
