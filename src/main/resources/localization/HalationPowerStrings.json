@@ -29,5 +29,12 @@
     "DESCRIPTIONS": [
       "This turn, all damage taken is reduced to #b0."
     ]
+  },
+  "halation:PrayingPower": {
+    "NAME": "Prayer",
+    "DESCRIPTIONS": [
+      "At the start of the turn, heal all combatants for #b",
+      " health."
+    ]
   }
 }

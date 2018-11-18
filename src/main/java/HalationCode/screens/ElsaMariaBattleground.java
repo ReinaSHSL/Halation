@@ -1,6 +1,7 @@
 package HalationCode.screens;
 
 import HalationCode.tools.TextureLoader;
+import basemod.BaseMod;
 import basemod.interfaces.PostRenderSubscriber;
 import basemod.interfaces.PreRoomRenderSubscriber;
 import com.badlogic.gdx.graphics.Color;
@@ -9,6 +10,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class ElsaMariaBattleground implements PreRoomRenderSubscriber, PostRenderSubscriber {
+
+    public ElsaMariaBattleground() {
+        BaseMod.subscribe(this);
+    }
 
     public void renderBackground(SpriteBatch sb){
         sb.setColor(Color.WHITE.cpy());
