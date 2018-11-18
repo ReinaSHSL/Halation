@@ -27,6 +27,7 @@ Keep in mind this is a passion project of mine to the things I love, so I won't 
 ## Credits
 
 Reina (https://github.com/ReinaSHSL) - Design, Implementation
+
 RedDyeNo5 (RedDyeNo5#0504) - Peace Piece and Toothbrush Relic Art
 
 ## Special Thanks
