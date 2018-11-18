@@ -198,5 +198,12 @@
       "When you would die, revive to 10% HP as a new character. Can only be used #ronce."
     ],
     "FLAVOR": "Listen up you low life scum who will accomplish nothing...!"
+  },
+  "halation:Komachan": {
+    "NAME": "Komachan",
+    "DESCRIPTIONS": [
+      "The next room you can go to turns becomes a campfire room."
+    ],
+    "FLAVOR": "Koma-chan always said to be prepared!"
   }
 }
