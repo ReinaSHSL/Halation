@@ -23,3 +23,12 @@ The current build of Halation is **not ready for public release.** If you wish t
 Halation is a love letter of mine, to the anime and game series that I love and have shaped me as a person, and, of course, to Slay the Spire itself. If you do not want to play Slay The Spire and have anime or anything like that shoved in your face, worry not. Everything is just merely a reference, and you can play hundreds of runs and not notice that the relics and events are anime inspired.
 
 Keep in mind this is a passion project of mine to the things I love, so I won't be taking suggestions unless I ask for them directly.
+
+## Credits
+
+Reina (https://github.com/ReinaSHSL) - Design, Implementation
+RedDyeNo5 (RedDyeNo5#0504) - Peace Piece and Toothbrush Relic Art
+
+## Special Thanks
+
+Kiooeht - Creator of BaseMod, MTS and StSLib
