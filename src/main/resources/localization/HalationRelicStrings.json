@@ -205,5 +205,12 @@
       "The next room you can go to turns becomes a campfire room."
     ],
     "FLAVOR": "Koma-chan always said to be prepared!"
+  },
+  "halation:Sosunser": {
+    "NAME": "Sonsunser",
+    "DESCRIPTIONS": [
+      "If you play #b8 attacks in one turn, play all #b8 attacks again."
+    ],
+    "FLAVOR": "ORAORAORAORAORAORAORAORAORA"
   }
 }

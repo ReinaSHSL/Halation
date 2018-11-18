@@ -1,4 +1,4 @@
-package HalationCode.relics;
+package HalationCode.relics.nonnonbiyori;
 
 import HalationCode.tools.TextureLoader;
 import basemod.ReflectionHacks;
@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.DungeonMapScreen;
@@ -30,7 +29,7 @@ public class Komachan extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return CLICKABLE_DESCRIPTIONS[0] + DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0];
     }
 
     @Override

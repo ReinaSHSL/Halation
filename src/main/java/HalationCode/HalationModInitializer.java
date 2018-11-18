@@ -3,6 +3,7 @@ package HalationCode;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
 import HalationCode.relics.hsl.BottledLove;
@@ -12,6 +13,7 @@ import HalationCode.relics.madoka.*;
 import HalationCode.relics.mawarupenguindrum.Diary;
 import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.monogatari.*;
+import HalationCode.relics.nonnonbiyori.Sonsunser;
 import HalationCode.relics.persona.PapillonHeart;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
@@ -69,6 +71,8 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
         BaseMod.addRelic(new Diary(), RelicType.SHARED);
         BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
+        BaseMod.addRelic(new Komachan(), RelicType.SHARED);
+        BaseMod.addRelic(new Sonsunser(), RelicType.SHARED);
     }
 
     @Override
