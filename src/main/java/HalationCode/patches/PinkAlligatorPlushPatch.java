@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.potions.PotionSlot;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -92,7 +93,6 @@ public class PinkAlligatorPlushPatch
                 EnergyPanel.addEnergy(currentEnergy);
                 AbstractDungeon.player.loseRandomRelics(1);
                 int relicIndex = 0;
-                int potionIndex = 0;
                 for (AbstractOrb o : playerOrbs) {
                     AbstractDungeon.actionManager.addToBottom(new ChannelAction(o));
                 }
@@ -104,8 +104,7 @@ public class PinkAlligatorPlushPatch
                     relicIndex++;
                 }
                 for (AbstractPotion po : playerPotions) {
-                    po.setAsObtained(potionIndex);
-                    potionIndex++;
+                    AbstractDungeon.player.obtainPotion(po);
                 }
                 for (AbstractCard c : currentDrawPile) {
                     AbstractDungeon.player.drawPile.addToBottom(c);
