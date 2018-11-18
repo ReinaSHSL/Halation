@@ -60,7 +60,7 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     }
 
 
-    private void restartCombat()
+    public void restartCombat()
     {
         System.out.println("Remaking combat vs " + AbstractDungeon.lastCombatMetricKey);
         AbstractRoom room = AbstractDungeon.getCurrRoom();
