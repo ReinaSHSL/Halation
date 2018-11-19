@@ -230,7 +230,7 @@
   "halation:VictoryRuler": {
     "NAME": "Victory Ruler",
     "DESCRIPTIONS": [
-      "Knock back an enemy into the one behind it, dealing #b5 damage to both. If there is no enemy behind it, deal #b2 damage."
+      "Knock back an enemy into the one behind it, dealing #b5 damage to both. If there is no enemy behind your target, deal #b2 damage."
     ],
     "FLAVOR": "The spirit of teamwork emanates from this ruler. You can feel the sacrifices it has made to make it this far."
   }

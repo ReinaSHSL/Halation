@@ -46,18 +46,15 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
 
     public void knockbackMonster (AbstractCreature m) {
         int index = AbstractDungeon.getCurrRoom().monsters.monsters.indexOf(m);
-        System.out.println(index);
         int indexTwo = index+1;
         AbstractMonster otherM = null;
-        try {
+        if (indexTwo < AbstractDungeon.getCurrRoom().monsters.monsters.size()) {
             //comment: Kio if you read this please no bully
             otherM = AbstractDungeon.getCurrRoom().monsters.monsters.get(indexTwo);
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(otherM, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
-        } catch (IndexOutOfBoundsException exception) {
+        } else {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL)));
-            System.out.println(otherM);
-            return;
         }
     }
 
