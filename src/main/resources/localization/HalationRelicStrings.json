@@ -202,7 +202,7 @@
   "halation:Komachan": {
     "NAME": "Komachan",
     "DESCRIPTIONS": [
-      "The next room you can go to turns becomes a campfire room."
+      "The next room you can go to becomes a Rest Site."
     ],
     "FLAVOR": "Koma-chan always said to be prepared!"
   },
@@ -219,5 +219,11 @@
       "Evoke an orb."
     ],
     "FLAVOR": "Biribiri."
+  },
+  "halation:SwordOfLegend": {
+    "NAME": "Sword of Legend",
+    "DESCRIPTIONS": [
+      "Upon entering a Rest Site, heal #b3 HP for every monster room you entered since you picked this up or the last Rest Site you entered."
+    ]
   }
 }

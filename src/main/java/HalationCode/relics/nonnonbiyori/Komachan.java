@@ -39,13 +39,14 @@ public class Komachan extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT && !this.usedUp) {
             ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) ReflectionHacks.getPrivate(AbstractDungeon.dungeonMapScreen, DungeonMapScreen.class, "visibleMapNodes");
             for (final MapRoomNode n : visibleMapNodes) {
                 if (n.y == AbstractDungeon.getCurrMapNode().y+1 && !(n.room instanceof MonsterRoomBoss)) {
                     n.setRoom(new RestRoom());
                 }
             }
+            this.usedUp = true;
         }
     }
 }
