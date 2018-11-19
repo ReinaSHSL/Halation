@@ -14,6 +14,7 @@ import HalationCode.relics.mawarupenguindrum.Diary;
 import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.monogatari.*;
 import HalationCode.relics.nonnonbiyori.Sonsunser;
+import HalationCode.relics.nonnonbiyori.SwordOfLegend;
 import HalationCode.relics.persona.PapillonHeart;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
@@ -76,6 +77,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Komachan(), RelicType.SHARED);
         BaseMod.addRelic(new Sonsunser(), RelicType.SHARED);
         BaseMod.addRelic(new Gekota(), RelicType.BLUE);
+        BaseMod.addRelic(new SwordOfLegend(), RelicType.SHARED);
     }
 
     @Override

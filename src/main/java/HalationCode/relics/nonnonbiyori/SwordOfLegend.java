@@ -19,7 +19,7 @@ public class SwordOfLegend extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public SwordOfLegend() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     @Override
