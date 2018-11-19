@@ -62,8 +62,12 @@ public class TargetAction implements RenderSubscriber, PostUpdateSubscriber {
             if (this.hoveredCreature != null && this.hoveredCreature != AbstractDungeon.player) {
                switch (r.relicId) {
                    case VictoryRuler.ID:
+                       System.out.println(hoveredCreature);
                        VictoryRuler re = (VictoryRuler) r;
-                       re.knockbackMonster(m);
+                       re.knockbackMonster(hoveredCreature);
+                       com.megacrit.cardcrawl.core.GameCursor.hidden = false;
+                       close();
+                       break;
                }
             }
         }

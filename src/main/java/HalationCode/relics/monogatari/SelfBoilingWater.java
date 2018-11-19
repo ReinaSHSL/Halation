@@ -66,6 +66,6 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
 
     @Override
     public void atBattleStart() {
-        am.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.counter), this.counter));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.counter), this.counter));
     }
 }

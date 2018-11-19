@@ -95,7 +95,7 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
                             {++_______;}
                         System.out.println(x*_______/________);}
                         DamageInfo info = new DamageInfo(p, (int)x, DamageInfo.DamageType.NORMAL);
-                        am.addToBottom(new DamageAction(p, info));
+                        AbstractDungeon.actionManager.addToBottom(new DamageAction(p, info));
                         p.gainGold(magic[4]);
                     AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                     final MapRoomNode node = new MapRoomNode(-1, 15);

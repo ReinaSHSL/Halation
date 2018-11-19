@@ -108,15 +108,6 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         Convergence.relicBullshit();
         StarCompass.relicBullshit();
         HeavySnake.cardEffects();
-        if (CardCrawlGame.dungeon != null) {
-            System.out.println("WAIT TIMER " + AbstractDungeon.getCurrRoom().waitTimer);
-            System.out.println("PHASE: " + AbstractDungeon.getCurrRoom().phase);
-            System.out.println("BATTLE OVER?: " + AbstractDungeon.getCurrRoom().isBattleOver);
-            System.out.println("SCREEN: " + AbstractDungeon.screen);
-            System.out.println("ENDING: " + AbstractDungeon.player.isEndingTurn);
-            System.out.println("ACTION: " + AbstractDungeon.actionManager.currentAction);
-            System.out.println("ENEMY TURN END: " + AbstractDungeon.actionManager.turnHasEnded);
-        }
     }
 
 }

@@ -37,13 +37,13 @@ public class RainbowClouds extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         if (AbstractDungeon.getCurrRoom().eliteTrigger) {
-            am.addToTop(new ApplyPowerAction(p, p, new NoDrawPower(p)));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new NoDrawPower(p)));
             if (p.hasRelic(BagOfPreparation.ID) || p.hasRelic(SnakeRing.ID)) {
-                am.addToBottom(new FixHandAction(7));
+                AbstractDungeon.actionManager.addToBottom(new FixHandAction(7));
             } else if (p.hasRelic(RingOfTheSerpent.ID)) {
-                am.addToBottom(new FixHandAction(6));
+                AbstractDungeon.actionManager.addToBottom(new FixHandAction(6));
             } else {
-                am.addToBottom(new FixHandAction(5));
+                AbstractDungeon.actionManager.addToBottom(new FixHandAction(5));
             }
         }
     }

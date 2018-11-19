@@ -20,6 +20,7 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/VictoryRuler.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private boolean usedThisTurn = false;
 
     public VictoryRuler() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.CLINK);
@@ -37,24 +38,31 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onRightClick() {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && am.turnHasEnded) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.actionManager.turnHasEnded && !this.usedThisTurn) {
             new TargetAction(this);
+            this.usedThisTurn = true;
         }
     }
 
     public void knockbackMonster (AbstractCreature m) {
         int index = AbstractDungeon.getCurrRoom().monsters.monsters.indexOf(m);
+        System.out.println(index);
         int indexTwo = index+1;
         AbstractMonster otherM = null;
         try {
             //comment: Kio if you read this please no bully
             otherM = AbstractDungeon.getCurrRoom().monsters.monsters.get(indexTwo);
-        } catch (ArrayIndexOutOfBoundsException exception) {
-            am.addToBottom(new DamageAction(m, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL)));
-        }
-        if (otherM != null) {
-            am.addToBottom(new DamageAction(m, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
-            am.addToBottom(new DamageAction(m, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(otherM, new DamageInfo(p, 5, DamageInfo.DamageType.NORMAL)));
+        } catch (IndexOutOfBoundsException exception) {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL)));
+            System.out.println(otherM);
+            return;
         }
     }
+
+    public void atTurnStart() {
+        this.usedThisTurn = false;
+    }
+
 }

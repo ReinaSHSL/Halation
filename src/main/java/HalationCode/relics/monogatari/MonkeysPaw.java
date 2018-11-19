@@ -39,7 +39,7 @@ public class MonkeysPaw extends CustomRelic {
         tmp.misc = c.misc/2;
         tmp.block = c.block/2;
         tmp.cost = c.cost/2;
-        am.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
         
     }
     //TODO FIX THIS

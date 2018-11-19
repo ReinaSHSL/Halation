@@ -34,7 +34,7 @@ public class Gekota extends CustomRelic implements ClickableRelic {
     @Override
     public void onRightClick() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && p.orbs.get(0) != null) {
-            am.addToBottom(new EvokeOrbAction(1));
+            AbstractDungeon.actionManager.addToBottom(new EvokeOrbAction(1));
         }
     }
 }

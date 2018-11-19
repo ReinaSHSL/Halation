@@ -60,14 +60,14 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
     public void onUseCard(AbstractCard c, UseCardAction a) {
         if (isGreen) {
             flash();
-            am.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-            am.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
-            am.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false)));
         } else {
             flash();
-            am.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-            am.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2), 2));
-            am.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false)));
         }
     }
 }

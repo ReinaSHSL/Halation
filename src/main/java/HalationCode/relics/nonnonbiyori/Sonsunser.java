@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import java.util.ArrayList;
 
 public class Sonsunser extends CustomRelic {
-    public static final String ID = "halation:Sonsunser";
-    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Sonsunser.png");
+    public static final String ID = "halation:Sosunser";
+    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Sosunser.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
 

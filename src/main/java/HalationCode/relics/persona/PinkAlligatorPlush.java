@@ -36,7 +36,7 @@ public class PinkAlligatorPlush extends CustomRelic {
     public void atTurnStart() {
         if (!this.usedUp) {
             flash();
-            am.addToBottom(new DamageAction(p, new DamageInfo(p, 2, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, 2, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

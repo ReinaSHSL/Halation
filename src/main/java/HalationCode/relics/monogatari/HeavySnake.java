@@ -42,7 +42,7 @@ public class HeavySnake extends CustomRelic implements ActualOnSmithRelic {
     public void atBattleStartPreDraw() {
         for (int i = 0; i < 3; i++) {
             AbstractCard c = AbstractDungeon.returnRandomCurse();
-            am.addToBottom(new MakeTempCardInDrawPileAction(c, 1, false, false, true));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, false, false, true));
         }
     }
 
