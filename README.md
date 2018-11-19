@@ -12,7 +12,7 @@ Todokete!
 Setsunasa ni wa namae o tsukeyou ka
 ```
 
-## Snow Halation
+## Snow Halation!
 
 Welcome to my mod, Snow Halation, or Halation for short! :snowflake:
 
@@ -32,4 +32,4 @@ RedDyeNo5 (RedDyeNo5#0504) - Peace Piece and Toothbrush Relic Art
 
 ## Special Thanks
 
-Kiooeht - Creator of BaseMod, MTS and StSLib
+Kiooeht - Creator of MTS and StSLib. Maintains BaseMod.
