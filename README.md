@@ -28,7 +28,7 @@ Keep in mind this is a passion project of mine to the things I love, so I won't 
 
 Reina (https://github.com/ReinaSHSL) - Design, Implementation
 
-RedDyeNo5 (RedDyeNo5#0504) - Peace Piece and Toothbrush Relic Art
+RedDyeNo5 (https://twitter.com/RedDyeNo5/media) - Komachan, Peace Piece and Toothbrush Relic Art
 
 ## Special Thanks
 
