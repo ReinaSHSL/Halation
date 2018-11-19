@@ -15,10 +15,12 @@ import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.monogatari.*;
 import HalationCode.relics.nonnonbiyori.Sonsunser;
 import HalationCode.relics.persona.PapillonHeart;
+import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -73,6 +75,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
         BaseMod.addRelic(new Komachan(), RelicType.SHARED);
         BaseMod.addRelic(new Sonsunser(), RelicType.SHARED);
+        BaseMod.addRelic(new Gekota(), RelicType.BLUE);
     }
 
     @Override

@@ -212,5 +212,12 @@
       "If you play #b8 attacks in one turn, play all #b8 attacks again."
     ],
     "FLAVOR": "ORAORAORAORAORAORAORAORAORA"
+  },
+  "halation:Gekota": {
+    "NAME": "Gekota",
+    "DESCRIPTIONS": [
+      "Evoke an orb."
+    ],
+    "FLAVOR": "Biribiri."
   }
 }
