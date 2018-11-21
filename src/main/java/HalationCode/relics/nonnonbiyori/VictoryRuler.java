@@ -47,7 +47,7 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
     public void knockbackMonster (AbstractCreature m) {
         int index = AbstractDungeon.getCurrRoom().monsters.monsters.indexOf(m);
         int indexTwo = index+1;
-        AbstractMonster otherM = null;
+        AbstractMonster otherM;
         if (indexTwo < AbstractDungeon.getCurrRoom().monsters.monsters.size()) {
             //comment: Kio if you read this please no bully
             otherM = AbstractDungeon.getCurrRoom().monsters.monsters.get(indexTwo);

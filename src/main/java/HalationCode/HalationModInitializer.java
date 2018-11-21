@@ -3,6 +3,7 @@ package HalationCode;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.discord.LBlock;
 import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
@@ -17,6 +18,7 @@ import HalationCode.relics.nonnonbiyori.Sonsunser;
 import HalationCode.relics.nonnonbiyori.SwordOfLegend;
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import HalationCode.relics.persona.PapillonHeart;
+import HalationCode.relics.persona.PinkAlligatorPlush;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
@@ -73,6 +75,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
+        BaseMod.addRelic(new PinkAlligatorPlush(), RelicType.SHARED);
         BaseMod.addRelic(new Diary(), RelicType.SHARED);
         BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
         BaseMod.addRelic(new Komachan(), RelicType.SHARED);
@@ -80,6 +83,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Gekota(), RelicType.BLUE);
         BaseMod.addRelic(new SwordOfLegend(), RelicType.SHARED);
         BaseMod.addRelic(new VictoryRuler(), RelicType.SHARED);
+        BaseMod.addRelic(new LBlock(), RelicType.SHARED);
     }
 
     @Override

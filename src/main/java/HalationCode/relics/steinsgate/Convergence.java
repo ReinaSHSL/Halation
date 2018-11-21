@@ -91,9 +91,11 @@ public class Convergence extends CustomRelic implements ClickableRelic{
 
     public static void relicBullshit() {
         if (relicChange) {
+            int index = 0;
             AbstractDungeon.player.relics.clear();
             for (AbstractRelic r : startRelics) {
-                r.obtain();
+                r.instantObtain(AbstractDungeon.player, index, false);
+                index++;
             }
             relicChange = false;
             normalActChange = true;
