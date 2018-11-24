@@ -53,6 +53,7 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
                 img = TextureLoader.getTexture("HalationImages/relics/TrafficLight.png");
                 getUpdatedDescription();
             }
+            this.getUpdatedDescription();
         }
     }
 
@@ -62,12 +63,12 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false), 1));
         } else {
             flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false), 1));
         }
     }
 }
