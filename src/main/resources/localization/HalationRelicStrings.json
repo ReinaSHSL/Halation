@@ -11,7 +11,7 @@
   "halation:PurpleSoulGem": {
     "NAME": "Purple Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain #b2 #yStength."
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain #b2 #yStrength."
     ],
     "FLAVOR": "If…If it’s for your sake…I don’t mind being locked in this eternal maze."
   },
@@ -20,12 +20,12 @@
     "DESCRIPTIONS": [
       "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Take no damage this combat and reduce your Max Health to #r10%. Cannot be used in boss combats. Can only be used twice."
     ],
-    "FLAVOR": "I didn’t want this power so I could fight witches. I wanted it so I’d have the #yStength to do what’s right and protect the ones I love."
+    "FLAVOR": "I didn’t want this power so I could fight witches. I wanted it so I’d have the #yStrength to do what’s right and protect the ones I love."
   },
   "halation:RedSoulGem": {
     "NAME": "Red Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #b10 #yStength. You may no longer use Skills this combat. Can only be used on turn one"
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Gain #b10 #yStrength. You may no longer use Skills this combat. Can only be used on turn one"
     ],
     "FLAVOR": "If you live for yourself you’ve only got yourself to blame. So I can’t really blame anyone else and I don’t have any regrets."
   },
@@ -88,7 +88,7 @@
   "halation:TwoAmDonut": {
     "NAME": "2 AM Donut",
     "DESCRIPTIONS": [
-      "If you do not play any attacks, at the end of your turn gain #b2 #yStength."
+      "If you do not play any attacks, at the end of your turn gain #b2 #yStrength."
     ],
     "FLAVOR": "KA KA KA"
   },
@@ -144,7 +144,7 @@
   "halation:TrafficLight": {
     "NAME": "Traffic Light",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 #yStength until the end of the turn for every card you play and #b1 #yFrail for every card you play. #rRed #rMode: Gain #b2 #yDexterity until the end of the turn for every card you play and #y1 #yWeak for every card you play. ",
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 #yStrength until the end of the turn for every card you play and #b1 #yFrail for every card you play. #rRed #rMode: Gain #b2 #yDexterity until the end of the turn for every card you play and #y1 #yWeak for every card you play. ",
       "Currently in #gGreen #gMode",
       "Currently in #rRed #rMode."
     ],
@@ -153,7 +153,7 @@
   "halation:SelfBoilingWater": {
     "NAME": "Self Boiling Water",
     "DESCRIPTIONS": [
-      "Gain #b1 #yStength at the start of combat for every charge on this relic. Gain a charge whenever you obtain a card, up to 3. Lose #rall charges whenever you skip or remove a card."
+      "Gain #b1 #yStrength at the start of combat for every charge on this relic. Gain a charge whenever you obtain a card, up to 3. Lose #rall charges whenever you skip or remove a card."
     ],
     "FLAVOR": "I despise water that thinks that it boiled itself on its own. I despise seasons that think they cycle naturally. I despise the sun that thinks it rose on its own. Despise, despise, d-d-despise...I despise them. I despise you."
   },
