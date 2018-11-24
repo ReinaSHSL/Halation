@@ -1,10 +1,10 @@
 package HalationCode.relics.monogatari;
 
-import HalationCode.interfaces.OnRemoveCardFromMasterDeckRelic;
-import HalationCode.interfaces.OnSkipCardRelic;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.OnRemoveCardFromMasterDeckRelic;
+import com.evacipated.cardcrawl.mod.stslib.relics.OnSkipCardRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 
 public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMasterDeckRelic, OnSkipCardRelic {
     public static final String ID = "halation:SelfBoilingWater";
@@ -36,7 +37,6 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
     @Override
     public void onRemoveCardFromMasterDeck(AbstractCard c)
     {
-        System.out.println("Master deck fuck");
         this.counter = 0;
     }
 
@@ -51,21 +51,21 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
     }
 
     @Override
-    public void onSkipSingingBowl() {
-        System.out.println("Singing Bowl Fuck");
+    public void onSkipSingingBowl(RewardItem r) {
         this.flash();
         this.counter = 0;
     }
 
     @Override
-    public void onSkipCard() {
-        System.out.println("Skip fuck");
+    public void onSkipCard(RewardItem r) {
         this.flash();
         this.counter = 0;
     }
 
     @Override
     public void atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.counter), this.counter));
+        if (this.counter > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.counter), this.counter));
+        }
     }
 }
