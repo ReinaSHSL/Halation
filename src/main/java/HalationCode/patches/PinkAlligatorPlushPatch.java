@@ -4,6 +4,7 @@ import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.persona.PinkAlligatorPlush;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.PotionSlot;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -52,7 +54,6 @@ public class PinkAlligatorPlushPatch {
                     boolean inspectMode = AbstractDungeon.player.inspectMode;
                     int damagedThisCombat = AbstractDungeon.player.damagedThisCombat;
                     int cardsPlayedThisTurn = AbstractDungeon.player.cardsPlayedThisTurn;
-                    int masterMaxOrb = AbstractDungeon.player.masterMaxOrbs;
                     int maxOrbs = AbstractDungeon.player.maxOrbs;
                     ArrayList<AbstractOrb> playerOrbs = new ArrayList<>(AbstractDungeon.player.orbs);
                     ArrayList<AbstractCard> playerDeck = new ArrayList<>(AbstractDungeon.player.masterDeck.group);
@@ -62,6 +63,7 @@ public class PinkAlligatorPlushPatch {
                     ArrayList<AbstractCard> currentDiscardPile = new ArrayList<>(AbstractDungeon.player.discardPile.group);
                     ArrayList<AbstractCard> currentExhaustPile = new ArrayList<>(AbstractDungeon.player.exhaustPile.group);
                     ArrayList<AbstractCard> currentHand = new ArrayList<>(AbstractDungeon.player.hand.group);
+                    ArrayList<AbstractPower> currentPowers = new ArrayList<>(AbstractDungeon.player.powers);
                     int currentEnergy = EnergyPanel.totalCount;
                     for (AbstractPlayer p : CardCrawlGame.characterManager.getAllCharacters()) {
                         if (p.chosenClass != AbstractDungeon.player.chosenClass) {
@@ -78,7 +80,6 @@ public class PinkAlligatorPlushPatch {
                     AbstractDungeon.player.inspectMode = inspectMode;
                     AbstractDungeon.player.damagedThisCombat = damagedThisCombat;
                     AbstractDungeon.player.cardsPlayedThisTurn = cardsPlayedThisTurn;
-                    AbstractDungeon.player.masterMaxOrbs = masterMaxOrb;
                     AbstractDungeon.player.maxOrbs = maxOrbs;
                     AbstractDungeon.player.hand.clear();
                     AbstractDungeon.topPanel.setPlayerName();
@@ -92,6 +93,9 @@ public class PinkAlligatorPlushPatch {
                     EnergyPanel.addEnergy(currentEnergy);
                     AbstractDungeon.player.loseRandomRelics(1);
                     int relicIndex = 0;
+                    for (AbstractPower po : currentPowers) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
+                    }
                     for (AbstractOrb o : playerOrbs) {
                         AbstractDungeon.actionManager.addToBottom(new ChannelAction(o));
                     }
