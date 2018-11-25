@@ -112,6 +112,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         Convergence.relicBullshit();
         StarCompass.relicBullshit();
         HeavySnake.cardEffects();
+        NonexistentMirror.cardEffects();
     }
 
 }

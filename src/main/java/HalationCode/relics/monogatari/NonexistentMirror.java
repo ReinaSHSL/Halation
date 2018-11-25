@@ -11,11 +11,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
+import java.util.ArrayList;
+
 public class NonexistentMirror extends CustomRelic {
     public static final String ID = "halation:NonexistentMirror";
-    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/NonexistentMirror.png");
+    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/NonExistentMirror.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static ArrayList<AbstractCard> cardToAdd = new ArrayList<>();
+    private static boolean addCard = false;
+    private static ArrayList<AbstractCard> addedCards = new ArrayList<>();
 
     public NonexistentMirror() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
@@ -33,11 +38,19 @@ public class NonexistentMirror extends CustomRelic {
 
     @Override
     public void onObtainCard(AbstractCard c) {
-        if (!this.usedUp) {
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c.makeStatEquivalentCopy(), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+        if (!this.usedUp && addedCards.size() > 0)  {
+            if (c != addedCards.get(0)) {
+                cardToAdd.add(c.makeStatEquivalentCopy());
+                addCard = true;
+                this.counter--;
+            }
+        } else if (!this.usedUp) {
+            cardToAdd.add(c.makeStatEquivalentCopy());
+            addCard = true;
             this.counter--;
         }
         if (this.counter == 0) {
+            this.counter--;
             this.usedUp = true;
         }
     }
@@ -45,5 +58,14 @@ public class NonexistentMirror extends CustomRelic {
     @Override
     public void onEquip() {
         this.counter = 2;
+    }
+
+    public static void cardEffects() {
+        if (addCard) {
+            addCard = false;
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(cardToAdd.get(0), (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            addedCards.add(cardToAdd.get(0));
+            cardToAdd.clear();
+        }
     }
 }

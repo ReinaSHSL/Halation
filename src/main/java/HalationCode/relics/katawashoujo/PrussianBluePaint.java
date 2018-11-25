@@ -28,5 +28,4 @@ public class PrussianBluePaint extends CustomRelic {
         return new PrussianBluePaint();
     }
 
-
 }
