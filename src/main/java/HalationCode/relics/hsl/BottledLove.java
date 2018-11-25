@@ -18,7 +18,7 @@ import java.util.function.Predicate;
 
 public class BottledLove extends CustomRelic implements CustomBottleRelic, CustomSavable<Integer> {
     public static final String ID = "halation:BottledLove";
-    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/BottledLove.png");
+    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/bottledLove.png");
     private boolean cardSelected = true;
     private AbstractCard card = null;
 

@@ -1,10 +1,10 @@
 package HalationCode.relics.monogatari;
 
-import HalationCode.interfaces.ActualOnSmithRelic;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnSmithRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import java.util.ArrayList;
 
-public class HeavySnake extends CustomRelic implements ActualOnSmithRelic {
+public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
     public static final String ID = "halation:HeavySnake";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/HeavySnake.png");
     private AbstractPlayer p = AbstractDungeon.player;
@@ -46,7 +46,7 @@ public class HeavySnake extends CustomRelic implements ActualOnSmithRelic {
         }
     }
 
-    public void actualOnSmith() {
+    public void betterOnSmith(AbstractCard ca) {
         this.flash();
         for (int i = 0; i < 3; i++) {
             if (p.masterDeck.getUpgradableCards().isEmpty()) {

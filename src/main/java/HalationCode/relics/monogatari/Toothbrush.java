@@ -1,9 +1,9 @@
 package HalationCode.relics.monogatari;
 
-import HalationCode.interfaces.OnRemoveCardFromMasterDeckRelic;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.OnRemoveCardFromMasterDeckRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
