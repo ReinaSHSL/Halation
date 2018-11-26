@@ -5,6 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 @SpirePatch(
@@ -19,7 +20,7 @@ public class PrussianBluePaintPatch {
     public static CardGroup Insert (CardGroup __instance, CardGroup retVal) {
         if (AbstractDungeon.player.hasRelic(PrussianBluePaint.ID)) {
             for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-                if (c.color == AbstractCard.CardColor.CURSE || c.type == AbstractCard.CardType.CURSE) {
+                if (!c.cardID.equals(AscendersBane.ID) && c.color == AbstractCard.CardColor.CURSE || c.type == AbstractCard.CardType.CURSE) {
                     retVal.addToBottom(c);
                 }
             }
