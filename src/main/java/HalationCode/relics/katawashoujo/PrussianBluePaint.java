@@ -18,7 +18,7 @@ public class PrussianBluePaint extends CustomRelic implements BetterOnSmithRelic
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public PrussianBluePaint() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.HEAVY);
     }
 
     @Override

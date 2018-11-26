@@ -244,7 +244,7 @@
   "halation:PrussianBluePaint": {
     "NAME": "Prussian Blue Paint",
     "DESCRIPTIONS": [
-      "You can now smith Curses. Smithing a curse removes it from your deck."
+      "You can now smith #rCurses. Smithing a #rcurse removes it from your deck."
     ],
     "FLAVOR": "What's that word for when you know in your heart everything in the world is going to be all right?"
   }
