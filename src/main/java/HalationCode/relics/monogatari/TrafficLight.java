@@ -27,7 +27,7 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        if (isGreen) {
+        if (this.isGreen) {
             return DESCRIPTIONS[0] + DESCRIPTIONS[1];
         } else {
             return DESCRIPTIONS[0] + DESCRIPTIONS[2];
@@ -66,8 +66,8 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false), 1));
         } else {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 2), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1), 1));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false), 1));
         }
     }

@@ -144,7 +144,7 @@
   "halation:TrafficLight": {
     "NAME": "Traffic Light",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 #yStrength until the end of the turn for every card you play and #b1 #yFrail for every card you play. #rRed #rMode: Gain #b2 #yDexterity until the end of the turn for every card you play and #y1 #yWeak for every card you play. ",
+      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]change [#2aecd7]mode.[] #gGreen #gMode: Gain #b2 #yStrength until the end of the turn for every card you play and #b1 #yFrail for every card you play. #rRed #rMode: Gain #b1 #yDexterity until the end of the turn for every card you play and #y1 #yWeak for every card you play. ",
       "Currently in #gGreen #gMode",
       "Currently in #rRed #rMode."
     ],
