@@ -20,7 +20,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public Prosthetics() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.BOSS);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override
