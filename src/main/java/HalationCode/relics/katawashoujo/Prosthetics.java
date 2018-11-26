@@ -41,6 +41,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
     @Override
     public boolean onReceivePower(AbstractPower p, AbstractCreature m) {
         if (p.type == AbstractPower.PowerType.DEBUFF) {
+            this.flash();
             if (m instanceof AbstractMonster) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, p, p.amount));
             }
