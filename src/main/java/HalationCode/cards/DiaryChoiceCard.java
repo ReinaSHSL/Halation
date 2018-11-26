@@ -10,7 +10,7 @@ public class DiaryChoiceCard extends AbstractCard {
     public String s;
 
     public DiaryChoiceCard(String s) {
-        super(ID, s, null, -2, null, CardType.SKILL, CardColor.COLORLESS,
+        super(ID, s, null, -2, "", CardType.SKILL, CardColor.COLORLESS,
                 CardRarity.SPECIAL, CardTarget.NONE);
     }
 
