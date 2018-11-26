@@ -4,6 +4,7 @@ import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
 import HalationCode.relics.discord.LBlock;
+import HalationCode.relics.katawashoujo.PrussianBluePaint;
 import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
@@ -84,6 +85,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new SwordOfLegend(), RelicType.SHARED);
         BaseMod.addRelic(new VictoryRuler(), RelicType.SHARED);
         //BaseMod.addRelic(new LBlock(), RelicType.SHARED);
+        BaseMod.addRelic(new PrussianBluePaint(), RelicType.SHARED);
     }
 
     @Override
