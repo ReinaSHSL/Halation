@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class TrafficLight extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:TrafficLight";
-    private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/TrafficLight.png");
+    private static final Texture     IMG = TextureLoader.getTexture("HalationImages/relics/TrafficLight.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private boolean isGreen = true;
