@@ -71,4 +71,9 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false), 1));
         }
     }
+
+    @Override
+    public int getPrice() {
+        return 400;
+    }
 }
