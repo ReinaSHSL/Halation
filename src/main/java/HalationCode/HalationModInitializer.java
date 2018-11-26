@@ -4,6 +4,7 @@ import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
 import HalationCode.relics.discord.LBlock;
+import HalationCode.relics.katawashoujo.BlackBeret;
 import HalationCode.relics.katawashoujo.Prosthetics;
 import HalationCode.relics.katawashoujo.PrussianBluePaint;
 import HalationCode.relics.nonnonbiyori.Komachan;
@@ -88,6 +89,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         //BaseMod.addRelic(new LBlock(), RelicType.SHARED);
         BaseMod.addRelic(new PrussianBluePaint(), RelicType.SHARED);
         BaseMod.addRelic(new Prosthetics(), RelicType.SHARED);
+        BaseMod.addRelic(new BlackBeret(), RelicType.SHARED);
     }
 
     @Override
