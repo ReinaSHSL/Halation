@@ -251,14 +251,14 @@
   "halation:Prosthetics": {
     "NAME": "Prosthetics",
     "DESCRIPTIONS": [
-      "Upon pickup, lose #r25 Maximum HP. When receiving a debuff, negate it, and if the source was a monster, apply the debuff to it instead."
+      "Upon pickup, lose #r50 Maximum HP. When receiving a debuff, negate it, and if the source was a monster, apply the debuff to it instead."
     ],
     "FLAVOR": "Keep moving! If you're alive you can keep moving, dammit!"
   },
   "halation:BlackBeret": {
     "NAME": "Black Beret",
     "DESCRIPTIONS": [
-      "At the start of Elite combats, if you have less than #y30% Max HP, gain #y3 #yIntangible. "
+      "At the start of Elite combats, if you have less than #b30% Max HP, gain #b3 #yIntangible. "
     ],
     "FLAVOR": "Can you face your fears?"
   }

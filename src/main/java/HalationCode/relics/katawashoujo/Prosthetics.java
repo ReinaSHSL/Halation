@@ -35,7 +35,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.decreaseMaxHealth(25);
+        AbstractDungeon.player.decreaseMaxHealth(50);
     }
 
     @Override
