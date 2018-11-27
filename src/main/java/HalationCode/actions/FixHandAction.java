@@ -1,5 +1,6 @@
 package HalationCode.actions;
 
+import HalationCode.relics.monogatari.RainbowClouds;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,7 +10,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class FixHandAction extends AbstractGameAction {
-    public static final String[] TEXT = new String[]{"Pick 5 Cards to add to your hand."};
+    public static final String[] TEXT = new String[]{"Pick ", " Cards to add to your hand."};
     private AbstractPlayer p;
 
     public FixHandAction(final int amount) {
@@ -94,7 +95,7 @@ public class FixHandAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        AbstractDungeon.gridSelectScreen.open(tmp, this.amount, TEXT[0], false);
+        AbstractDungeon.gridSelectScreen.open(tmp, this.amount, TEXT[0] + RainbowClouds.handSize + TEXT[1], false);
         this.tickDuration();
     }
 }

@@ -37,7 +37,8 @@ public class PapillonHeart extends CustomRelic {
         counter++;
         if (this.counter >= 4) {
             this.counter = 0;
-            AbstractDungeon.actionManager.addToBottom(new OrgiaModeAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null,true, AbstractDungeon.monsterRng)));
+            AbstractDungeon.actionManager.addToBottom(new OrgiaModeAction());
         }
     }
+
 }
