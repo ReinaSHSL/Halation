@@ -26,7 +26,7 @@ public class Risk extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public Risk() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.SOLID);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     @Override
