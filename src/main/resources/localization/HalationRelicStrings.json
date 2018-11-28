@@ -79,7 +79,7 @@
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   },
   "halation:WeightlessCrab": {
-    "NAME": "Weightless Crab",
+    "NAME": "Weightless Krab",
     "DESCRIPTIONS": [
       "For every #b3 Curses you draw, gain #b1 Intangible."
     ],
@@ -100,21 +100,21 @@
     "FLAVOR": "I don't know everything. I only know what I know."
   },
   "halation:HeavySnake": {
-    "NAME": "Heavy Snake",
+    "NAME": "Heavy Snek",
     "DESCRIPTIONS": [
       "Add #b3 random Curses to the bottom of your draw pile at the start of combat. Every time you smith a card, upgrade #b3 more random cards."
     ],
     "FLAVOR": "I only want one thing. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. "
   },
   "halation:MonkeysPaw": {
-    "NAME": "Monkey's Paw",
+    "NAME": "Monkei's Paw",
     "DESCRIPTIONS": [
       "Whenever you play a card, add #b2 copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
     ],
     "FLAVOR": "Upon closer inspection, this isn't a monkey's paw at all."
   },
   "halation:LostSnail": {
-    "NAME": "No Longer Lost Snail",
+    "NAME": "No Longer Lost Snayl",
     "DESCRIPTIONS": [
       "Upon entering a #y? room, there is a #b40% all connected rooms become a #y? room."
     ],
@@ -137,7 +137,7 @@
   "halation:PlatinumPhoenix": {
     "NAME": "Platinum Phoenix",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain [E] [E]. You can #ronly play #b1 cost cards."
+      "At the start of your turn, gain [E] [E] . You can #ronly play #b1 cost cards."
     ],
     "FLAVOR": "I'm platinum mad at you!"
   },
@@ -179,7 +179,7 @@
     "FLAVOR": "It is precisely because I cannot die, that I can say, I will always be by your side."
   },
   "halation:PinkAlligatorPlush": {
-    "NAME": "Pink Alligator Plush",
+    "NAME": "Pink Allygator Plush",
     "DESCRIPTIONS": [
       "Lose #b2 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce and stops doing damage once used."
     ],
@@ -193,7 +193,7 @@
     "FLAVOR": "DESTIIIIIIIIIIIIIIIINY"
   },
   "halation:PenguinHat": {
-    "NAME": "Penguin Hat",
+    "NAME": "Pengwin Hat",
     "DESCRIPTIONS": [
       "When you would die, revive to 10% HP as a new character. Can only be used #ronce."
     ],
@@ -265,7 +265,7 @@
   "halation:Risk": {
     "NAME": "Risk",
     "DESCRIPTIONS": [
-      "Upon pickup lose [E] . Play the first #b2 Attacks or Skills you play each turn twice. If you play an attack or skill, you cannot play the other type in the same turn."
+      "Upon pickup lose [E] . Play the first #b2 Attacks or Skills you play each turn twice. If you play an Attack or Skill, you cannot play the other type in the same turn."
     ],
     "FLAVOR": "The oldest game known to man, upon which the fate of nations has been known to rest: Rock, Paper, Scissors."
   }
