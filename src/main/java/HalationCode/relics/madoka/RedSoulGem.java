@@ -42,7 +42,7 @@ public class RedSoulGem extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new StrengthPower(AbstractDungeon.player, 6)));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new NoSkillsPower(AbstractDungeon.player)));
+                    new NoSkillsPower(AbstractDungeon.player, false)));
             this.used = true;
         }
     }

@@ -261,5 +261,12 @@
       "At the start of Elite combats, if you have less than #b30% Max HP, gain #b3 #yIntangible. "
     ],
     "FLAVOR": "Can you face your fears?"
+  },
+  "halation:Risk": {
+    "NAME": "Risk",
+    "DESCRIPTIONS": [
+      "Upon pickup lose [E] . Play the first #b2 Attacks or Skills you play each turn twice. If you play an attack or skill, you cannot play the other type in the same turn."
+    ],
+    "FLAVOR": "The oldest game known to man, upon which the fate of nations has been known to rest: Rock, Paper, Scissors."
   }
 }
