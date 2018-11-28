@@ -34,17 +34,18 @@ public class WeightlessCrab extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        this.counter = 0;
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
     }
 
     @Override
     public void onCardDraw(AbstractCard c) {
-        AbstractRelic r = AbstractDungeon.player.getRelic(WeightlessCrab.ID);
         if (c.type == AbstractCard.CardType.CURSE) {
-            r.counter++;
+            this.counter++;
         }
-        if (r.counter >= 3) {
-            r.counter = 0;
+        if (this.counter >= 3) {
+            this.counter = 0;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1), 1));
         }
     }

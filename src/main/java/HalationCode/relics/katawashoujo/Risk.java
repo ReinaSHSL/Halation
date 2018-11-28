@@ -4,8 +4,11 @@ import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class Risk extends CustomRelic {
@@ -26,5 +29,11 @@ public class Risk extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new Risk();
+    }
+
+    public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            
+        }
     }
 }

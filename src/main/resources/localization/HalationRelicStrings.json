@@ -202,7 +202,7 @@
   "halation:Komachan": {
     "NAME": "Komachan",
     "DESCRIPTIONS": [
-      "The next room you can go to becomes a Rest Site."
+      "The next room you can go to becomes a Rest Site. Can only be used #ronce."
     ],
     "FLAVOR": "Koma-chan always said to be prepared!"
   },
