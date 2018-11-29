@@ -91,6 +91,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Risk(), RelicType.SHARED);
         BaseMod.addRelic(new AfternoonTea(), RelicType.SHARED);
         BaseMod.addRelic(new IllGainedPizza(), RelicType.SHARED);
+        BaseMod.addRelic(new Jellyphish(), RelicType.SHARED);
     }
 
     @Override
