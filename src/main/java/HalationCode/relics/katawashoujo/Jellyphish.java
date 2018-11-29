@@ -26,7 +26,7 @@ public class Jellyphish extends CustomRelic {
     private AbstractRelic gainedRelic;
 
     public Jellyphish() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
     @Override
