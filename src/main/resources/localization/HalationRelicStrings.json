@@ -268,5 +268,12 @@
       "Upon pickup lose [E] . Play the first #b2 Attacks or Skills you play each turn twice. If you play an Attack or Skill, you cannot play the other type in the same turn."
     ],
     "FLAVOR": "The oldest game known to man, upon which the fate of nations has been known to rest: Rock, Paper, Scissors."
+  },
+  "halation:AfternoonTea": {
+    "NAME": "Afternoon Tea",
+    "DESCRIPTIONS": [
+      "Upon resting, gain #b5 #yRegen next combat."
+    ],
+    "FLAVOR": "There's no point in apologizing for who you are. You are a beautiful person. Please don't apologize for that. "
   }
 }
