@@ -42,6 +42,7 @@ public class Jellyphish extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom r) {
         if (r instanceof MonsterRoom) {
+            this.flash();
             int roll = AbstractDungeon.potionRng.random(99);
             RelicTier tier = RelicTier.COMMON;
             if (roll < 25) {
@@ -54,7 +55,7 @@ public class Jellyphish extends CustomRelic {
                 tier = RelicTier.BOSS;
             }
             this.gainedRelic = AbstractDungeon.returnRandomRelic(tier);
-            this.gainedRelic.obtain();
+            this.gainedRelic.instantObtain();
         }
     }
 
