@@ -122,6 +122,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         HeavySnake.cardEffects();
         NonexistentMirror.cardEffects();
         PrussianBluePaint.cardEffects();
+        Jellyphish.fuckmeintheASS();
     }
 
 }
