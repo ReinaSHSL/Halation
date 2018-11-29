@@ -15,12 +15,15 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 public class Jellyphish extends CustomRelic {
     public static final String ID = "halation:Jellyphish";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Jellyphish.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private AbstractRelic gainedRelic;
 
     public Jellyphish() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -37,20 +40,26 @@ public class Jellyphish extends CustomRelic {
     }
 
     @Override
-    public void onEquip() {
-        final EnergyManager energy = AbstractDungeon.player.energy;
-        ++energy.energyMaster;
+    public void onEnterRoom(AbstractRoom r) {
+        if (r instanceof MonsterRoom) {
+            int roll = AbstractDungeon.potionRng.random(99);
+            RelicTier tier = RelicTier.COMMON;
+            if (roll < 25) {
+                tier = RelicTier.COMMON;
+            } else if (roll < 50) {
+                tier = RelicTier.UNCOMMON;
+            } else if (roll < 75) {
+                tier = RelicTier.RARE;
+            } else if (roll < 100) {
+                tier = RelicTier.BOSS;
+            }
+            this.gainedRelic = AbstractDungeon.returnRandomRelic(tier);
+            this.gainedRelic.obtain();
+        }
     }
 
     @Override
-    public void onUnequip() {
-        final EnergyManager energy = AbstractDungeon.player.energy;
-        --energy.energyMaster;
-    }
-
-    @Override
-    public void atPreBattle() {
-        this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConfusionPower(AbstractDungeon.player)));
+    public void onVictory() {
+        AbstractDungeon.player.loseRelic(gainedRelic.relicId);
     }
 }
