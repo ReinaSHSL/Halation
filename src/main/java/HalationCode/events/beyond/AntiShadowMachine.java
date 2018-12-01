@@ -22,7 +22,7 @@ public class AntiShadowMachine extends AbstractImageEvent {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/AntiShadowMachine.png");
         imageEventText.setDialogOption(OPTIONS[0] + this.maxHPAmt + OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
-        this.maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth * 0.05F);
+        this.maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth / 5);
     }
 
     @Override
