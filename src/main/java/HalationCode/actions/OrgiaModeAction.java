@@ -31,7 +31,7 @@ public class OrgiaModeAction extends AbstractGameAction {
                     AbstractMonster target = AbstractDungeon.getRandomMonster();
                     card.applyPowers();
                     AbstractDungeon.actionManager.addToTop(new QueueCardAction(card, target));
-                    AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo, true));
+                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(card, AbstractDungeon.player.limbo, true));
                     if (!Settings.FAST_MODE) {
                         AbstractDungeon.actionManager.addToTop(new WaitAction(Settings.ACTION_DUR_MED));
                     } else {
