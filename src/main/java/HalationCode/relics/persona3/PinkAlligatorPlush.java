@@ -1,4 +1,4 @@
-package HalationCode.relics.persona;
+package HalationCode.relics.persona3;
 
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;

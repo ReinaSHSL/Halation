@@ -1,6 +1,6 @@
 package HalationCode.events.beyond;
 
-import HalationCode.relics.persona.PapillonHeart;
+import HalationCode.relics.persona3.PapillonHeart;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
