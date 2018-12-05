@@ -61,8 +61,8 @@ public class Risk extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type == AbstractCard.CardType.ATTACK) {
-            if (this.counter > 0) {
+        if (this.counter > 0) {
+            if (card.type == AbstractCard.CardType.ATTACK) {
                 if (!card.purgeOnUse) {
                     this.flash();
                     AbstractMonster m = null;
@@ -89,33 +89,33 @@ public class Risk extends CustomRelic {
                 if (!AbstractDungeon.player.hasPower(NoSkillsPower.POWER_ID)) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NoSkillsPower(p, true)));
                 }
-                if (card.type == AbstractCard.CardType.SKILL) {
-                    if (!card.purgeOnUse) {
-                        this.flash();
-                        AbstractMonster m = null;
-                        if (action.target != null) {
-                            m = (AbstractMonster)action.target;
-                        }
-                        final AbstractCard tmp = card.makeStatEquivalentCopy();
-                        AbstractDungeon.player.limbo.addToBottom(tmp);
-                        tmp.current_x = card.current_x;
-                        tmp.current_y = card.current_y;
-                        tmp.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale;
-                        tmp.target_y = Settings.HEIGHT / 2.0f;
-                        tmp.freeToPlayOnce = true;
-                        if (m != null) {
-                            tmp.calculateCardDamage(m);
-                        }
-                        tmp.purgeOnUse = true;
-                        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, m, card.energyOnUse));
-                        if (tmp.cardID.equals("Genetic Algorithm")) {
-                            AbstractDungeon.actionManager.addToBottom(new IncreaseMiscAction(tmp.uuid, tmp.misc + tmp.magicNumber, tmp.magicNumber));
-                        }
-                        this.counter--;
+            }
+            if (card.type == AbstractCard.CardType.SKILL) {
+                if (!card.purgeOnUse) {
+                    this.flash();
+                    AbstractMonster m = null;
+                    if (action.target != null) {
+                        m = (AbstractMonster) action.target;
                     }
-                    if (!AbstractDungeon.player.hasPower(EntanglePower.POWER_ID)) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EntanglePower(p)));
+                    final AbstractCard tmp = card.makeStatEquivalentCopy();
+                    AbstractDungeon.player.limbo.addToBottom(tmp);
+                    tmp.current_x = card.current_x;
+                    tmp.current_y = card.current_y;
+                    tmp.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale;
+                    tmp.target_y = Settings.HEIGHT / 2.0f;
+                    tmp.freeToPlayOnce = true;
+                    if (m != null) {
+                        tmp.calculateCardDamage(m);
                     }
+                    tmp.purgeOnUse = true;
+                    AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, m, card.energyOnUse));
+                    if (tmp.cardID.equals("Genetic Algorithm")) {
+                        AbstractDungeon.actionManager.addToBottom(new IncreaseMiscAction(tmp.uuid, tmp.misc + tmp.magicNumber, tmp.magicNumber));
+                    }
+                    this.counter--;
+                }
+                if (!AbstractDungeon.player.hasPower(EntanglePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EntanglePower(p)));
                 }
             }
         }
