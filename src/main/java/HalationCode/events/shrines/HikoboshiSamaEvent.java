@@ -25,18 +25,14 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private static AbstractRelic isHikoboshi = new OrihimeAndHikoboshiSamaAndTears();
     private static AbstractRelic isTear = new OrihimeAndHikoboshiSamaAndTears();
+    private int hpLoss = 0;
 
     public HikoboshiSamaEvent() {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/HikoboshiSama.png");
         isHikoboshi.setCounter(-Integer.parseInt("DAB", 14));
         isTear.setCounter(-Integer.parseInt("HECK", 21));
-        if (AbstractDungeon.player.gold >= 75 && AbstractDungeon.player.potions.size() != AbstractDungeon.player.potionSlots) {
-            imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0], isHikoboshi,
-                    AbstractDungeon.player.gold < 100 && AbstractDungeon.player.potions.size() != AbstractDungeon.player.potionSlots));
-        } else {
-            imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[1], isHikoboshi,
-                    AbstractDungeon.player.gold < 100 && AbstractDungeon.player.potions.size() != AbstractDungeon.player.potionSlots));
-        }
+        this.hpLoss = AbstractDungeon.player.maxHealth/2;
+        imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0] + this.hpLoss + OPTIONS[1], isHikoboshi, false));
         imageEventText.optionList.add(new RelicDialogOptionButton(1, OPTIONS[2], isTear, false));
         imageEventText.setDialogOption(OPTIONS[3]);
     }
@@ -49,10 +45,7 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
                     case 0:
                         AbstractRelic r = AbstractDungeon.player.getRelic(OrihimeAndHikoboshiSamaAndTears.ID);
                         r.setCounter(-Integer.parseInt("DAB", 14));
-                        AbstractDungeon.player.loseGold(100);
-                        for (AbstractPotion p : AbstractDungeon.player.potions) {
-                            AbstractDungeon.player.removePotion(p);
-                        }
+                        AbstractDungeon.player.decreaseMaxHealth(this.hpLoss);
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         imageEventText.updateDialogOption(0, OPTIONS[4]);
@@ -114,6 +107,11 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
                         retVal.add(r);
                     }
                 }
+            }
+        }
+        for (AbstractRelic r : retVal) {
+            if (AbstractDungeon.player.hasRelic(r.relicId)) {
+                retVal.remove(r);
             }
         }
         return retVal;

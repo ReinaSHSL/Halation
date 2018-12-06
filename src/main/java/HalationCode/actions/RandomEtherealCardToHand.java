@@ -29,7 +29,7 @@ public class RandomEtherealCardToHand extends AbstractGameAction {
                 AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
             } else if (this.isCurse) {
-                AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.CURSE).makeStatEquivalentCopy();
+                AbstractCard c = AbstractDungeon.returnRandomCurse().makeStatEquivalentCopy();
                 AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
             }

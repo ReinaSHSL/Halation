@@ -2,9 +2,12 @@ package HalationCode.events.buttons;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.buttons.LargeDialogOptionButton;
 
@@ -13,9 +16,20 @@ public class RelicDialogOptionButton extends LargeDialogOptionButton {
     private float x;
     private float y;
     private boolean isDisabled;
+    private float animTimer;
+    private static Color TEXT_ACTIVE_COLOR = Color.WHITE.cpy();
+    private static Color TEXT_INACTIVE_COLOR = new Color(0.8F, 0.8F, 0.8F, 1.0F);
+    private static Color TEXT_DISABLED_COLOR = Color.FIREBRICK.cpy();
+    private Color boxInactiveColor;
+    private Color textColor;
+    private Color boxColor;
 
     public RelicDialogOptionButton(int slot, String msg, AbstractRelic r, boolean isDisabled) {
         super(slot, msg);
+        this.animTimer = 0.5F;
+        this.textColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
+        this.boxColor = new Color(0.0F, 0.0F, 0.0F, 0.0F);
+        this.boxInactiveColor = new Color(0.2F, 0.25F, 0.25F, 0.0F);
         this.r = r;
         this.y = -9999.0F * Settings.scale;
         this.pressed = false;
@@ -38,8 +52,12 @@ public class RelicDialogOptionButton extends LargeDialogOptionButton {
         } else {
             this.msg = msg;
         }
-
-        this.hb = new Hitbox(892.0F * Settings.scale, 80.0F * Settings.scale);
+        if (isDisabled) {
+            this.textColor = TEXT_DISABLED_COLOR;
+            this.boxColor = this.boxInactiveColor;
+        } else {
+            this.hb = new Hitbox(892.0F * Settings.scale, 80.0F * Settings.scale);
+        }
     }
 
     public void renderRelicPreview(SpriteBatch sb) {
@@ -51,6 +69,51 @@ public class RelicDialogOptionButton extends LargeDialogOptionButton {
 
             this.r.currentY = this.y;
             this.r.renderTip(sb);
+        }
+    }
+
+    @Override
+    public void update(int size) {
+        super.update(size);
+        this.hoverAndClickLogic();
+    }
+
+    @SpireOverride
+    private void hoverAndClickLogic() {
+        this.hb.update();
+        if (this.hb.hovered && InputHelper.justClickedLeft && !this.isDisabled && this.animTimer < 0.1F) {
+            InputHelper.justClickedLeft = false;
+            this.hb.clickStarted = true;
+        }
+
+        if (this.hb.hovered && CInputActionSet.select.isJustPressed() && !this.isDisabled) {
+            this.hb.clicked = true;
+        }
+
+        if (this.hb.clicked) {
+            this.hb.clicked = false;
+            this.pressed = true;
+        }
+
+        if (!this.isDisabled) {
+            if (this.hb.hovered) {
+                this.textColor = TEXT_ACTIVE_COLOR;
+                this.boxColor = Color.WHITE.cpy();
+            } else {
+                this.textColor = TEXT_INACTIVE_COLOR;
+                this.boxColor = new Color(0.4F, 0.4F, 0.4F, 1.0F);
+            }
+        }
+        if (this.hb.hovered) {
+            if (!this.isDisabled) {
+                this.textColor = TEXT_ACTIVE_COLOR;
+            } else {
+                this.textColor = Color.GRAY.cpy();
+            }
+        } else if (!this.isDisabled) {
+            this.textColor = TEXT_ACTIVE_COLOR;
+        } else {
+            this.textColor = Color.GRAY.cpy();
         }
     }
 
