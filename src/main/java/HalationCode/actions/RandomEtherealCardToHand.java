@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
 public class RandomEtherealCardToHand extends AbstractGameAction {
     private boolean isRare = false;
@@ -25,11 +26,11 @@ public class RandomEtherealCardToHand extends AbstractGameAction {
                 c.exhaust = true;
                 c.rawDescription = c.rawDescription + " NL Ethereal. NL Exhaust.";
                 c.initializeDescription();
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c));
+                AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
             } else if (this.isCurse) {
                 AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.CURSE).makeStatEquivalentCopy();
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c));
+                AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
             }
             else {
@@ -38,15 +39,31 @@ public class RandomEtherealCardToHand extends AbstractGameAction {
                 c.exhaust = true;
                 c.rawDescription = c.rawDescription + " NL Ethereal. NL Exhaust.";
                 c.initializeDescription();
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c));
-                System.out.println("EXHAUST: " + c.exhaust);
-                System.out.println("ETHEREAL: " + c.isEthereal);
-                System.out.println("DESC: " + c.rawDescription);
-                System.out.println("c " + c);
+                AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
             }
         }
 
         this.isDone = true;
     }
+
+    public class MakeStatEquivalentCopyBullshit extends AbstractGameAction {
+        private AbstractCard c;
+
+        public MakeStatEquivalentCopyBullshit(AbstractCard c) {
+            this.actionType = ActionType.CARD_MANIPULATION;
+            this.duration = Settings.ACTION_DUR_FAST;
+            this.c = c;
+
+        }
+
+        public void update() {
+            if (this.duration == Settings.ACTION_DUR_FAST) {
+                AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(c));
+                tickDuration();
+                this.isDone = true;
+            }
+        }
+    }
+
 }
