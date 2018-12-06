@@ -34,7 +34,6 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
         this.hpLoss = AbstractDungeon.player.maxHealth/2;
         imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0] + this.hpLoss + OPTIONS[1], isHikoboshi, false));
         imageEventText.optionList.add(new RelicDialogOptionButton(1, OPTIONS[2], isTear, false));
-        imageEventText.setDialogOption(OPTIONS[3]);
     }
 
     @Override
@@ -48,7 +47,7 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
                         AbstractDungeon.player.decreaseMaxHealth(this.hpLoss);
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
                         imageEventText.clearRemainingOptions();
                         break;
                     case 1:
@@ -59,13 +58,7 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2, Settings.HEIGHT / 2, relicToObtain.makeCopy());
                         screenNum = 1;
                         imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        imageEventText.updateDialogOption(0, OPTIONS[4]);
-                        imageEventText.clearRemainingOptions();
-                        break;
-                    case 2:
-                        screenNum = 1;
-                        imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        imageEventText.updateDialogOption(0, OPTIONS[3]);
                         imageEventText.clearRemainingOptions();
                         break;
                 }

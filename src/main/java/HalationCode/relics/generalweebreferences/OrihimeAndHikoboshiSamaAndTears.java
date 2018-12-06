@@ -34,7 +34,7 @@ public class OrihimeAndHikoboshiSamaAndTears extends CustomRelic {
         super.setCounter(value);
         if (this.counter == -Integer.parseInt("DAB", 14)) {
             flash();
-            img = TextureLoader.getTexture("HalationImages/relics/OrihimeAndHikoshiSama.png");
+            img = TextureLoader.getTexture("HalationImages/relics/OrihimeAndHikoboshiSama.png");
             try {
                 Field targetField = AbstractRelic.class.getDeclaredField("name");
 
@@ -56,7 +56,7 @@ public class OrihimeAndHikoboshiSamaAndTears extends CustomRelic {
         }
         if (this.counter == -Integer.parseInt("HECK", 21)) {
             flash();
-            img = TextureLoader.getTexture("HalationImages/relics/OrihimeAndHikoshiSama.png");
+            img = TextureLoader.getTexture("HalationImages/relics/CelestialTears.png");
             try {
                 Field targetField = AbstractRelic.class.getDeclaredField("name");
 
