@@ -50,7 +50,7 @@ public class RelicDialogOptionButton extends LargeDialogOptionButton {
             }
 
             this.r.currentY = this.y;
-            this.r.render(sb);
+            this.r.renderTip(sb);
         }
     }
 

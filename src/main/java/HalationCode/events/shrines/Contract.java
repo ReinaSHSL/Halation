@@ -1,5 +1,6 @@
 package HalationCode.events.shrines;
 
+import HalationCode.events.buttons.RelicDialogOptionButton;
 import HalationCode.relics.madoka.*;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -18,11 +19,11 @@ public class Contract extends AbstractImageEvent {
 
     public Contract() {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/Contract.png");
-        imageEventText.setDialogOption(OPTIONS[0]);
-        imageEventText.setDialogOption(OPTIONS[1]);
-        imageEventText.setDialogOption(OPTIONS[2]);
-        imageEventText.setDialogOption(OPTIONS[3]);
-        imageEventText.setDialogOption(OPTIONS[4]);
+        imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0], new PurpleSoulGem(), false));
+        imageEventText.optionList.add(new RelicDialogOptionButton(1, OPTIONS[1], new BlueSoulGem(), false));
+        imageEventText.optionList.add(new RelicDialogOptionButton(2, OPTIONS[2], new RedSoulGem(), false));
+        imageEventText.optionList.add(new RelicDialogOptionButton(3, OPTIONS[3], new YellowSoulGem(), false));
+        imageEventText.optionList.add(new RelicDialogOptionButton(4, OPTIONS[4], new PinkSoulGem(), false));
         imageEventText.setDialogOption(OPTIONS[5]);
     }
 

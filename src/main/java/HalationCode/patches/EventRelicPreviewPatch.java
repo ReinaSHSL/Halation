@@ -12,7 +12,7 @@ public class EventRelicPreviewPatch {
     @SpireInsertPatch(
             rloc = 70
     )
-    private static void Insert(GenericEventDialog __instance, SpriteBatch sb) {
+    public static void Insert(GenericEventDialog __instance, SpriteBatch sb) {
         for (LargeDialogOptionButton b : __instance.optionList) {
             if (b instanceof RelicDialogOptionButton) {
                 RelicDialogOptionButton rb = (RelicDialogOptionButton) b;
