@@ -94,19 +94,17 @@ public class HikoboshiSamaEvent extends AbstractImageEvent {
             }
             if (g1) {
                 if (g2) {
-                    retVal.add(r);
+                    if (!AbstractDungeon.player.hasRelic(r.relicId)) {
+                        retVal.add(r);
+                    }
                 } else {
-                    if (r.relicId.equals("RNG:RNG")) {
+                    if (r.relicId.equals("RNG:RNG") && !AbstractDungeon.player.hasRelic("RNG:RNG")) {
                         retVal.add(r);
                     }
                 }
             }
         }
-        for (AbstractRelic r : retVal) {
-            if (AbstractDungeon.player.hasRelic(r.relicId)) {
-                retVal.remove(r);
-            }
-        }
+
         return retVal;
     }
 }
