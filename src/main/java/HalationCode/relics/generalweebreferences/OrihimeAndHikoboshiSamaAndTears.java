@@ -1,5 +1,6 @@
 package HalationCode.relics.generalweebreferences;
 
+import HalationCode.actions.RandomEtherealCardToHand;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;

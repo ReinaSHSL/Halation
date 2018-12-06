@@ -295,12 +295,12 @@
     "DESCRIPTIONS": [
       "Orihime and Hikoboshi",
       "Orihime and Hikoboshi Tears",
-      "At the start of your turn, add a random card to your hand that's #yEthereal.",
-      "At the start of your turn, add a random #yRare card to your hand that's #yEthereal.",
+      "At the start of your turn, add a random card to your hand and make it #yEthereal and #yExhaust.",
+      "At the start of your turn, add a random #yRare card to your hand make it #yEthereal and #yExhaust.",
       "At the start of your turn, add a random #yCurse to your hand.",
       "Reunited at last.",
       "You're a monster."
     ],
-    "FLAVOR": "A Goddess from another time. She longs for her lover."
+    "FLAVOR": "A Goddess from another time. She longs for her star crossed lover."
   }
 }

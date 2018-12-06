@@ -3,6 +3,7 @@ package HalationCode;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
 import HalationCode.relics.katawashoujo.*;
 import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.hibike.Trompette;
@@ -89,6 +90,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new AfternoonTea(), RelicType.SHARED);
         BaseMod.addRelic(new IllGainedPizza(), RelicType.SHARED);
         BaseMod.addRelic(new Jellyphish(), RelicType.SHARED);
+        BaseMod.addRelic(new OrihimeAndHikoboshiSamaAndTears(), RelicType.SHARED);
     }
 
     @Override
@@ -109,6 +111,9 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         Convergence.updateStats();
         if (AbstractDungeon.player.hasRelic(Diary.ID)) {
             Diary.newAct();
+        }
+        if (AbstractDungeon.id.equals(TheBeyond.ID)) {
+            AbstractDungeon.rareRelicPool.remove(OrihimeAndHikoboshiSamaAndTears.ID);
         }
     }
 
