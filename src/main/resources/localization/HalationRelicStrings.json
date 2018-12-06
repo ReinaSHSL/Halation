@@ -289,5 +289,18 @@
       "I'm honestly not sure what this does."
     ],
     "FLAVOR": "People are like jellyphish to me. I don't understand."
+  },
+  "halation:OrihimeAndHikoboshiSamaAndTears": {
+    "NAME": "Orihime-Sama",
+    "DESCRIPTIONS": [
+      "Orihime and Hikoboshi",
+      "Orihime and Hikoboshi Tears",
+      "At the start of your turn, add a random card to your hand that's #yEthereal.",
+      "At the start of your turn, add a random #yRare card to your hand that's #yEthereal.",
+      "At the start of your turn, add a random #yCurse to your hand.",
+      "Reunited at last.",
+      "You're a monster."
+    ],
+    "FLAVOR": "A Goddess from another time. She longs for her lover."
   }
 }
