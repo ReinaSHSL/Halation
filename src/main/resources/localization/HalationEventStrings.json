@@ -52,5 +52,21 @@
       "[Refuse]",
       "[Continue]"
     ]
+  },
+  "halation:HikoboshiSama": {
+    "NAME": "Tanabata",
+    "DESCRIPTIONS": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "OPTIONS": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ]
   }
 }
