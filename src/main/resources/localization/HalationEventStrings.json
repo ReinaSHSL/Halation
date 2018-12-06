@@ -42,7 +42,7 @@
   "halation:AntiShadowMachine": {
     "NAME": "Anti Shadow Machine",
     "DESCRIPTIONS": [
-      "A group of strange men in lab coats spring from the shadows, blocking your path. NL \"Hello there, traveller.\" NL The group of men @enclose@ in on you. NL \"We are having...#rproblems with the shadows around here lately. The #rGoddess #rof #rDeath seems to be #p~stirring~ lately.\" NL \"Say, do you want to survive the apocalypse?\" ",
+      "A group of strange men in lab coats spring from the shadows, blocking your path. NL \"Hello there, traveller.\" NL The group of men @enclose@ in on you. NL \"We are having... #rproblems with the shadows around here lately. The #rGoddess #rof #rDeath seems to be #p~stirring~ .\" NL \"Say, do you want to survive the apocalypse?\" ",
       "\"Very well then...\" NL @CLUNK@ @CLUNK@ @CLUNK@ NL You awake, alone, feeling #pinvigorated despite the #rpain in your neck. You seem to get emotional easier...",
       "You brandish your weapons and @barge@ your way through. NL You can hear them shouting and calling for your head. Running on and on and on, the hallways don't seem to end, but eventually, it seems like no one is around."
     ],

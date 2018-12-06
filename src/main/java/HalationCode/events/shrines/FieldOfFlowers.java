@@ -1,7 +1,9 @@
 package HalationCode.events.shrines;
 
+import HalationCode.events.buttons.RelicDialogOptionButton;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
+import HalationCode.relics.madoka.PurpleSoulGem;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,8 +22,8 @@ public class FieldOfFlowers extends AbstractImageEvent {
     public FieldOfFlowers() {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/FieldOfFlowers.png");
 
-        imageEventText.setDialogOption(OPTIONS[0]);
-        imageEventText.setDialogOption(OPTIONS[1]);
+        imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0], new StarCompass(), false));
+        imageEventText.optionList.add(new RelicDialogOptionButton(1, OPTIONS[1], new EternalFortune(), false));
         imageEventText.setDialogOption(OPTIONS[2]);
     }
 

@@ -1,5 +1,7 @@
 package HalationCode.events.beyond;
 
+import HalationCode.events.buttons.RelicDialogOptionButton;
+import HalationCode.relics.madoka.PurpleSoulGem;
 import HalationCode.relics.persona3.PapillonHeart;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -20,9 +22,9 @@ public class AntiShadowMachine extends AbstractImageEvent {
 
     public AntiShadowMachine() {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/AntiShadowMachine.png");
-        imageEventText.setDialogOption(OPTIONS[0] + this.maxHPAmt + OPTIONS[1]);
-        imageEventText.setDialogOption(OPTIONS[2]);
         this.maxHPAmt = MathUtils.round((float)AbstractDungeon.player.maxHealth / 20);
+        imageEventText.optionList.add(new RelicDialogOptionButton(0, OPTIONS[0] + this.maxHPAmt + OPTIONS[1], new PapillonHeart(), false));
+        imageEventText.setDialogOption(OPTIONS[2]);
     }
 
     @Override
