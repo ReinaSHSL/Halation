@@ -1,6 +1,7 @@
 package HalationCode.patches;
 
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
+import HalationCode.rooms.HikoboshiSamaRoom;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
