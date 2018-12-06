@@ -18,7 +18,6 @@ public class Contract extends AbstractImageEvent {
 
     public Contract() {
         super(NAME, DESCRIPTIONS[0], "HalationImages/events/Contract.png");
-
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
