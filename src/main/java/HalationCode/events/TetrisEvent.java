@@ -4,6 +4,7 @@ import HalationCode.events.buttons.RelicDialogOptionButton;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -50,8 +51,17 @@ public class TetrisEvent extends AbstractImageEvent {
         }
     }
 
-    public void updateTetrisLogic() {
+    @Override
+    public void render(SpriteBatch sb) {
+        if (this.screen == CUR_SCREEN.PLAY) {
 
+        }
+    }
+
+    public void updateTetrisLogic() {
+        if (this.screen == CUR_SCREEN.PLAY) {
+
+        }
     }
 
     @Override
@@ -60,13 +70,13 @@ public class TetrisEvent extends AbstractImageEvent {
             case 0:
                 switch (i) {
                     case 0:
-
+                        this.screen = CUR_SCREEN.PLAY;
                         break;
                     case 1:
 
                         break;
                     case 2:
-                        
+
                         break;
                     case 3:
 

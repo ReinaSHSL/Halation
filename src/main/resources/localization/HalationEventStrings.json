@@ -67,5 +67,17 @@
       "[Steal] #gObtain #yRandom #yEnergy #yRelic. #rObtain #rCelestial #rTears.",
       "[Leave]"
     ]
+  },
+  "halation:TetrisEvent": {
+    "NAME": "Anything is Possible",
+    "DESCRIPTIONS:": [
+      "0"
+    ],
+    "OPTIONS": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
   }
 }
