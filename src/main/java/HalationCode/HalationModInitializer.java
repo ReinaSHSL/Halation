@@ -1,5 +1,6 @@
 package HalationCode;
 
+import HalationCode.events.TetrisEvent;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
@@ -29,13 +30,14 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
 public class HalationModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber, PostDungeonInitializeSubscriber {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -105,6 +107,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
         BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
+        BaseMod.addEvent(TetrisEvent.ID, TetrisEvent.class);
         BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);}
 
     @Override
@@ -128,4 +131,8 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         Jellyphish.fuckmeintheASS();
     }
 
+    @Override
+    public void receivePostDungeonInitialize() {
+        AbstractDungeon.eventList.remove(TetrisEvent.ID);
+    }
 }

@@ -1,10 +1,16 @@
 package HalationCode.relics.discord;
 
 import HalationCode.events.TetrisEvent;
+import HalationCode.rooms.TetrisRoom;
+import HalationCode.tools.JavaProcess;
 import HalationCode.tools.TextureLoader;
 import HalationCode.tools.tetris.TetrisGame;
+import HalationCode.tools.tetris.TetrisLauncher;
 import basemod.CustomEventRoom;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
+import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -16,7 +22,9 @@ import com.megacrit.cardcrawl.map.MapRoomNode;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.screens.DungeonMapScreen;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LBlock extends CustomRelic implements ClickableRelic {
@@ -40,29 +48,16 @@ public class LBlock extends CustomRelic implements ClickableRelic {
     }
 
     @Override
+    public void onEquip() {
+
+    }
+
+    @Override
     public void onRightClick() {
-        AbstractDungeon.eventList.add(0, TetrisEvent.ID);
-        final MapRoomNode cur = AbstractDungeon.currMapNode;
-        final MapRoomNode node = new MapRoomNode(cur.x, cur.y);
-        node.room = (AbstractRoom)new CustomEventRoom();
-        final ArrayList<MapEdge> curEdges = (ArrayList<MapEdge>)cur.getEdges();
-        for (final MapEdge edge : curEdges) {
-            node.addEdge(edge);
+        try {
+            int status = JavaProcess.exec(TetrisLauncher.class);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
-        AbstractDungeon.previousScreen = null;
-        AbstractDungeon.dynamicBanner.hide();
-        AbstractDungeon.dungeonMapScreen.closeInstantly();
-        AbstractDungeon.closeCurrentScreen();
-        AbstractDungeon.topPanel.unhoverHitboxes();
-        AbstractDungeon.fadeIn();
-        //AbstractDungeon.effectList.clear();
-        //AbstractDungeon.topLevelEffects.clear();
-        //AbstractDungeon.topLevelEffectsQueue.clear();
-        //AbstractDungeon.effectsQueue.clear();
-        AbstractDungeon.dungeonMapScreen.dismissable = true;
-        AbstractDungeon.setCurrMapNode(AbstractDungeon.nextRoom = node);
-        AbstractDungeon.getCurrRoom().onPlayerEntry();
-        AbstractDungeon.scene.nextRoom(node.room);
-        AbstractDungeon.rs = AbstractDungeon.RenderScene.EVENT;
     }
 }

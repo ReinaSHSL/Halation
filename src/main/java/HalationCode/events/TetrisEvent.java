@@ -24,7 +24,6 @@ public class TetrisEvent extends AbstractImageEvent {
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private CUR_SCREEN screen;
-    private ShapeRenderer shapeRenderer = new ShapeRenderer();
 
     private enum CUR_SCREEN
     {
