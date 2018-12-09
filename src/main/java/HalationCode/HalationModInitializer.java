@@ -85,7 +85,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Gekota(), RelicType.BLUE);
         BaseMod.addRelic(new SwordOfLegend(), RelicType.SHARED);
         BaseMod.addRelic(new VictoryRuler(), RelicType.SHARED);
-        BaseMod.addRelic(new LBlock(), RelicType.SHARED);
+        //BaseMod.addRelic(new LBlock(), RelicType.SHARED);
         BaseMod.addRelic(new PrussianBluePaint(), RelicType.SHARED);
         BaseMod.addRelic(new Prosthetics(), RelicType.SHARED);
         BaseMod.addRelic(new BlackBeret(), RelicType.SHARED);
