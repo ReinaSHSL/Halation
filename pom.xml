@@ -68,6 +68,13 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+
     </build>
 
     <description>Adds a ton of different relics with anime references.</description>

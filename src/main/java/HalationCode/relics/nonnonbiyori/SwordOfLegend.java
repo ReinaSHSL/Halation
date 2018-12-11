@@ -36,9 +36,10 @@ public class SwordOfLegend extends CustomRelic {
     public void onEnterRoom(AbstractRoom r) {
         if (r instanceof MonsterRoom) {
             if (this.counter < 0) {
-                this.counter += 4;
+                this.counter = 3;
+            } else {
+                this.counter += 3;
             }
-            this.counter += 3;
         }
         if (r instanceof RestRoom) {
             AbstractDungeon.player.heal(this.counter);

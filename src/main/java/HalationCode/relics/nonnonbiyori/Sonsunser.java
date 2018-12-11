@@ -53,6 +53,7 @@ public class Sonsunser extends CustomRelic {
                         c.use(p, null);
                     }
                 }
+                this.counter = 0;
             }
         }
     }
