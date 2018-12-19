@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import javax.xml.soap.Text;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 

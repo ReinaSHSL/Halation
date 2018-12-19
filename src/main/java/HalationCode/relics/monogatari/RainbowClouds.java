@@ -4,20 +4,13 @@ import HalationCode.actions.FixHandAction;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.NoDrawPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.BagOfPreparation;
-import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
-import com.megacrit.cardcrawl.relics.SnakeRing;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-
-import javax.swing.*;
 
 public class RainbowClouds extends CustomRelic {
     public static final String ID = "halation:RainbowClouds";

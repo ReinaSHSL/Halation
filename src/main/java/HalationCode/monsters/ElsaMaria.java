@@ -2,7 +2,6 @@ package HalationCode.monsters;
 
 import HalationCode.powers.PrayingPower;
 import HalationCode.tools.TextureLoader;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,9 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
-import com.megacrit.cardcrawl.vfx.CollectorStakeEffect;
 
 public class ElsaMaria extends AbstractMonster {
     public static final String ID = "halation:ElsaMaria";

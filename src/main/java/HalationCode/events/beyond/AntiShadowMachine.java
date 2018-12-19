@@ -1,7 +1,6 @@
 package HalationCode.events.beyond;
 
 import HalationCode.events.buttons.RelicDialogOptionButton;
-import HalationCode.relics.madoka.PurpleSoulGem;
 import HalationCode.relics.persona3.PapillonHeart;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

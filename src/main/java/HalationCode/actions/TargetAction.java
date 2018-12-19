@@ -2,7 +2,6 @@ package HalationCode.actions;
 
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import basemod.BaseMod;
-import basemod.interfaces.PostRenderSubscriber;
 import basemod.interfaces.PostUpdateSubscriber;
 import basemod.interfaces.RenderSubscriber;
 import com.badlogic.gdx.graphics.Color;

@@ -2,17 +2,13 @@ package HalationCode.events.shrines;
 
 import HalationCode.events.buttons.RelicDialogOptionButton;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
-import HalationCode.relics.madoka.*;
-import HalationCode.relics.persona3.PapillonHeart;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.Circlet;
 import com.megacrit.cardcrawl.relics.CursedKey;
 
 import java.util.ArrayList;

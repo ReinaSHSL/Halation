@@ -1,16 +1,12 @@
 package HalationCode.patches;
 
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
-import HalationCode.rooms.HikoboshiSamaRoom;
 import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.map.MapEdge;
 import com.megacrit.cardcrawl.map.MapRoomNode;
-import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.screens.DungeonMapScreen;
 
 import java.util.ArrayList;

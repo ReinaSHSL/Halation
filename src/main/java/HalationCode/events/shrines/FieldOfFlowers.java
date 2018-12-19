@@ -3,7 +3,6 @@ package HalationCode.events.shrines;
 import HalationCode.events.buttons.RelicDialogOptionButton;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
-import HalationCode.relics.madoka.PurpleSoulGem;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

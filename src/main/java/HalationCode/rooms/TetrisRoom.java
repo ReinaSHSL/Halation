@@ -1,7 +1,6 @@
 package HalationCode.rooms;
 
 import HalationCode.events.TetrisEvent;
-import HalationCode.events.shrines.HikoboshiSamaEvent;
 import HalationCode.tools.TextureLoader;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;

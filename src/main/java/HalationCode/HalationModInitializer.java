@@ -1,23 +1,22 @@
 package HalationCode;
 
-import HalationCode.events.TetrisEvent;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
-import HalationCode.relics.discord.LBlock;
+import HalationCode.relics.aobuta.SmartPhone;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
-import HalationCode.relics.katawashoujo.*;
-import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
 import HalationCode.relics.hsl.BottledLove;
+import HalationCode.relics.katawashoujo.*;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
 import HalationCode.relics.mawarupenguindrum.Diary;
 import HalationCode.relics.mawarupenguindrum.PenguinHat;
 import HalationCode.relics.monogatari.*;
+import HalationCode.relics.nonnonbiyori.Komachan;
 import HalationCode.relics.nonnonbiyori.Sonsunser;
 import HalationCode.relics.nonnonbiyori.SwordOfLegend;
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
@@ -31,7 +30,6 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -96,6 +94,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new Jellyphish(), RelicType.SHARED);
         BaseMod.addRelic(new OrihimeAndHikoboshiSamaAndTears(), RelicType.SHARED);
         BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
+        BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
     }
 
     @Override
