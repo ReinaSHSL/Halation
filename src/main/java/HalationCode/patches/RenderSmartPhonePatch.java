@@ -17,7 +17,7 @@ public class RenderSmartPhonePatch {
     )
     public static class RenderOverCard {
         public static void Postfix(AbstractCard __instance, SpriteBatch sb, boolean useless1, boolean useless2) {
-            if (__instance == SmartPhonePatch.smartCard) {
+            if (SmartPhonePatch.smartCard != null && __instance.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
                 sb.draw(TextureLoader.getTexture("HalationImages/relics/SmartPhone.png"),
                         __instance.current_x + 320.0f * __instance.drawScale / 3.0f * Settings.scale,
                         __instance.current_y + 480.0f * __instance.drawScale / 3.0f * Settings.scale,

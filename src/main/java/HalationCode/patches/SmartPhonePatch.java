@@ -12,16 +12,16 @@ import java.util.ArrayList;
 @SpirePatch(
         clz = RewardItem.class,
         method = SpirePatch.CONSTRUCTOR,
-        paramtypez = AbstractCard.CardColor.class
+        paramtypez = {}
 )
 public class SmartPhonePatch {
     public static boolean smartSkip = false;
     public static boolean smartBowl = false;
     public static AbstractCard smartCard;
-    public static ArrayList<AbstractCard> notSmartCards;
+    public static ArrayList<String> notSmartCards;
     private static int rng;
 
-    public static void Postfix(RewardItem __instance, AbstractCard.CardColor color) {
+    public static void Postfix(RewardItem __instance) {
         notSmartCards = new ArrayList<>();
         if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) {
             if (AbstractDungeon.player.hasRelic(SingingBowl.ID)) {
@@ -35,11 +35,17 @@ public class SmartPhonePatch {
             } else {
                 smartCard = __instance.cards.get(rng);
                 for (AbstractCard c : __instance.cards) {
-                    if (c != smartCard) {
-                        notSmartCards.add(c);
+                    if (!c.cardID.equals(smartCard.cardID)) {
+                        notSmartCards.add(c.cardID);
                     }
                 }
             }
+            System.out.println(
+                    "FUCK ME: " + smartCard +
+                            " DAB: " + smartBowl +
+                            " HECK: " + smartSkip +
+                            " SHIT: " + notSmartCards
+            );
         }
     }
 }

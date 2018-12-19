@@ -129,6 +129,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         NonexistentMirror.cardEffects();
         PrussianBluePaint.cardEffects();
         Jellyphish.fuckmeintheASS();
+        SmartPhone.morePostUpdateBullshit();
     }
 
 }

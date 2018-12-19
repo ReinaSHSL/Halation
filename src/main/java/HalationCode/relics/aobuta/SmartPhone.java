@@ -21,6 +21,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/SmartPhone.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static boolean doTheThing = false;
 
     public SmartPhone() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
@@ -50,44 +51,51 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
 
     @Override
     public void onSkipSingingBowl(RewardItem rewardItem) {
-        if (SmartPhonePatch.smartBowl) {
-            CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-            CardCrawlGame.sound.play("BLUNT_FAST");
-            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/10));
-            SmartPhonePatch.smartBowl = false;
+        if (!SmartPhonePatch.smartBowl) {
+            doTheThing = true;
         }
         SmartPhonePatch.notSmartCards.clear();
+        SmartPhonePatch.smartCard = null;
     }
 
     @Override
     public void onSkipCard(RewardItem rewardItem) {
-        if (SmartPhonePatch.smartSkip) {
-            CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-            CardCrawlGame.sound.play("BLUNT_FAST");
-            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/10));
-            SmartPhonePatch.smartSkip = false;
+        if (!SmartPhonePatch.smartSkip) {
+            doTheThing = true;
+            SmartPhonePatch.notSmartCards.clear();
+            SmartPhonePatch.smartCard = null;
         }
-        SmartPhonePatch.notSmartCards.clear();
     }
 
     @Override
     public void onObtainCard(AbstractCard c) {
         if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl) {
-            for (AbstractCard ca : SmartPhonePatch.notSmartCards) {
-                if (c == ca) {
-                    return;
+            for (String s : SmartPhonePatch.notSmartCards) {
+                System.out.println("OVERHEREMFKR: " + s + " " + c.cardID);
+                if (c.cardID.equals(s)) {
+                   doTheThing = true;
                 } else {
-                    CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
-                    CardCrawlGame.sound.play("BLUNT_FAST");
-                    AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/10));
+                    SmartPhonePatch.notSmartCards.clear();
+                    SmartPhonePatch.smartCard = null;
+                    return;
                 }
             }
         }
         SmartPhonePatch.notSmartCards.clear();
+        SmartPhonePatch.smartCard = null;
     }
 
     @Override
     public void onVictory() {
         this.flash();
+    }
+
+    public static void morePostUpdateBullshit() {
+        if (doTheThing) {
+            CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
+            CardCrawlGame.sound.play("BLUNT_FAST");
+            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/10));
+            doTheThing = false;
+        }
     }
 }

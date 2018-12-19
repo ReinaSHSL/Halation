@@ -309,5 +309,12 @@
       "You now exist on 2 Map Nodes at once."
     ],
     "FLAVOR": "Something something entanglement, something something teleportation."
+  },
+  "halation:SmartPhone": {
+    "NAME": "Smart Phone",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. On Card Rewards, one of the choices will randomly be selected. If you do not pick that choice, take #b10% of your Max HP as damage."
+    ],
+    "FLAVOR": "If I don't respond quickly, everyone will leave me behind...!"
   }
 }
