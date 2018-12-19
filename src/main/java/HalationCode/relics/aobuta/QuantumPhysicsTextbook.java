@@ -38,6 +38,6 @@ public class QuantumPhysicsTextbook extends CustomRelic {
 
     @Override
     public void onEquip() {
-
+       AbstractDungeon.getCurrMapNode().isConnectedTo(QuantumMapNodeField.quantumPhysicsNode.get(CardCrawlGame.dungeon));
     }
 }

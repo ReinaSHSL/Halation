@@ -48,7 +48,7 @@ public class QuantumPhysicsPatch {
                 ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) ReflectionHacks.getPrivate(AbstractDungeon.dungeonMapScreen, DungeonMapScreen.class, "visibleMapNodes");
                 if (currNode != null) {
                     for (MapRoomNode n : visibleMapNodes) {
-                        if (n.y == currNode.y) {
+                        if (n.y == currNode.y && AbstractDungeon.getCurrMapNode() != n) {
                             quantumCandidates.add(n);
                         }
                     }
