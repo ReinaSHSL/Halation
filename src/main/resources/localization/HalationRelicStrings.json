@@ -302,5 +302,12 @@
       "You're a monster."
     ],
     "FLAVOR": "A Goddess from another time. She longs for her star crossed lover."
+  },
+  "halation:QuantumPhysicsTextbook": {
+    "NAME": "Quantum Physics Textbook",
+    "DESCRIPTIONS": [
+      "You now exist on 2 Map Nodes at once."
+    ],
+    "FLAVOR": "Something something entanglement, something something teleportation."
   }
 }

@@ -4,6 +4,7 @@ import HalationCode.events.TetrisEvent;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
 import HalationCode.relics.discord.LBlock;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
 import HalationCode.relics.katawashoujo.*;
@@ -94,6 +95,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new IllGainedPizza(), RelicType.SHARED);
         BaseMod.addRelic(new Jellyphish(), RelicType.SHARED);
         BaseMod.addRelic(new OrihimeAndHikoboshiSamaAndTears(), RelicType.SHARED);
+        BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
     }
 
     @Override
