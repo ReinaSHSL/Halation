@@ -27,7 +27,7 @@ public class Convergence extends CustomRelic implements ClickableRelic{
     private static boolean normalActChange = true;
 
     public Convergence() {
-        super(ID, IMG, AbstractRelic.RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, IMG, AbstractRelic.RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override
