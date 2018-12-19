@@ -18,23 +18,6 @@ import java.util.ArrayList;
 
 public class QuantumPhysicsPatch {
 
-    public static boolean isDirectlyConnectedTo(MapRoomNode start, MapRoomNode end) {
-        for (MapEdge edge : start.getEdges()) {
-            if (end.x == edge.dstX && end.y == edge.dstY) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static MapRoomNode getNode(int x, int y) {
-        try {
-            return CardCrawlGame.dungeon.getMap().get(y).get(x);
-        } catch (IndexOutOfBoundsException e) {
-            return null;
-        }
-    }
-
     @SpirePatch(
             clz = AbstractDungeon.class,
             method = "setCurrMapNode"
