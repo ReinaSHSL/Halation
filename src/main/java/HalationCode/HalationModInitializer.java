@@ -37,7 +37,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
 public class HalationModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber, PostDungeonInitializeSubscriber {
+        PostUpdateSubscriber {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -107,7 +107,6 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
         BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
-        BaseMod.addEvent(TetrisEvent.ID, TetrisEvent.class);
         BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);}
 
     @Override
@@ -131,8 +130,4 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         Jellyphish.fuckmeintheASS();
     }
 
-    @Override
-    public void receivePostDungeonInitialize() {
-        AbstractDungeon.eventList.remove(TetrisEvent.ID);
-    }
 }

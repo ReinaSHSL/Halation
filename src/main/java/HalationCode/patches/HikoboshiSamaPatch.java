@@ -21,7 +21,7 @@ public class HikoboshiSamaPatch {
     @SpireInsertPatch(
             locator = Locator.class
     )
-    public static void AddNailsmithRoom() {
+    public static void AddHikoboshiRoom() {
         if (AbstractDungeon.player.hasRelic(OrihimeAndHikoboshiSamaAndTears.ID)) {
             List<MapRoomNode> eventNodes = new ArrayList<>();
             for (List<MapRoomNode> rows : AbstractDungeon.map) {

@@ -60,8 +60,8 @@ public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
 
     public static void cardEffects() {
         for (AbstractCard c : cardsToShow) {
-            final float x = MathUtils.random(0.4f, 0.9f) * Settings.WIDTH;
-            final float y = MathUtils.random(0.6f, 0.8f) * Settings.HEIGHT;
+            final float x = MathUtils.random(0.3f, 0.8f) * Settings.WIDTH;
+            final float y = MathUtils.random(0.3f, 0.9f) * Settings.HEIGHT;
             AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy(), x, y));
             AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
         }
