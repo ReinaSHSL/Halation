@@ -19,12 +19,12 @@ public class RenderSmartPhonePatch {
         public static void Postfix(AbstractCard __instance, SpriteBatch sb, boolean useless1, boolean useless2) {
             if (SmartPhonePatch.smartCard != null && __instance.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
                 sb.draw(TextureLoader.getTexture("HalationImages/relics/SmartPhone.png"),
-                        __instance.current_x + 320.0f * __instance.drawScale / 3.0f * Settings.scale,
-                        __instance.current_y + 480.0f * __instance.drawScale / 3.0f * Settings.scale,
-                        32f, 32f, 64f, 64f,
+                        __instance.current_x + 180.0f * __instance.drawScale / 3.0f * Settings.scale,
+                        __instance.current_y + 380.0f * __instance.drawScale / 3.0f * Settings.scale,
+                        32f, 32f, 128f, 128f,
                         __instance.drawScale * Settings.scale, __instance.drawScale * Settings.scale,
                         0.0f, 0, 0,
-                        64, 64,
+                        128, 128,
                         false, false);
             }
         }
@@ -39,14 +39,14 @@ public class RenderSmartPhonePatch {
             if (SmartPhonePatch.smartSkip) {
                 float current_x = (float)ReflectionHacks.getPrivate(__instance, SkipCardButton.class, "current_x");
                 sb.draw(TextureLoader.getTexture("HalationImages/relics/SmartPhone.png"),
-                        current_x - 256.0F,
-                        220.0F * Settings.scale - 128.0F,
+                        current_x - 20f,
+                        25.0F * Settings.scale,
                         256.0F,
                         128.0F,
                         512.0F,
                         256.0F,
-                        Settings.scale,
-                        Settings.scale,
+                        0.8F * Settings.scale,
+                        0.8F * Settings.scale,
                         0.0F,
                         0,
                         0,

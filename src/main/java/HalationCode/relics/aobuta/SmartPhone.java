@@ -67,12 +67,15 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
 
     @Override
     public void onObtainCard(AbstractCard c) {
-        if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl) {
-          if (!c.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
-              doTheThing = true;
-          }
+        if (SmartPhonePatch.smartSkip || SmartPhonePatch.smartBowl) {
+            doTheThing = true;
         }
-        SmartPhonePatch.smartCard = null;
+        if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl) {
+            if (!c.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
+                doTheThing = true;
+            }
+            SmartPhonePatch.smartCard = null;
+        }
     }
 
     @Override
