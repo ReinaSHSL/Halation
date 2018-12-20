@@ -54,7 +54,6 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
         if (!SmartPhonePatch.smartBowl) {
             doTheThing = true;
         }
-        SmartPhonePatch.notSmartCards.clear();
         SmartPhonePatch.smartCard = null;
     }
 
@@ -62,26 +61,17 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     public void onSkipCard(RewardItem rewardItem) {
         if (!SmartPhonePatch.smartSkip) {
             doTheThing = true;
-            SmartPhonePatch.notSmartCards.clear();
-            SmartPhonePatch.smartCard = null;
         }
+        SmartPhonePatch.smartCard = null;
     }
 
     @Override
     public void onObtainCard(AbstractCard c) {
         if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl) {
-            for (String s : SmartPhonePatch.notSmartCards) {
-                System.out.println("OVERHEREMFKR: " + s + " " + c.cardID);
-                if (c.cardID.equals(s)) {
-                   doTheThing = true;
-                } else {
-                    SmartPhonePatch.notSmartCards.clear();
-                    SmartPhonePatch.smartCard = null;
-                    return;
-                }
-            }
+          if (!c.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
+              doTheThing = true;
+          }
         }
-        SmartPhonePatch.notSmartCards.clear();
         SmartPhonePatch.smartCard = null;
     }
 

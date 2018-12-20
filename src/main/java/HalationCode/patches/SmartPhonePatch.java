@@ -18,11 +18,9 @@ public class SmartPhonePatch {
     public static boolean smartSkip = false;
     public static boolean smartBowl = false;
     public static AbstractCard smartCard;
-    public static ArrayList<String> notSmartCards;
     private static int rng;
 
     public static void Postfix(RewardItem __instance) {
-        notSmartCards = new ArrayList<>();
         if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) {
             if (AbstractDungeon.player.hasRelic(SingingBowl.ID)) {
                 rng = AbstractDungeon.cardRng.random(__instance.cards.size()) + 1;
@@ -34,18 +32,7 @@ public class SmartPhonePatch {
                 smartBowl = true;
             } else {
                 smartCard = __instance.cards.get(rng);
-                for (AbstractCard c : __instance.cards) {
-                    if (!c.cardID.equals(smartCard.cardID)) {
-                        notSmartCards.add(c.cardID);
-                    }
-                }
             }
-            System.out.println(
-                    "FUCK ME: " + smartCard +
-                            " DAB: " + smartBowl +
-                            " HECK: " + smartSkip +
-                            " SHIT: " + notSmartCards
-            );
         }
     }
 }
