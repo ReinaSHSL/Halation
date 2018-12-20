@@ -4,8 +4,10 @@ import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class PromiseList extends CustomRelic {
@@ -15,7 +17,7 @@ public class PromiseList extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
 
     public PromiseList() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override
@@ -26,5 +28,19 @@ public class PromiseList extends CustomRelic {
     @Override
     public AbstractRelic makeCopy() {
         return new PromiseList();
+    }
+
+    public void atPreBattle() {
+        if (this.counter > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+        }
+    }
+
+    @Override
+    public void onTrigger() {
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
+        this.counter++;
     }
 }

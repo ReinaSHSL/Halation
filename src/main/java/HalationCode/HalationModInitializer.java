@@ -26,11 +26,13 @@ import HalationCode.relics.nonnonbiyori.SwordOfLegend;
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import HalationCode.relics.persona3.PapillonHeart;
 import HalationCode.relics.persona3.PinkAlligatorPlush;
+import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
@@ -38,13 +40,20 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import infinitespire.InfiniteSpire;
 
 @SpireInitializer
-public class HalationModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber, EditCardsSubscriber {
+public class HalationModInitializer implements EditRelicsSubscriber,
+        EditStringsSubscriber,
+        PostInitializeSubscriber,
+        StartActSubscriber,
+        PostUpdateSubscriber,
+        EditCardsSubscriber
+{
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
+    private static boolean infiniteLoaded = Loader.isModLoaded("infinitespire");
 
     public HalationModInitializer() {
         BaseMod.subscribe(this);
@@ -101,6 +110,10 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
         BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
         BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
+
+        if (infiniteLoaded) {
+            BaseMod.addRelic(new PromiseList(), RelicType.SHARED);
+        }
     }
 
     @Override
@@ -145,4 +158,5 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addCard(new LetterOfLove());
         BaseMod.addCard(new LetterOfRespect());
     }
+
 }

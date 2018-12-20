@@ -14,28 +14,35 @@
             <artifactId>slaythespire</artifactId>
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
             <artifactId>basemod</artifactId>
             <version>5.0.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/BaseMod.jar</systemPath>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/BaseMod.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
             <artifactId>modthespire</artifactId>
             <version>${ModTheSpire.version}</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/ModTheSpire.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>StSLib</artifactId>
             <version>1.3.2</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/StSLib.jar</systemPath>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/StSLib.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>infinitespire</groupId>
+            <artifactId>InfiniteSpire</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/mods/InfiniteSpire.jar</systemPath>
         </dependency>
     </dependencies>
 
