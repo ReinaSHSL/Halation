@@ -17,6 +17,7 @@ public class Sonsunser extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Sosunser.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private ArrayList<AbstractCard> attacksPlayedThisTurn = new ArrayList<>();
 
     public Sonsunser() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
@@ -36,11 +37,11 @@ public class Sonsunser extends CustomRelic {
     public void onUseCard(AbstractCard c, UseCardAction a) {
         if (c.type == AbstractCard.CardType.ATTACK) {
             if (this.counter < 0) {
-                this.counter += 2;
+                this.counter = 0;
             }
             this.counter++;
             if (this.counter >= 8) {
-                ArrayList<AbstractCard> attacksPlayedThisTurn = new ArrayList<>();
+
                 for (AbstractCard ca : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
                     if (ca.type == AbstractCard.CardType.ATTACK) {
                         attacksPlayedThisTurn.add(ca);
@@ -61,10 +62,12 @@ public class Sonsunser extends CustomRelic {
     @Override
     public void onPlayerEndTurn() {
         this.counter = 0;
+        attacksPlayedThisTurn.clear();
     }
 
     @Override
     public void onVictory() {
         this.counter = 0;
+        attacksPlayedThisTurn.clear();
     }
 }
