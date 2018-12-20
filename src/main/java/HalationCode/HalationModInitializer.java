@@ -1,8 +1,12 @@
 package HalationCode;
 
+import HalationCode.cards.LetterOfAdmiration;
+import HalationCode.cards.LetterOfLove;
+import HalationCode.cards.LetterOfRespect;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.aobuta.LettersToSomeoneImportant;
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
 import HalationCode.relics.aobuta.SmartPhone;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
@@ -30,13 +34,14 @@ import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
 public class HalationModInitializer implements EditRelicsSubscriber, EditStringsSubscriber, PostInitializeSubscriber, StartActSubscriber,
-        PostUpdateSubscriber {
+        PostUpdateSubscriber, EditCardsSubscriber {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
@@ -95,6 +100,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.addRelic(new OrihimeAndHikoboshiSamaAndTears(), RelicType.SHARED);
         BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
         BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
+        BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
     }
 
     @Override
@@ -102,6 +108,7 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/HalationPowerStrings.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/HalationRelicStrings.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, "localization/HalationEventStrings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "localization/HalationCardStrings.json");
     }
 
     @Override
@@ -132,4 +139,10 @@ public class HalationModInitializer implements EditRelicsSubscriber, EditStrings
         SmartPhone.morePostUpdateBullshit();
     }
 
+    @Override
+    public void receiveEditCards() {
+        BaseMod.addCard(new LetterOfAdmiration());
+        BaseMod.addCard(new LetterOfLove());
+        BaseMod.addCard(new LetterOfRespect());
+    }
 }

@@ -1,0 +1,15 @@
+{
+  "halation:LetterOfAdmiration": {
+    "NAME": "Letter of Admiration",
+    "DESCRIPTION": "Draw 1 card. NL Gain [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Gain [E] [E] . NL Exhaust."
+  },
+  "halation:LetterOfRespect": {
+    "NAME": "Letter of Respect",
+    "DESCRIPTION": "Draw 1 card. NL Gain !M! Strength. NL Exhaust."
+  },
+  "halation:LetterOfLove": {
+    "NAME": "Letter of Love",
+    "DESCRIPTION": "Draw 1 card. NL Gain !M! Temporary HP. NL Exhaust."
+  }
+}
