@@ -18,7 +18,7 @@ public class PenCasePatch {
             method = SpirePatch.CLASS
     )
     public static class PenCaseField {
-        public static SpireField<Boolean> isPenCase = new SpireField<>(() -> true);
+        public static SpireField<Boolean> isPenCase = new SpireField<>(() -> false);
     }
 
     @SpirePatch(
@@ -31,7 +31,7 @@ public class PenCasePatch {
             for(int i = 0; i < campfireButtons.size(); i++) {
                 AbstractCampfireOption option = campfireButtons.get(i);
                 if(option instanceof RestOption && AbstractDungeon.player.hasRelic(PenCase.ID)) {
-                    PenCaseField.isPenCase.set(option, false);
+                    PenCaseField.isPenCase.set(option, true);
                 }
             }
         }
@@ -42,9 +42,9 @@ public class PenCasePatch {
             method = "update"
     )
     public static class SetBool {
-        public static boolean shouldContinue = false;
+        public static boolean shouldStop = false;
         public static void Postfix(AbstractCampfireOption __instance) {
-            shouldContinue = PenCaseField.isPenCase.get(__instance);
+            shouldStop = PenCaseField.isPenCase.get(__instance);
         }
     }
 }

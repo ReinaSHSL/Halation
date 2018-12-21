@@ -354,7 +354,7 @@
   "halation:PenCase": {
     "NAME": "Pen Case",
     "DESCRIPTIONS": [
-      "You may now use #b2 #yCampfire #yOptions as long as neither is #yRest."
+      "You may now use #b2 #yCampfire #yOptions as long as neither option chosen is #yRest."
     ],
     "FLAVOR": "That's the best part."
   }

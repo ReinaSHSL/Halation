@@ -44,7 +44,7 @@ public class PenCase extends CustomRelic {
     }
 
     public static boolean ContinueCampfire() {
-        if(PenCasePatch.SetBool.shouldContinue && secondOption) {
+        if(PenCasePatch.SetBool.shouldStop && secondOption) {
             ((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();
             ((RestRoom)AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.INCOMPLETE;
             ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI, CampfireUI.class, "buttons");
@@ -53,8 +53,19 @@ public class PenCase extends CustomRelic {
                     o.usable = false;
                 }
             }
-            PenCasePatch.SetBool.shouldContinue = false;
+            PenCasePatch.SetBool.shouldStop = false;
             secondOption = false;
+            boolean softLocked = true;
+            for (AbstractCampfireOption o : campfireButtons) {
+                if (o.usable) {
+                    softLocked = false;
+                }
+            }
+            if (softLocked) {
+                AbstractDungeon.overlayMenu.proceedButton.show();
+                ((RestRoom)AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.COMPLETE;
+                return true;
+            }
             return false;
         }
        return true;
