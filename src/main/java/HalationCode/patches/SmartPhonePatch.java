@@ -7,8 +7,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.SingingBowl;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 
-import java.util.ArrayList;
-
 @SpirePatch(
         clz = RewardItem.class,
         method = SpirePatch.CONSTRUCTOR,

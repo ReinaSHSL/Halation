@@ -350,5 +350,12 @@
       "All in combat healing is reduced by #y1. Upon healing, gain #b1 #yEnergy."
     ],
     "FLAVOR": "You have a lot of faith in me. Thank you, my little guinea pig."
+  },
+  "halation:PenCase": {
+    "NAME": "Pen Case",
+    "DESCRIPTIONS": [
+      "You may now use #b2 #yCampfire #yOptions as long as neither is #yRest."
+    ],
+    "FLAVOR": "That's the best part."
   }
 }

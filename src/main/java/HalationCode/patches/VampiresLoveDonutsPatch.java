@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.BloodVial;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class VampiresLoveDonutsPatch {

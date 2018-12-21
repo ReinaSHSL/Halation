@@ -28,6 +28,7 @@ import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import HalationCode.relics.persona3.PapillonHeart;
 import HalationCode.relics.persona3.PinkAlligatorPlush;
 import HalationCode.relics.persona5.KoshaPiece;
+import HalationCode.relics.persona5.PenCase;
 import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
@@ -42,7 +43,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import infinitespire.InfiniteSpire;
 
 @SpireInitializer
 public class HalationModInitializer implements EditRelicsSubscriber,
@@ -50,7 +50,8 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         PostInitializeSubscriber,
         StartActSubscriber,
         PostUpdateSubscriber,
-        EditCardsSubscriber
+        EditCardsSubscriber,
+        PostCampfireSubscriber
 {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
@@ -114,6 +115,7 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
         BaseMod.addRelic(new ForbiddenBikini(), RelicType.SHARED);
         BaseMod.addRelic(new KoshaPiece(), RelicType.SHARED);
+        BaseMod.addRelic(new PenCase(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);
@@ -163,4 +165,11 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         BaseMod.addCard(new LetterOfRespect());
     }
 
+    @Override
+    public boolean receivePostCampfire() {
+        if (AbstractDungeon.player.hasRelic(PenCase.ID)) {
+            return PenCase.ContinueCampfire();
+        }
+        return true;
+    }
 }
