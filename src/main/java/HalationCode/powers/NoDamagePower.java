@@ -1,6 +1,7 @@
 package HalationCode.powers;
 
 import HalationCode.tools.TextureLoader;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -36,7 +37,8 @@ public class NoDamagePower extends AbstractPower {
     }
 
     @Override
-    public int onLoseHp (int damageAmount) {
-        return 0;
+    public float atDamageFinalReceive(float damage, DamageInfo.DamageType type)
+    {
+        return 0.0F;
     }
 }
