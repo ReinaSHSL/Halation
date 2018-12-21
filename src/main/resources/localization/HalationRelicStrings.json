@@ -343,5 +343,12 @@
       "If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #1b Power, you can right click this relic to flee the combat."
     ],
     "FLAVOR": "I feel... a gambler's spirit emanating from you."
+  },
+  "halation:DogTag": {
+    "NAME": "Dog Tag",
+    "DESCRIPTIONS": [
+      "All in combat healing is reduced by #y1. Upon healing, gain #b1 #yEnergy."
+    ],
+    "FLAVOR": "You have a lot of faith in me. Thank you, my little guinea pig."
   }
 }
