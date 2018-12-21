@@ -45,13 +45,17 @@ public class PenCase extends CustomRelic {
 
     public static boolean ContinueCampfire() {
         if(PenCasePatch.SetBool.shouldStop && secondOption) {
+            AbstractCampfireOption rest = null;
             ((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();
             ((RestRoom)AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.INCOMPLETE;
             ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI, CampfireUI.class, "buttons");
             for (AbstractCampfireOption o : campfireButtons) {
                 if (o instanceof RestOption) {
-                    o.usable = false;
+                    rest = o;
                 }
+            }
+            if (rest != null) {
+                campfireButtons.remove(rest);
             }
             PenCasePatch.SetBool.shouldStop = false;
             secondOption = false;
