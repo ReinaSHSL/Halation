@@ -6,6 +6,7 @@ import HalationCode.cards.LetterOfRespect;
 import HalationCode.events.beyond.AntiShadowMachine;
 import HalationCode.events.shrines.Contract;
 import HalationCode.events.shrines.FieldOfFlowers;
+import HalationCode.relics.aobuta.ForbiddenBikini;
 import HalationCode.relics.aobuta.LettersToSomeoneImportant;
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
 import HalationCode.relics.aobuta.SmartPhone;
@@ -110,6 +111,7 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
         BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
         BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
+        BaseMod.addRelic(new ForbiddenBikini(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);

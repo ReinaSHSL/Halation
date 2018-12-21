@@ -306,7 +306,7 @@
   "halation:QuantumPhysicsTextbook": {
     "NAME": "Quantum Physics Textbook",
     "DESCRIPTIONS": [
-      "You now exist on 2 Map Nodes at once."
+      "You may now also select rooms connected to a randomly chosen room on the same level."
     ],
     "FLAVOR": "Something something entanglement, something something teleportation."
   },
@@ -329,5 +329,12 @@
       "Gain #b1 #yStrength for every #yQuest completed since this relic was picked up."
     ],
     "FLAVOR":"What denies you is an illusion...a curse put upon you by the Heartless."
+  },
+  "halation:ForbiddenBikini": {
+    "NAME": "Forbidden Bikini",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. You can no longer interact with merchants or find events."
+    ],
+    "FLAVOR": "Don’t go about doing weird things while thinking about me."
   }
 }
