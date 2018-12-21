@@ -27,6 +27,7 @@ import HalationCode.relics.nonnonbiyori.SwordOfLegend;
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import HalationCode.relics.persona3.PapillonHeart;
 import HalationCode.relics.persona3.PinkAlligatorPlush;
+import HalationCode.relics.persona5.KoshaPiece;
 import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
@@ -112,6 +113,7 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
         BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
         BaseMod.addRelic(new ForbiddenBikini(), RelicType.SHARED);
+        BaseMod.addRelic(new KoshaPiece(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);

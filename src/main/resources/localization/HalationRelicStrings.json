@@ -336,5 +336,12 @@
       "Gain [E] at the start of your turn. You can no longer interact with merchants or find events."
     ],
     "FLAVOR": "Don’t go about doing weird things while thinking about me."
+  },
+  "halation:KoshaPiece": {
+    "NAME": "Kosha Piece",
+    "DESCRIPTIONS": [
+      "If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #1b Power, you can right click this relic to flee the combat."
+    ],
+    "FLAVOR": "I feel... a gambler's spirit emanating from you."
   }
 }
