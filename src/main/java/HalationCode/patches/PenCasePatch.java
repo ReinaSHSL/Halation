@@ -28,10 +28,9 @@ public class PenCasePatch {
     public static class SetRestButton {
         public static void Postfix(CampfireUI __instance) {
             ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(__instance, CampfireUI.class, "buttons");
-            for(int i = 0; i < campfireButtons.size(); i++) {
-                AbstractCampfireOption option = campfireButtons.get(i);
-                if(option instanceof RestOption && AbstractDungeon.player.hasRelic(PenCase.ID)) {
-                    PenCaseField.isPenCase.set(option, true);
+            for(AbstractCampfireOption o : campfireButtons) {
+                if(o instanceof RestOption && AbstractDungeon.player.hasRelic(PenCase.ID)) {
+                    PenCaseField.isPenCase.set(o, true);
                 }
             }
         }
