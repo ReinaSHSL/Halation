@@ -22,32 +22,4 @@ public class ForbiddenBikiniPatch {
             }
         }
     }
-
-    @SpirePatch(
-            clz = EventHelper.class,
-            method = "roll"
-    )
-    public static class NoMoreEvents {
-        public static EventHelper.RoomResult Postfix(EventHelper.RoomResult __result) {
-            if (AbstractDungeon.player.hasRelic(ForbiddenBikini.ID)) {
-                AbstractDungeon.player.getRelic(ForbiddenBikini.ID).flash();
-                if (__result == EventHelper.RoomResult.EVENT) {
-                    int rng = AbstractDungeon.eventRng.random(1);
-                    switch(rng) {
-                        case 0:
-                            __result = EventHelper.RoomResult.MONSTER;
-                            if (AbstractDungeon.player.hasRelic(JuzuBracelet.ID)) {
-                                __result = EventHelper.RoomResult.SHOP;
-                            }
-                            return __result;
-                        case 1:
-                            __result = EventHelper.RoomResult.SHOP;
-                            return __result;
-                    }
-                }
-            }
-            return __result;
-        }
-    }
-
 }

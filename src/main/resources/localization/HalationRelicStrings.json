@@ -333,7 +333,7 @@
   "halation:ForbiddenBikini": {
     "NAME": "Forbidden Bikini",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. You can no longer interact with merchants or find events."
+      "Gain [E] at the start of your turn. You can no longer interact with merchants."
     ],
     "FLAVOR": "Don’t go about doing weird things while thinking about me."
   },
