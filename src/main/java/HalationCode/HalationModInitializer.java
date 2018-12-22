@@ -10,6 +10,7 @@ import HalationCode.relics.aobuta.ForbiddenBikini;
 import HalationCode.relics.aobuta.LettersToSomeoneImportant;
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
 import HalationCode.relics.aobuta.SmartPhone;
+import HalationCode.relics.ddlc.BottledHappiness;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
@@ -116,6 +117,7 @@ public class HalationModInitializer implements EditRelicsSubscriber,
         BaseMod.addRelic(new ForbiddenBikini(), RelicType.SHARED);
         BaseMod.addRelic(new KoshaPiece(), RelicType.SHARED);
         BaseMod.addRelic(new PenCase(), RelicType.SHARED);
+        BaseMod.addRelic(new BottledHappiness(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);

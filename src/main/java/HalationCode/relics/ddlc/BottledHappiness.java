@@ -43,6 +43,10 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
         return new BottledHappiness();
     }
 
+    public ArrayList<AbstractCard> getCards() {
+        return this.cards;
+    }
+
     @Override
     public Predicate<AbstractCard> isOnCard()
     {
@@ -145,9 +149,8 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
     public void onCardDraw(AbstractCard c) {
         if (this.cards != null && this.cards.size() > 0) {
             for (AbstractCard ca : this.cards) {
-                if (ca == c) {
+                if (c.uuid == ca.uuid) {
                     AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
-                    AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
                 }
             }
         }
