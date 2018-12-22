@@ -46,7 +46,8 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
 @SpireInitializer
-public class HalationModInitializer implements EditRelicsSubscriber,
+public class HalationModInitializer implements
+        EditRelicsSubscriber,
         EditStringsSubscriber,
         PostInitializeSubscriber,
         StartActSubscriber,
