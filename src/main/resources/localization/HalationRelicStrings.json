@@ -372,5 +372,12 @@
       "Gain [E] at the start of your turn. After the #bthird card played in a turn, all cards played will be #rremoved from your deck and #rpurged."
     ],
     "FLAVOR": "It's just a better Velvet Choker."
+  },
+  "halation:Thesaurus": {
+    "NAME": "Thesaurus",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose #b3 cards. They are transformed into a card one rarity higher. #yRares become #rcommon.",
+      "Pick 3 cards to find synonyms."
+    ]
   }
 }
