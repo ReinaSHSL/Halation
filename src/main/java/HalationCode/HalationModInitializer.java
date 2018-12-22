@@ -11,6 +11,7 @@ import HalationCode.relics.aobuta.LettersToSomeoneImportant;
 import HalationCode.relics.aobuta.QuantumPhysicsTextbook;
 import HalationCode.relics.aobuta.SmartPhone;
 import HalationCode.relics.ddlc.BottledHappiness;
+import HalationCode.relics.ddlc.CatFaceCupcake;
 import HalationCode.relics.generalweebreferences.OrihimeAndHikoboshiSamaAndTears;
 import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
@@ -119,6 +120,8 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new KoshaPiece(), RelicType.SHARED);
         BaseMod.addRelic(new PenCase(), RelicType.SHARED);
         BaseMod.addRelic(new BottledHappiness(), RelicType.SHARED);
+        BaseMod.addRelic(new CatFaceCupcake(), RelicType.SHARED);
+
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);

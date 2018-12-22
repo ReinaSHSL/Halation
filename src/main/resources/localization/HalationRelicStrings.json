@@ -369,7 +369,7 @@
   "halation:CatFaceCupcake": {
     "NAME": "Cat Face Cupcake",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. After the third card played in a turn, all cards played will be removed from your deck and purged."
+      "Gain [E] at the start of your turn. After the #bthird card played in a turn, all cards played will be #rremoved from your deck and #rpurged."
     ],
     "FLAVOR": "It's just a better Velvet Choker."
   }
