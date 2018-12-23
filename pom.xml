@@ -3,8 +3,13 @@
     <groupId>Halation</groupId>
     <artifactId>Halation</artifactId>
     <version>0.0.1</version>
-
     <name>Halation!</name>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <SlayTheSpire.version>12-20-2018</SlayTheSpire.version>
+        <ModTheSpire.version>3.6.3</ModTheSpire.version>
+    </properties>
 
 
 
@@ -46,12 +51,7 @@
         </dependency>
     </dependencies>
 
-    <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>11-15-2018</SlayTheSpire.version>
-        <ModTheSpire.version>3.6.0</ModTheSpire.version>
-    </properties>
+
 
     <build>
         <finalName>Halation</finalName>
@@ -79,6 +79,20 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>ModTheSpire.json</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>ModTheSpire.json</include>
+                </includes>
             </resource>
         </resources>
 

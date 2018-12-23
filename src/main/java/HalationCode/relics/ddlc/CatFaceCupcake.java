@@ -76,5 +76,5 @@ public class CatFaceCupcake extends CustomRelic {
     public int getPrice() {
         return 0;
     }
-    
+
 }
