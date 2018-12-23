@@ -1,7 +1,9 @@
 package HalationCode.relics.ddlc;
 
 import HalationCode.tools.TextureLoader;
+import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.helpers.BaseModCardTags;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -41,7 +43,12 @@ public class Thesaurus extends CustomRelic {
         this.cardsSelected = false;
         final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (final AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-            if (!card.cardID.equals(Necronomicurse.ID) && !card.cardID.equals(AscendersBane.ID)) {
+            if (
+                    card.type != AbstractCard.CardType.CURSE
+                    || card.color != AbstractCard.CardColor.CURSE
+                    || !card.hasTag(BaseModCardTags.BASIC_STRIKE)
+                    || !card.hasTag(BaseModCardTags.BASIC_DEFEND))
+            {
                 tmp.addToTop(card);
             }
         }

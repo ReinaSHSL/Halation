@@ -376,7 +376,7 @@
   "halation:Thesaurus": {
     "NAME": "Thesaurus",
     "DESCRIPTIONS": [
-      "Upon pickup, choose #b3 cards. They are transformed into a card one rarity higher. #yRares become #rcommon.",
+      "Upon pickup, choose #b3 non-Strike or Defend cards. They are transformed into a card one rarity higher. #yRares become #rcommon. #rCurses cannot be chosen.",
       "Pick 3 cards to find synonyms."
     ]
   }
