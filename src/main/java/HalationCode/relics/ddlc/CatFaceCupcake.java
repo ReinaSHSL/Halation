@@ -71,4 +71,10 @@ public class CatFaceCupcake extends CustomRelic {
     public void onVictory() {
         this.counter = 0;
     }
+
+    @Override
+    public int getPrice() {
+        return 0;
+    }
+    
 }
