@@ -30,7 +30,7 @@ public class SimulatedSpirePatch {
             for (AbstractCard c : simulatedSpireRewards.cards) {
                 IsSimulatedSpireField.isSimulatedSpireReward.set(c, true);
             }
-            simulatedSpireRewards.text = "Simulated Spire Card";
+            simulatedSpireRewards.text = "Add a card to your second deck";
             __instance.rewards.add(simulatedSpireRewards);
         }
     }
