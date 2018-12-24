@@ -23,6 +23,7 @@ public class SimulatedSpire extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public CardGroup secondDeck = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    public final String rewardScreenText = DESCRIPTIONS[1];
 
     public SimulatedSpire() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
