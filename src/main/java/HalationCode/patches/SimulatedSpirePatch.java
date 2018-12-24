@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowReward;
 import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.PrayerWheel;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
@@ -29,6 +30,14 @@ public class SimulatedSpirePatch {
             if (simulatedSpireRewards.cards.size() == 0) return;
             for (AbstractCard c : simulatedSpireRewards.cards) {
                 IsSimulatedSpireField.isSimulatedSpireReward.set(c, true);
+            }
+            if (AbstractDungeon.player.hasRelic(PrayerWheel.ID)) {
+                RewardItem secondSimulatedSpireRewards = new RewardItem();
+                for (AbstractCard c : secondSimulatedSpireRewards.cards) {
+                    IsSimulatedSpireField.isSimulatedSpireReward.set(c, true);
+                }
+                secondSimulatedSpireRewards.text = "Add a card to your second deck";
+                __instance.rewards.add(secondSimulatedSpireRewards);
             }
             simulatedSpireRewards.text = "Add a card to your second deck";
             __instance.rewards.add(simulatedSpireRewards);
