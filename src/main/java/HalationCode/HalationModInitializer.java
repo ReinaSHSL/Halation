@@ -36,6 +36,7 @@ import HalationCode.relics.persona5.PenCase;
 import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
+import HalationCode.ui.SimulatedSpireButton;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -56,7 +57,8 @@ public class HalationModInitializer implements
         StartActSubscriber,
         PostUpdateSubscriber,
         EditCardsSubscriber,
-        PostCampfireSubscriber
+        PostCampfireSubscriber,
+        PostDungeonInitializeSubscriber
 {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
@@ -180,5 +182,14 @@ public class HalationModInitializer implements
             return PenCase.ContinueCampfire();
         }
         return true;
+    }
+
+    @Override
+    public void receivePostDungeonInitialize() {
+        if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
+            BaseMod.addTopPanelItem(
+                    new SimulatedSpireButton()
+            );
+        }
     }
 }
