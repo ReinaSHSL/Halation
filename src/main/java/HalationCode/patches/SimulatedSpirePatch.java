@@ -114,23 +114,12 @@ public class SimulatedSpirePatch {
     }
 
     @SpirePatch(
-            clz = CancelButton.class,
-            method = "hide"
-    )
-    public static class CancelButtonHide {
-        public static void Postfix(CancelButton __instance) {
-            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID && AbstractDungeon.previousScreen == SECOND_MASTER_DECK) {
-                HalationModInitializer.secondMasterDeckScreen.open();
-            }
-        }
-    }
-    @SpirePatch(
             clz=AbstractDungeon.class,
             method="closeCurrentScreen"
     )
     public static class CloseCurrentScreen {
         public static void Prefix() {
-            if(AbstractDungeon.screen == SECOND_MASTER_DECK) {
+            if (AbstractDungeon.previousScreen == SECOND_MASTER_DECK && AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
                 try {
                     Method overlayReset = AbstractDungeon.class.getDeclaredMethod("genericScreenOverlayReset");
                     overlayReset.setAccessible(true);
