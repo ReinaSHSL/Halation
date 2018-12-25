@@ -9,7 +9,7 @@ public class SecondDeck extends CustomCard {
     public static final String ID = "halation:SecondDeck";
 
     public SecondDeck() {
-        super(ID, "Second Deck", null, 0, "", CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, "Second Deck", null, -2, "", CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
     }
 
 

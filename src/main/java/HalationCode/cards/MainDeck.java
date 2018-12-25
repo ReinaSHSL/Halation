@@ -9,7 +9,7 @@ public class MainDeck extends CustomCard {
     public static final String ID = "halation:MainDeck";
 
     public MainDeck() {
-        super(ID, "Main Deck", null, 0, "", CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
+        super(ID, "Main Deck", null, -2, "", CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
     }
 
 

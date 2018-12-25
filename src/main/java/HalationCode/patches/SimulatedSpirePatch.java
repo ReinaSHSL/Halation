@@ -2,10 +2,14 @@ package HalationCode.patches;
 
 import HalationCode.HalationModInitializer;
 import HalationCode.actions.PickDeckAction;
+import HalationCode.campfires.UpgradeSecondDeck;
+import HalationCode.effects.OtherCampfireSmithEffect;
 import HalationCode.relics.ddlc.SimulatedSpire;
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowReward;
 import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
@@ -13,9 +17,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.PrayerWheel;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.CancelButton;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -146,6 +152,27 @@ public class SimulatedSpirePatch {
         public static void Postfix(AbstractPlayer __instance) {
             if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
                 AbstractDungeon.actionManager.addToTop(new PickDeckAction());
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz = CampfireUI.class,
+            method = "initializeButtons"
+    )
+    public static class SecondUpgradeOption {
+        public static void Postfix(CampfireUI __instance) {
+            if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
+                final ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(__instance, (Class)CampfireUI.class, "buttons");
+                AbstractCampfireOption secondUpgradeOption = new UpgradeSecondDeck();
+                campfireButtons.add(secondUpgradeOption);
+                float x = 950.f;
+                float y = 990.0f - (270.0f * (float)((campfireButtons.size() + 1) / 2));
+                if (campfireButtons.size() % 2 == 0) {
+                    x = 1110.0f;
+                    campfireButtons.get(campfireButtons.size() - 2).setPosition(800.0f * Settings.scale, y * Settings.scale);
+                }
+                campfireButtons.get(campfireButtons.size() - 1).setPosition(x * Settings.scale, y * Settings.scale);
             }
         }
     }
