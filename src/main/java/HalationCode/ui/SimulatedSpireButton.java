@@ -20,7 +20,7 @@ public class SimulatedSpireButton extends TopPanelItem {
         super(IMG, ID);
     }
 
-    @Override
+    @Overrideg
     protected void onClick() {
         if (AbstractDungeon.getCurrRoom().phase != AbstractRoom.RoomPhase.COMBAT) {
             SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
