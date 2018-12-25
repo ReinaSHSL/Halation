@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.relics.PrayerWheel;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
+import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.CancelButton;
@@ -38,6 +39,7 @@ public class SimulatedSpirePatch {
                 rloc = 36
         )
         public static void Insert(CombatRewardScreen __instance) {
+            if (AbstractDungeon.getCurrRoom() instanceof TreasureRoom) return;
             RewardItem simulatedSpireRewards = new RewardItem();
             if (simulatedSpireRewards.cards.size() == 0) return;
             for (AbstractCard c : simulatedSpireRewards.cards) {
