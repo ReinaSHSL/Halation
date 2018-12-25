@@ -39,6 +39,7 @@ public class SimulatedSpirePatch {
                 rloc = 36
         )
         public static void Insert(CombatRewardScreen __instance) {
+            if (!AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) return;
             if (AbstractDungeon.getCurrRoom() instanceof TreasureRoom) return;
             RewardItem simulatedSpireRewards = new RewardItem();
             if (simulatedSpireRewards.cards.size() == 0) return;

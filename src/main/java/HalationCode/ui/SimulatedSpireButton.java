@@ -34,9 +34,11 @@ public class SimulatedSpireButton extends TopPanelItem {
 
     @Override
     public void render(SpriteBatch sb) {
-        SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
-        super.render(sb);
-        FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont, Integer.toString(r.secondDeck.size()), this.x + 58.0f * Settings.scale, this.y + 25.0f * Settings.scale, Color.WHITE.cpy());
+        if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
+            SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
+            super.render(sb);
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont, Integer.toString(r.secondDeck.size()), this.x + 58.0f * Settings.scale, this.y + 25.0f * Settings.scale, Color.WHITE.cpy());
+        }
     }
 
 
