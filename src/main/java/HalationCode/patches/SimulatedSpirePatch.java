@@ -1,9 +1,11 @@
 package HalationCode.patches;
 
 import HalationCode.HalationModInitializer;
+import HalationCode.actions.PickDeckAction;
 import HalationCode.relics.ddlc.SimulatedSpire;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowReward;
 import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
@@ -133,6 +135,18 @@ public class SimulatedSpirePatch {
                 HalationModInitializer.secondMasterDeckScreen.close();
             }
 
+        }
+    }
+
+    @SpirePatch(
+            clz = AbstractPlayer.class,
+            method = "preBattlePrep"
+    )
+    public static class ChooseDeckPatch {
+        public static void Postfix(AbstractPlayer __instance) {
+            if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
+                AbstractDungeon.actionManager.addToTop(new PickDeckAction());
+            }
         }
     }
 
