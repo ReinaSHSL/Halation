@@ -36,7 +36,7 @@ import HalationCode.relics.persona5.PenCase;
 import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
 import HalationCode.relics.steinsgate.Convergence;
-import HalationCode.ui.SimulatedSpireButton;
+import HalationCode.screens.SecondMasterDeckViewScreen;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -57,13 +57,13 @@ public class HalationModInitializer implements
         StartActSubscriber,
         PostUpdateSubscriber,
         EditCardsSubscriber,
-        PostCampfireSubscriber,
-        PostDungeonInitializeSubscriber
+        PostCampfireSubscriber
 {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Relics I guess.";
     private static boolean infiniteLoaded = Loader.isModLoaded("infinitespire");
+    public static SecondMasterDeckViewScreen secondMasterDeckScreen;
 
     public HalationModInitializer() {
         BaseMod.subscribe(this);
@@ -145,7 +145,9 @@ public class HalationModInitializer implements
     public void receivePostInitialize() {
         BaseMod.addEvent(Contract.ID, Contract.class);
         BaseMod.addEvent(FieldOfFlowers.ID, FieldOfFlowers.class);
-        BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);}
+        BaseMod.addEvent(AntiShadowMachine.ID, AntiShadowMachine.class, TheBeyond.ID);
+        secondMasterDeckScreen = new SecondMasterDeckViewScreen();
+    }
 
     @Override
     public void receiveStartAct() {
@@ -184,12 +186,4 @@ public class HalationModInitializer implements
         return true;
     }
 
-    @Override
-    public void receivePostDungeonInitialize() {
-        if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
-            BaseMod.addTopPanelItem(
-                    new SimulatedSpireButton()
-            );
-        }
-    }
 }

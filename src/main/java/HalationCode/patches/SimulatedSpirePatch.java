@@ -1,5 +1,6 @@
 package HalationCode.patches;
 
+import HalationCode.HalationModInitializer;
 import HalationCode.relics.ddlc.SimulatedSpire;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +13,10 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
+import com.megacrit.cardcrawl.ui.buttons.CancelButton;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 
@@ -62,6 +66,9 @@ public class SimulatedSpirePatch {
                 if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
                     SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
                     r.secondDeck.addToBottom(c);
+                    for (AbstractRelic re : AbstractDungeon.player.relics) {
+                        re.onMasterDeckChange();
+                    }
                     return SpireReturn.Return(null);
                 }
             }
@@ -96,6 +103,42 @@ public class SimulatedSpirePatch {
         }
     }
 
+    @SpirePatch(
+            clz = CancelButton.class,
+            method = "hide"
+    )
+    public static class CancelButtonHide {
+        public static void Postfix(CancelButton __instance) {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID && AbstractDungeon.previousScreen == SECOND_MASTER_DECK) {
+                HalationModInitializer.secondMasterDeckScreen.open();
+            }
+        }
+    }
+    @SpirePatch(
+            clz=AbstractDungeon.class,
+            method="closeCurrentScreen"
+    )
+    public static class CloseCurrentScreen {
+        public static void Prefix() {
+            if(AbstractDungeon.screen == SECOND_MASTER_DECK) {
+                try {
+                    Method overlayReset = AbstractDungeon.class.getDeclaredMethod("genericScreenOverlayReset");
+                    overlayReset.setAccessible(true);
+                    overlayReset.invoke(AbstractDungeon.class);
+                } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                AbstractDungeon.overlayMenu.hideBlackScreen();
+                HalationModInitializer.secondMasterDeckScreen.close();
+            }
+
+        }
+    }
+
     @SpireEnum
     public static NeowReward.NeowRewardType SIMULATED_SPIRE;
+    @SpireEnum
+    public static AbstractDungeon.CurrentScreen SECOND_MASTER_DECK;
+
 }
