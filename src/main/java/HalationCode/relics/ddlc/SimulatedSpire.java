@@ -25,6 +25,7 @@ public class SimulatedSpire extends CustomRelic implements CustomSavable<Integer
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public CardGroup secondDeck = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    private SimulatedSpireButton simulatedSpireButton = new SimulatedSpireButton();
 
     public SimulatedSpire() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -61,8 +62,11 @@ public class SimulatedSpire extends CustomRelic implements CustomSavable<Integer
 
     @Override
     public void onLoad(Integer i) {
-        BaseMod.addTopPanelItem(
-                new SimulatedSpireButton()
-        );
+        BaseMod.addTopPanelItem(simulatedSpireButton);
+    }
+
+    @Override
+    public void onUnequip() {
+        BaseMod.removeTopPanelItem(simulatedSpireButton);
     }
 }

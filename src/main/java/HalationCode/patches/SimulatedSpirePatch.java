@@ -134,7 +134,6 @@ public class SimulatedSpirePatch {
                     overlayReset.setAccessible(true);
                     overlayReset.invoke(AbstractDungeon.class);
                 } catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
                 AbstractDungeon.overlayMenu.hideBlackScreen();

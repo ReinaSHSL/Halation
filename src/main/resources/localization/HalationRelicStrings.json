@@ -383,7 +383,7 @@
   "halation:SimulatedSpire": {
     "NAME": "Simulated Spire",
     "DESCRIPTIONS": [
-      "Obtain a #ySecond #yDeck that copies your starter deck. Upon ending combat, there will be an #yadditional #ycard #yreward you can add to your #ySecond #yDeck. Press the button in the top right to swap between your #ySecond #yAnd #yMain #yDeck.",
+      "Obtain a #ySecond #yDeck that copies your starter deck. Upon ending combat, there will be an #yadditional #ycard #yreward you can add to your #ySecond #yDeck. At the start of combat, pick a deck to use.",
       "Add a card to your second deck"
     ],
     "FLAVOR": "Every day, I imagine a future where I can be with you."
