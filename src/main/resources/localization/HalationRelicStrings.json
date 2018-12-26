@@ -174,7 +174,7 @@
   "halation:PapillonHeart": {
     "NAME": "Papillon Heart",
     "DESCRIPTIONS": [
-      "Every #b4 turns, at the start of your turn, your entire hand is played at no cost and exhausts. They are played in a random order and target random enemies."
+      "Every #b4 turns, at the start of your turn, your entire hand is played at no cost. They target random enemies."
     ],
     "FLAVOR": "It is precisely because I cannot die, that I can say, I will always be by your side."
   },
@@ -387,5 +387,10 @@
       "Add a card to your second deck"
     ],
     "FLAVOR": "Every day, I imagine a future where I can be with you."
+  },
+  "halation:Pancakes": {
+    "NAME": "Pancakes",
+    "DESCRIPTIONS": "Upon pickup, heal #b75% of your missing health.",
+    "FLAVOR": "I heard something about delicious pancakes..."
   }
 }

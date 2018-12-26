@@ -30,5 +30,12 @@ public class Pancakes extends CustomRelic {
         return new Pancakes();
     }
 
+    @Override
+    public void onEquip() {
+        int missingHealth = AbstractDungeon.player.maxHealth - AbstractDungeon.player.currentHealth;
+        int healthToHeal = (int)(missingHealth * 0.75);
+        AbstractDungeon.player.heal(healthToHeal);
+    }
+
 
 }
