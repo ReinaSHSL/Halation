@@ -3,12 +3,13 @@ package HalationCode.relics.lovelive;
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class LoveArrow extends CustomRelic {
+public class LoveArrow extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:LoveArrow";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/LoveArrow.png");
     private AbstractPlayer p = AbstractDungeon.player;

@@ -23,7 +23,7 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
     private boolean usedThisCombat = false;
 
     public VictoryRuler() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.CLINK);
+        super(ID, IMG, RelicTier.RARE, LandingSound.CLINK);
     }
 
     @Override
@@ -51,8 +51,8 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
         if (indexTwo < AbstractDungeon.getCurrRoom().monsters.monsters.size()) {
             //comment: Kio if you read this please no bully
             otherM = AbstractDungeon.getCurrRoom().monsters.monsters.get(indexTwo);
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, m.currentHealth/4, DamageInfo.DamageType.NORMAL)));
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(otherM, new DamageInfo(p, m.currentHealth/4, DamageInfo.DamageType.NORMAL)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, m.maxHealth/4, DamageInfo.DamageType.NORMAL)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(otherM, new DamageInfo(p, m.maxHealth/4, DamageInfo.DamageType.NORMAL)));
         } else {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL)));
         }
