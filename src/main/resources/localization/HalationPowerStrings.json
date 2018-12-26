@@ -36,5 +36,17 @@
       "At the start of the turn, heal all combatants for #b",
       " health."
     ]
+  },
+  "halation:AttractivePower": {
+    "NAME": "Attractive",
+    "DESCRIPTIONS": [
+      "Every other enemy seems to have the hots for this one. Does 50% more damage out of confidence."
+    ]
+  },
+  "halation:ActualSurroundedPower": {
+    "NAME": "Surrounded",
+    "DESCRIPTIONS": [
+      "Receives 50% more damage."
+    ]
   }
 }

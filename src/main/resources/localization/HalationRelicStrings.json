@@ -392,5 +392,12 @@
     "NAME": "Pancakes",
     "DESCRIPTIONS": "Upon pickup, heal #b75% of your missing health.",
     "FLAVOR": "I heard something about delicious pancakes..."
+  },
+  "halation:LoveArrow": {
+    "NAME": "Love Arrow",
+    "DESCRIPTIONS": [
+      "Target an enemy. Every enemy between you and it becomes Surrounded until the targeted enemy dies. The targeted enemy deals #b50% more damage. #rCan #ronly #rbe #rused #ronce #rper #rcombat."
+    ],
+    "FLAVOR": "LOVE ARROW SHOOT"
   }
 }

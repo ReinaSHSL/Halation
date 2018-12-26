@@ -1,5 +1,6 @@
 package HalationCode.actions;
 
+import HalationCode.relics.lovelive.LoveArrow;
 import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import basemod.BaseMod;
 import basemod.interfaces.PostUpdateSubscriber;
@@ -61,9 +62,14 @@ public class TargetAction implements RenderSubscriber, PostUpdateSubscriber {
             if (this.hoveredCreature != null && this.hoveredCreature != AbstractDungeon.player) {
                switch (r.relicId) {
                    case VictoryRuler.ID:
-                       System.out.println(hoveredCreature);
-                       VictoryRuler re = (VictoryRuler) r;
-                       re.knockbackMonster(hoveredCreature);
+                       VictoryRuler ruler = (VictoryRuler)r;
+                       ruler.knockbackMonster(hoveredCreature);
+                       com.megacrit.cardcrawl.core.GameCursor.hidden = false;
+                       close();
+                       break;
+                   case LoveArrow.ID:
+                       LoveArrow arrow = (LoveArrow)r;
+                       arrow.arrowShoot(hoveredCreature);
                        com.megacrit.cardcrawl.core.GameCursor.hidden = false;
                        close();
                        break;
