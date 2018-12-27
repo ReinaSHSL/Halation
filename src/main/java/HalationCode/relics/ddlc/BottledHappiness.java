@@ -90,7 +90,6 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
                 AbstractDungeon.overlayMenu.cancelButton.hide();
                 AbstractDungeon.previousScreen = AbstractDungeon.screen;
             }
-            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
             AbstractDungeon.gridSelectScreen.open(CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck),
                     1, DESCRIPTIONS[1] + name + ".",
                     false, false, false, false);
@@ -121,8 +120,9 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
             cardSelected = true;
             cards.add(AbstractDungeon.gridSelectScreen.selectedCards.get(0));
             BottledHappinessPatch.inBottledHappiness.set(AbstractDungeon.gridSelectScreen.selectedCards.get(0), true);
-            AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.INCOMPLETE) {
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+            }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             setDescriptionAfterLoading();
         }
@@ -131,14 +131,19 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
     private void setDescriptionAfterLoading()
     {
         StringBuilder s = new StringBuilder();
-        for (AbstractCard c : this.cards) {
-            if (this.cards.indexOf(c) != this.cards.size() - 1) {
-                s.append(FontHelper.colorString(c.name, "y")).append(", ");
-            } else {
-                s.append("and ").append(FontHelper.colorString(c.name, "y"));
+        String finalString;
+        if (this.cards.size() == 1) {
+            finalString = this.cards.get(0).name;
+        } else {
+            for (AbstractCard c : this.cards) {
+                if (this.cards.indexOf(c) != this.cards.size() - 1) {
+                    s.append(FontHelper.colorString(c.name, "y")).append(", ");
+                } else {
+                    s.append("and ").append(FontHelper.colorString(c.name, "y"));
+                }
             }
+            finalString = s.toString();
         }
-        String finalString = s.toString();
         description = finalString + DESCRIPTIONS[2];
         tips.clear();
         tips.add(new PowerTip(name, description));
