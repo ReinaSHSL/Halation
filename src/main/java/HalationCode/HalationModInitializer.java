@@ -164,6 +164,7 @@ public class HalationModInitializer implements
 
     @Override
     public void receivePostUpdate() {
+        if (AbstractDungeon.player == null) return;
         if (AbstractDungeon.player.hasRelic(Convergence.ID)) Convergence.relicBullshit();
         if (AbstractDungeon.player.hasRelic(StarCompass.ID)) StarCompass.relicBullshit();
         if (AbstractDungeon.player.hasRelic(HeavySnake.ID)) HeavySnake.cardEffects();

@@ -30,7 +30,7 @@ public class KoshaPiece extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0];
     }
 
     @Override

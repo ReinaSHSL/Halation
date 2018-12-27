@@ -202,7 +202,7 @@
   "halation:Komachan": {
     "NAME": "Komachan",
     "DESCRIPTIONS": [
-      "The next room you can go to becomes a Rest Site. Can only be used #ronce."
+      " The next room you can go to becomes a Rest Site. Can only be used #ronce."
     ],
     "FLAVOR": "Koma-chan always said to be prepared!"
   },
@@ -216,7 +216,7 @@
   "halation:Gekota": {
     "NAME": "Gekota",
     "DESCRIPTIONS": [
-      "Evoke an orb."
+      " Evoke an orb."
     ],
     "FLAVOR": "Biribiri."
   },
@@ -230,7 +230,7 @@
   "halation:VictoryRuler": {
     "NAME": "Victory Ruler",
     "DESCRIPTIONS": [
-      "Knock back an enemy into the one behind it, dealing #b25% of its Max HP to both enemies. If there is no enemy behind your target, deal #b2 damage."
+      " Knock back an enemy into the one behind it, dealing #b25% of its Max HP to both enemies. If there is no enemy behind your target, deal #b2 damage."
     ],
     "FLAVOR": "The spirit of teamwork emanates from this ruler. You can feel the sacrifices it has made to make it this far."
   },
@@ -340,7 +340,7 @@
   "halation:KoshaPiece": {
     "NAME": "Kosha Piece",
     "DESCRIPTIONS": [
-      "If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #1b Power, you can right click this relic to flee the combat."
+      " If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #1b Power, you can flee the combat."
     ],
     "FLAVOR": "I feel...a gambler's spirit emanating from you."
   },
@@ -390,20 +390,22 @@
   },
   "halation:Pancakes": {
     "NAME": "Pancakes",
-    "DESCRIPTIONS": "Upon pickup, heal #b75% of your missing health.",
+    "DESCRIPTIONS": [
+      "Upon pickup, heal #b75% of your missing health."
+    ],
     "FLAVOR": "I heard something about delicious pancakes..."
   },
   "halation:LoveArrow": {
     "NAME": "Love Arrow",
     "DESCRIPTIONS": [
-      "Target an enemy. Every enemy between you and it becomes Surrounded until the targeted enemy dies. The targeted enemy deals #b50% more damage. #rCan #ronly #rbe #rused #ronce #rper #rcombat."
+      " Target an enemy. Every enemy between you and it becomes Surrounded until the targeted enemy dies. The targeted enemy deals #b50% more damage. #rCan #ronly #rbe #rused #ronce #rper #rcombat."
     ],
     "FLAVOR": "LOVE ARROW SHOOT"
   },
   "halation:ShiningIdol": {
     "NAME": "Shining Idol",
     "DESCRIPTIONS": [
-  "When you spend gold at a shop, #yUpgrade #b3 random cards."
+      "When you spend gold at a shop, #yUpgrade #b3 random cards."
     ],
     "FLAVOR": "Getting used to it would be quicker than trying to work around it somehow."
   }
