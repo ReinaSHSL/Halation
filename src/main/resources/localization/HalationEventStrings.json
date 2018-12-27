@@ -79,5 +79,15 @@
       "2",
       "3"
     ]
+  },
+  "halation:ShiningIdol": {
+    "NAME": "Forgotten Altar",
+    "DESCRIPTIONS": [
+      "0"
+    ],
+    "OPTIONS": [
+      "0",
+      "1"
+    ]
   }
 }

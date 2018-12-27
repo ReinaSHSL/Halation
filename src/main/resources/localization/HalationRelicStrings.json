@@ -399,5 +399,12 @@
       "Target an enemy. Every enemy between you and it becomes Surrounded until the targeted enemy dies. The targeted enemy deals #b50% more damage. #rCan #ronly #rbe #rused #ronce #rper #rcombat."
     ],
     "FLAVOR": "LOVE ARROW SHOOT"
+  },
+  "halation:ShiningIdol": {
+    "NAME": "Shining Idol",
+    "DESCRIPTIONS": [
+  "When you spend gold at a shop, #yUpgrade #b3 random cards."
+    ],
+    "FLAVOR": "Getting used to it would be quicker than trying to work around it somehow."
   }
 }

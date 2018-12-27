@@ -23,7 +23,10 @@ public class VampiresLoveDonutsPatch {
     public static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     public static final String[] OPTIONS = eventStrings.OPTIONS;
 
-    @SpirePatch(clz = Vampires.class, method = SpirePatch.CONSTRUCTOR)
+    @SpirePatch(
+            clz = Vampires.class,
+            method = SpirePatch.CONSTRUCTOR
+    )
     public static class Constructor {
         public static void Postfix(Vampires __instance) {
             if (AbstractDungeon.player.hasRelic(TwoAmDonut.ID)) {

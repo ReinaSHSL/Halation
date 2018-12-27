@@ -19,6 +19,7 @@ import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
 import HalationCode.relics.hsl.BottledLove;
 import HalationCode.relics.katawashoujo.*;
+import HalationCode.relics.lovelive.ShiningIdol;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
 import HalationCode.relics.madoka.*;
@@ -127,6 +128,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new CatFaceCupcake(), RelicType.SHARED);
         BaseMod.addRelic(new Thesaurus(), RelicType.SHARED);
         BaseMod.addRelic(new SimulatedSpire(), RelicType.SHARED);
+        BaseMod.addRelic(new ShiningIdol(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);
@@ -162,13 +164,14 @@ public class HalationModInitializer implements
 
     @Override
     public void receivePostUpdate() {
-        Convergence.relicBullshit();
-        StarCompass.relicBullshit();
-        HeavySnake.cardEffects();
-        NonexistentMirror.cardEffects();
-        PrussianBluePaint.cardEffects();
-        Jellyphish.fuckmeintheASS();
-        SmartPhone.morePostUpdateBullshit();
+        if (AbstractDungeon.player.hasRelic(Convergence.ID)) Convergence.relicBullshit();
+        if (AbstractDungeon.player.hasRelic(StarCompass.ID)) StarCompass.relicBullshit();
+        if (AbstractDungeon.player.hasRelic(HeavySnake.ID)) HeavySnake.cardEffects();
+        if (AbstractDungeon.player.hasRelic(NonexistentMirror.ID)) NonexistentMirror.cardEffects();
+        if (AbstractDungeon.player.hasRelic(PrussianBluePaint.ID)) PrussianBluePaint.cardEffects();
+        if (AbstractDungeon.player.hasRelic(Jellyphish.ID)) Jellyphish.fuckmeintheASS();
+        if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) SmartPhone.morePostUpdateBullshit();
+        if (AbstractDungeon.player.hasRelic(ShiningIdol.ID)) ShiningIdol.cardEffects();
     }
 
     @Override
