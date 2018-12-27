@@ -26,7 +26,7 @@ public class LoveArrow extends CustomRelic implements ClickableRelic {
     private boolean usedThisCombat = false;
 
     public LoveArrow() {
-        super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
     }
 
     @Override

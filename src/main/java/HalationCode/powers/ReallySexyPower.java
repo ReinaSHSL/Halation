@@ -42,8 +42,10 @@ public class ReallySexyPower extends AbstractPower {
     @Override
     public void onDeath() {
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            m.flipHorizontal = false;
-            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(m, m, ActualSurroundedWtfPower.POWER_ID));
+            if (m.hasPower(ActualSurroundedWtfPower.POWER_ID)) {
+                m.flipHorizontal = false;
+                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(m, m, ActualSurroundedWtfPower.POWER_ID));
+            }
         }
     }
 }
