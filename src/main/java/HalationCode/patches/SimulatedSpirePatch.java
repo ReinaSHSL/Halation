@@ -94,7 +94,7 @@ public class SimulatedSpirePatch {
     public static class AddToNeow {
         public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
                 if (category == 3) {
-                    __result.add(new NeowRewardDef(SIMULATED_SPIRE, "#rLose #ryour #ystarter #yRelic. #gObtain #ySimulated #ySpire"));
+                    __result.add(new NeowRewardDef(SIMULATED_SPIRE, "#rLose #ryour #rstarter #rRelic. #gObtain #ySimulated #ySpire"));
                 }
                 return __result;
         }
@@ -105,11 +105,13 @@ public class SimulatedSpirePatch {
             method = "activate"
     )
     public static class ActivatePatch {
-        public static void PostFix(NeowReward __instance) {
+        public static void Prefix(NeowReward __instance) {
+            System.out.println("HELLO BITCHESSS " + __instance.type);
             if (__instance.type == SIMULATED_SPIRE) {
+                System.out.println("SHIT GET");
                 AbstractRelic r = AbstractDungeon.player.relics.get(0);
                 AbstractDungeon.player.loseRelic(r.relicId);
-                AbstractDungeon.player.getRelic(SimulatedSpire.ID);
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 3, Settings.HEIGHT / 2, new SimulatedSpire());
             }
         }
     }

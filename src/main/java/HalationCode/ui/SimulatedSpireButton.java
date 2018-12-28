@@ -27,6 +27,10 @@ public class SimulatedSpireButton extends TopPanelItem {
 
     @Override
     protected void onClick() {
+        if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
+            AbstractDungeon.closeCurrentScreen();
+            return;
+        }
         SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
         AbstractDungeon.gridSelectScreen.open(r.secondDeck, 999, "Second Deck", false, false, false, false);
         AbstractDungeon.overlayMenu.cancelButton.show("Return");
