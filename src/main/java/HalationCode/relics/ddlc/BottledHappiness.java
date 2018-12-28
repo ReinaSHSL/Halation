@@ -138,6 +138,8 @@ public class BottledHappiness extends CustomRelic implements CustomBottleRelic, 
             for (AbstractCard c : this.cards) {
                 if (this.cards.indexOf(c) != this.cards.size() - 1) {
                     s.append(FontHelper.colorString(c.name, "y")).append(", ");
+                } if (this.cards.indexOf(c) == this.cards.size() -1) {
+                    s.append(FontHelper.colorString(c.name, "y")).append(" ");
                 } else {
                     s.append("and ").append(FontHelper.colorString(c.name, "y"));
                 }
