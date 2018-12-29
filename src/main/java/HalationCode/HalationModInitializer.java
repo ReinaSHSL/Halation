@@ -19,6 +19,7 @@ import HalationCode.relics.hibike.Trompette;
 import HalationCode.relics.hibike.Yufonium;
 import HalationCode.relics.hsl.BottledLove;
 import HalationCode.relics.katawashoujo.*;
+import HalationCode.relics.lovelive.LoveArrow;
 import HalationCode.relics.lovelive.ShiningIdol;
 import HalationCode.relics.madeinabyss.EternalFortune;
 import HalationCode.relics.madeinabyss.StarCompass;
@@ -129,6 +130,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new Thesaurus(), RelicType.SHARED);
         BaseMod.addRelic(new SimulatedSpire(), RelicType.SHARED);
         BaseMod.addRelic(new ShiningIdol(), RelicType.SHARED);
+        BaseMod.addRelic(new LoveArrow(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);
