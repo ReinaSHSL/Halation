@@ -77,6 +77,8 @@ public class Diary extends CustomRelic {
                 Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
                 setBoss.setAccessible(true);
                 setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                pickBoss = false;
             } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
                 e.printStackTrace();
             }
