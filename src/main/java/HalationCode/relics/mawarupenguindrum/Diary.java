@@ -54,10 +54,12 @@ public class Diary extends CustomRelic {
                 bossList.addToTop(new DiaryChoiceCard("Collector"));
                 bossList.addToTop(new DiaryChoiceCard("Champ"));
                 bossList.addToTop(new DiaryChoiceCard("Automaton"));
+                break;
             case TheBeyond.ID:
                 bossList.addToTop(new DiaryChoiceCard("Time Eater"));
                 bossList.addToTop(new DiaryChoiceCard("Donu and Deca"));
                 bossList.addToTop(new DiaryChoiceCard("Awakened One"));
+                break;
             case TheEnding.ID:
                 bossList.addToTop(new DiaryChoiceCard("The Heart"));
         }
