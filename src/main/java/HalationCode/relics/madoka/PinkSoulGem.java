@@ -44,7 +44,7 @@ public class PinkSoulGem extends CustomRelic implements ClickableRelic, BetterOn
         if (this.counter == -1) {
             this.counter = 0;
         }
-        this.counter += damageAmount * 2;
+        this.counter += damageAmount;
         return damageAmount;
     }
 }
