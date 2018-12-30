@@ -51,9 +51,14 @@ public class LoveArrow extends CustomRelic implements ClickableRelic {
         if (m.id.equals(SpireSpear.ID) || m.id.equals(SpireShield.ID)) return;
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new ReallySexyPower(m)));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (mo.hasPower(ReallySexyPower.POWER_ID)) return;
+            if (mo == m) return;
             mo.flipHorizontal = true;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new ActualSurroundedWtfPower(mo)));
         }
+    }
+
+    @Override
+    public void onVictory() {
+        this.usedThisCombat = false;
     }
 }

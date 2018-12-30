@@ -28,6 +28,11 @@ public class ReallySexyPower extends AbstractPower {
     }
 
     @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;

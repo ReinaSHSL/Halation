@@ -22,6 +22,11 @@ public class ActualSurroundedWtfPower extends AbstractPower {
     }
 
     @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public float atDamageReceive(float dmg, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) return dmg * 1.5F;
         return dmg;
