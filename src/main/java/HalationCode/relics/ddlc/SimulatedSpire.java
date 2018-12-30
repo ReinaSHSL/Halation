@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.cards.curses.AscendersBane;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,8 +19,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import javax.smartcardio.Card;
 import java.util.ArrayList;
+import java.util.List;
 
-public class SimulatedSpire extends CustomRelic implements CustomSavable<Integer> {
+public class SimulatedSpire extends CustomRelic implements CustomSavable<List<CardSave>> {
     public static final String ID = "halation:SimulatedSpire";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/SimulatedSpire.png");
     private AbstractPlayer p = AbstractDungeon.player;
@@ -56,13 +58,20 @@ public class SimulatedSpire extends CustomRelic implements CustomSavable<Integer
     }
 
     @Override
-    public Integer onSave() {
-        return 0;
+    public List<CardSave> onSave() {
+        ArrayList<CardSave> retVal = new ArrayList<>();
+        for (AbstractCard card : this.secondDeck.group) {
+            retVal.add(new CardSave(card.cardID, card.timesUpgraded, card.misc));
+        }
+        return retVal;
     }
 
     @Override
-    public void onLoad(Integer i) {
+    public void onLoad(List<CardSave> cardSaves) {
         BaseMod.addTopPanelItem(simulatedSpireButton);
+        for (CardSave s : cardSaves) {
+            this.secondDeck.addToBottom(CardLibrary.getCopy(s.id, s.upgrades, s.misc));
+        }
     }
 
     @Override
