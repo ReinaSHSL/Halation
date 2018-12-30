@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
 
-public class Convergence extends CustomRelic implements ClickableRelic{
+public class Convergence extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:Convergence";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Convergence.png");
     private static int startHp = 0;

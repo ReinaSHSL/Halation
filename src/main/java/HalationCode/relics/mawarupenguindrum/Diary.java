@@ -4,6 +4,7 @@ import HalationCode.cards.DiaryChoiceCard;
 import HalationCode.tools.TextureLoader;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -15,12 +16,13 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Diary extends CustomRelic {
+public class Diary extends CustomRelic implements CustomSavable<String> {
     public static final String ID = "halation:Diary";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Diary.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private static boolean pickBoss = true;
+    private static String pickedBoss = null;
 
     public Diary() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
@@ -74,6 +76,7 @@ public class Diary extends CustomRelic {
                 pickBoss = false;
                 DiaryChoiceCard selected = (DiaryChoiceCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0);
                 AbstractDungeon.bossKey = selected.name;
+                pickedBoss = selected.name;
                 Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
                 setBoss.setAccessible(true);
                 setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
@@ -92,5 +95,22 @@ public class Diary extends CustomRelic {
 
     public static void newAct() {
         AbstractDungeon.player.getRelic(Diary.ID).onEquip();
+    }
+
+    @Override
+    public String onSave() {
+        return pickedBoss;
+    }
+
+    @Override
+    public void onLoad(String s) {
+        try {
+            AbstractDungeon.bossKey = s;
+            Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
+            setBoss.setAccessible(true);
+            setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 }
