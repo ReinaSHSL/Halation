@@ -15,7 +15,6 @@ public class LetterOfLove extends CustomCard {
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = null;
     private static final int COST = 0;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.SPECIAL;
@@ -46,8 +45,6 @@ public class LetterOfLove extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(2);
-            this.rawDescription = UPGRADED_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 }
