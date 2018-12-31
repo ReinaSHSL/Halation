@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.city.ForgottenAltar;
 import com.megacrit.cardcrawl.events.city.Vampires;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.GoldenIdol;
 
 public class ShiningIdolPatch {
@@ -38,21 +39,17 @@ public class ShiningIdolPatch {
     )
     public static class ButtonEffectPatch {
         public static SpireReturn Prefix(ForgottenAltar __instance, @ByRef int[] buttonPressed) {
-            if ((int) ReflectionHacks.getPrivate(__instance, ForgottenAltar.class, "screenNum") == 0) {
-                if (buttonPressed[0] == 3) {
-                    AbstractDungeon.player.loseRelic(GoldenIdol.ID);
-                    UPDATEBODYTEXT(__instance);
-                    ReflectionHacks.setPrivate(__instance, ForgottenAltar.class, "screenNum", 1);
-                    return SpireReturn.Return(null);
-                }
+            if (buttonPressed[0] == 3) {
+                AbstractRelic goldenIdol = AbstractDungeon.player.getRelic(GoldenIdol.ID);
+                int relicIndex = AbstractDungeon.player.relics.indexOf(goldenIdol);
+                AbstractDungeon.player.loseRelic(GoldenIdol.ID);
+                AbstractRelic shiningIdol = new ShiningIdol();
+                shiningIdol.instantObtain(AbstractDungeon.player, relicIndex, false);
+                __instance.showProceedScreen(DESCRIPTIONS[0]);
+                ReflectionHacks.setPrivate(__instance, ForgottenAltar.class, "screenNum", 1);
+                return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
-        }
-
-        private static void UPDATEBODYTEXT(ForgottenAltar __instance) {
-            __instance.imageEventText.updateBodyText(DESCRIPTIONS[0]);
-            __instance.imageEventText.updateDialogOption(0, OPTIONS[1]);
-            __instance.imageEventText.clearRemainingOptions();
         }
     }
 }
