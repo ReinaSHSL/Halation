@@ -29,7 +29,7 @@ public class Komachan extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[1] + DESCRIPTIONS[0];
     }
 
     @Override

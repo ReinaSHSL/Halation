@@ -42,13 +42,13 @@ public class Thesaurus extends CustomRelic {
     public void onEquip() {
         this.cardsSelected = false;
         final CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        for (final AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
             if (
                     card.type != AbstractCard.CardType.CURSE
                     || card.color != AbstractCard.CardColor.CURSE
                     || !card.hasTag(BaseModCardTags.BASIC_STRIKE)
-                    || !card.hasTag(BaseModCardTags.BASIC_DEFEND))
-            {
+                    || !card.hasTag(BaseModCardTags.BASIC_DEFEND)
+            ) {
                 tmp.addToTop(card);
             }
         }
@@ -91,6 +91,42 @@ public class Thesaurus extends CustomRelic {
             AbstractDungeon.dynamicBanner.hide();
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
             AbstractDungeon.gridSelectScreen.open(tmp, 3, this.DESCRIPTIONS[1], false, false, false, false);
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (!this.cardsSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == 3) {
+            thesaurusSwap();
+        }
+    }
+
+    private void thesaurusSwap() {
+        this.cardsSelected = true;
+        for (final AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
+            ArrayList<AbstractCard.CardRarity> rarities = new ArrayList<>();
+            ArrayList<AbstractCard.CardRarity> newRarities = new ArrayList<>();
+            rarities.add(card.rarity);
+            for (AbstractCard.CardRarity r : rarities) {
+                switch (r) {
+                    case COMMON:
+                        newRarities.add(AbstractCard.CardRarity.UNCOMMON);
+                    case UNCOMMON:
+                        newRarities.add(AbstractCard.CardRarity.RARE);
+                    case RARE:
+                        newRarities.add(AbstractCard.CardRarity.COMMON);
+                    case BASIC:
+                        newRarities.add(AbstractCard.CardRarity.UNCOMMON);
+                    default:
+                        newRarities.add(AbstractCard.CardRarity.UNCOMMON);
+                }
+            }
+            AbstractDungeon.player.masterDeck.removeCard(card);
+            for (AbstractCard.CardRarity r : newRarities) {
+                AbstractCard c = AbstractDungeon.getCard(r);
+                AbstractDungeon.player.masterDeck.addToBottom(c.makeCopy());
+            }
         }
     }
 }
