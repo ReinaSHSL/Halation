@@ -47,6 +47,7 @@ public class KoshaPiece extends CustomRelic implements ClickableRelic {
             AbstractDungeon.player.isEscaping = true;
             AbstractDungeon.overlayMenu.endTurnButton.disable();
             AbstractDungeon.player.escapeTimer = 2.5f;
+            this.counter = 0;
         }
     }
 

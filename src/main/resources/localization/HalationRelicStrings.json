@@ -340,7 +340,7 @@
   "halation:KoshaPiece": {
     "NAME": "Kosha Piece",
     "DESCRIPTIONS": [
-      " If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #1b Power, you can flee the combat."
+      " If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #b1 Power, you can flee the combat."
     ],
     "FLAVOR": "I feel...a gambler's spirit emanating from you."
   },
@@ -377,7 +377,7 @@
   "halation:Thesaurus": {
     "NAME": "Thesaurus",
     "DESCRIPTIONS": [
-      "Upon pickup, choose #b3 non-Strike or Defend cards. They are transformed into a card one rarity higher. #yRares become #rcommon. #rCurses, Strikes or Defends cannot be chosen.",
+      "Upon pickup, choose #b3 non-Strike or Defend cards. They are transformed into a card one rarity higher. #yRares become #rcommon. Curses, Strikes or Defends cannot be chosen.",
       "Pick 3 cards to find synonyms."
     ]
   },

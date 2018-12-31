@@ -34,6 +34,7 @@ import HalationCode.relics.nonnonbiyori.VictoryRuler;
 import HalationCode.relics.persona3.PapillonHeart;
 import HalationCode.relics.persona3.PinkAlligatorPlush;
 import HalationCode.relics.persona5.KoshaPiece;
+import HalationCode.relics.persona5.Pancakes;
 import HalationCode.relics.persona5.PenCase;
 import HalationCode.relics.persona5.PromiseList;
 import HalationCode.relics.railgun.Gekota;
@@ -131,6 +132,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new SimulatedSpire(), RelicType.SHARED);
         BaseMod.addRelic(new ShiningIdol(), RelicType.SHARED);
         BaseMod.addRelic(new LoveArrow(), RelicType.SHARED);
+        BaseMod.addRelic(new Pancakes(), RelicType.SHARED);
 
         if (infiniteLoaded) {
             BaseMod.addRelic(new PromiseList(), RelicType.SHARED);

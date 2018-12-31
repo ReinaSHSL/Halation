@@ -40,13 +40,10 @@ public class ShiningIdolPatch {
     public static class ButtonEffectPatch {
         public static SpireReturn Prefix(ForgottenAltar __instance, @ByRef int[] buttonPressed) {
             if (buttonPressed[0] == 3) {
-                AbstractRelic goldenIdol = AbstractDungeon.player.getRelic(GoldenIdol.ID);
-                int relicIndex = AbstractDungeon.player.relics.indexOf(goldenIdol);
                 AbstractDungeon.player.loseRelic(GoldenIdol.ID);
                 AbstractRelic shiningIdol = new ShiningIdol();
-                shiningIdol.instantObtain(AbstractDungeon.player, relicIndex, false);
+                shiningIdol.instantObtain();
                 __instance.showProceedScreen(DESCRIPTIONS[0]);
-                ReflectionHacks.setPrivate(__instance, ForgottenAltar.class, "screenNum", 1);
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();
