@@ -38,7 +38,10 @@
   "halation:YellowSoulGem": {
     "NAME": "Yellow Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal #b15 damage to ALL enemies. Apply #b99 Vulnerable to yourself. Can only be used once per combat and only up to #b8 times overall."
+      " Deal #b",
+      "damage to ALL enemies. Apply #b",
+      " Vulnerable to yourself. Can only be used once per combat and only up to #b",
+      " times overall."
     ],
     "FLAVOR": "If you’re not 100% sure why you’re doing it, you’ll most certainly regret it later."
   },

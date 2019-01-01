@@ -20,6 +20,9 @@ public class YellowSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:YellowSoulGem";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/YellowSoulGem.png");
     private boolean usedThisTurn;
+    private static final int DAMAGE_AMT = 15;
+    private static final int USAGE_LIMIT = 8;
+    private static final int VULN_AMT = 99;
 
     public YellowSoulGem() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -27,7 +30,7 @@ public class YellowSoulGem extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + DAMAGE_AMT + DESCRIPTIONS[1] + VULN_AMT + DESCRIPTIONS[2] + USAGE_LIMIT + DESCRIPTIONS[3];
     }
 
     @Override
@@ -41,11 +44,11 @@ public class YellowSoulGem extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new MindblastEffect(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, AbstractDungeon.player.flipHorizontal), 0.1f));
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(AbstractDungeon.player, 15,
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(AbstractDungeon.player, DAMAGE_AMT,
                         DamageInfo.DamageType.NORMAL)));
             }
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new VulnerablePower(AbstractDungeon.player, 99, false)));
+                    new VulnerablePower(AbstractDungeon.player, VULN_AMT, false), VULN_AMT));
             this.counter++;
             counterCheck();
             this.usedThisTurn = true;
@@ -57,7 +60,7 @@ public class YellowSoulGem extends CustomRelic implements ClickableRelic {
     }
 
     public void counterCheck() {
-        if (this.counter >= 8) {
+        if (this.counter >= USAGE_LIMIT) {
             this.usedUp = true;
         }
     }
