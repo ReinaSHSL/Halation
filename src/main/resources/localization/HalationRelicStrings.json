@@ -269,7 +269,7 @@
     "NAME": "Victory Ruler",
     "DESCRIPTIONS": [
       " Knock back an enemy into the one behind it, dealing #b",
-      " % of its Max HP to both enemies. If there is no enemy behind your target, deal #b",
+      "% of its Max HP to both enemies. If there is no enemy behind your target, deal #b",
       " damage."
     ],
     "FLAVOR": "The spirit of teamwork emanates from this ruler. You can feel the sacrifices it has made to make it this far."
