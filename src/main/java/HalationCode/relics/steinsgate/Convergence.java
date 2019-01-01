@@ -2,20 +2,25 @@ package HalationCode.relics.steinsgate;
 
 import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Convergence extends CustomRelic implements ClickableRelic {
+public class Convergence extends CustomRelic implements ClickableRelic, CustomSavable<HashMap<String, Object>> {
     public static final String ID = "halation:Convergence";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Convergence.png");
     private static int startHp = 0;
@@ -103,21 +108,30 @@ public class Convergence extends CustomRelic implements ClickableRelic {
         }
     }
 
-//    @Override
-//    public HashMap<String, Object> onSave() {
-//        HashMap<String, Object> statsSaved = new HashMap<>();
-//        statsSaved.clear();
-//        statsSaved.put("hp", startHp);
-//        statsSaved.put("relics", startRelics);
-//        statsSaved.put("deck", startDeck);
-//        System.out.println("SHIT'S HAPPENING HERE " + statsSaved + statsSaved.get("hp") + statsSaved.get("relics") + statsSaved.get("deck"));
-//        return statsSaved;
-//    }
-//
-//    @Override
-//    public void onLoad(HashMap<String, Object> li) {
-//        startHp = (int)li.get("hp");
-//        startRelics = (ArrayList)li.get("relics");
-//        startDeck = (CardGroup)li.get("deck");
-//    }
+    @Override
+    public HashMap<String, Object> onSave() {
+        HashMap<String, Object> statsSaved = new HashMap<>();
+        ArrayList<CardSave> cardsInDeck = new ArrayList<>();
+        for (AbstractCard c : startDeck.group) {
+            cardsInDeck.add(new CardSave(c.cardID, c.timesUpgraded, c.misc));
+        }
+        statsSaved.clear();
+        statsSaved.put("hp", startHp);
+        statsSaved.put("relics", startRelics);
+        statsSaved.put("deck", cardsInDeck);
+        statsSaved.put("gold", startGold);
+        statsSaved.put("potions", startPotions);
+        return statsSaved;
+    }
+
+    @Override
+    public void onLoad(HashMap<String, Object> li) {
+        startHp = (int)li.get("hp");
+        startRelics = (ArrayList)li.get("relics");
+        for (CardSave c : (ArrayList<CardSave>)li.get("deck")) {
+            startDeck.addToBottom(CardLibrary.getCopy(c.id, c.upgrades, c.misc));
+        }
+        startGold = (int)li.get("gold");
+        startPotions = (ArrayList<AbstractPotion>)li.get("potions");
+    }
 }
