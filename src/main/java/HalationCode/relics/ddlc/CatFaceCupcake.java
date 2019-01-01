@@ -17,6 +17,7 @@ public class CatFaceCupcake extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/CatFaceCupcake.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int PURGE_START = 3;
 
     public CatFaceCupcake() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.MAGICAL);
@@ -24,7 +25,7 @@ public class CatFaceCupcake extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + PURGE_START + DESCRIPTIONS[1];
 
 
     }
@@ -52,7 +53,7 @@ public class CatFaceCupcake extends CustomRelic {
             this.counter = 0;
         }
         this.counter++;
-        if (this.counter > 3) {
+        if (this.counter > PURGE_START) {
             c.purgeOnUse = true;
             AbstractCard ca = StSLib.getMasterDeckEquivalent(c);
             AbstractDungeon.player.masterDeck.removeCard(ca);
