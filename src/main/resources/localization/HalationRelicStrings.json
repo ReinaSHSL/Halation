@@ -161,7 +161,8 @@
   "halation:PlatinumPhoenix": {
     "NAME": "Platinum Phoenix",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain [E] [E] . You can #ronly play #b1 cost cards."
+      "At the start of your turn, gain [E] [E] . You can #ronly play #b",
+      " cost cards."
     ],
     "FLAVOR": "I'm platinum mad at you!"
   },

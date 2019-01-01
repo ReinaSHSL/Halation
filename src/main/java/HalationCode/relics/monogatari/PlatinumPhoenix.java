@@ -15,6 +15,7 @@ public class PlatinumPhoenix extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PlatinumPhoenix.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int COST_REST = 1;
 
     public PlatinumPhoenix() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY);
@@ -22,7 +23,7 @@ public class PlatinumPhoenix extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + COST_REST + DESCRIPTIONS[1];
     }
 
     @Override
@@ -45,7 +46,7 @@ public class PlatinumPhoenix extends CustomRelic {
     }
 
     public boolean canPlay(AbstractCard card) {
-      if (card.cost != 1) {
+      if (card.cost != COST_REST) {
           return false;
       } else {
           return true;
