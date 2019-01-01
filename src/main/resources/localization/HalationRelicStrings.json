@@ -251,7 +251,7 @@
   "halation:Prosthetics": {
     "NAME": "Prosthetics",
     "DESCRIPTIONS": [
-      "Upon pickup, lose #r50 Maximum HP. When receiving a debuff, negate it, and if the source was a monster, apply the debuff to it instead."
+      "Upon pickup, lose #r35 Maximum HP. When receiving a debuff, negate it, and if the source was a monster, apply the debuff to it instead."
     ],
     "FLAVOR": "Keep moving! If you're alive you can keep moving, dammit!"
   },
