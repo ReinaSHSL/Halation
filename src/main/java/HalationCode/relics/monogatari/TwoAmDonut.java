@@ -33,6 +33,11 @@ public class TwoAmDonut extends CustomRelic {
     }
 
     @Override
+    public void onEquip() {
+        this.counter = 0;
+    }
+
+    @Override
     public void atPreBattle()
     {
         flash();
@@ -55,9 +60,19 @@ public class TwoAmDonut extends CustomRelic {
         }
     }
 
+    @Override
     public void onPlayerEndTurn() {
-        if (pulse) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
+        if (pulse && this.counter < 4) {
+            if (this.counter < 0) {
+                this.counter = 0;
+            }
+            this.counter ++;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
         }
+    }
+
+    @Override
+    public void onVictory() {
+        this.counter = 0;
     }
 }
