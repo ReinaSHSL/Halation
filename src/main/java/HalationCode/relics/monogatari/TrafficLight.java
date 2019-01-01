@@ -20,6 +20,10 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private boolean isGreen = true;
+    private static final int STR_AMT = 2;
+    private static final int FRAIL_AMT = 1;
+    private static final int DEX_AMT = 1;
+    private static final int WEAK_AMT = 1;
 
     public TrafficLight() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
@@ -28,9 +32,11 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
     @Override
     public String getUpdatedDescription() {
         if (this.isGreen) {
-            return DESCRIPTIONS[0] + DESCRIPTIONS[1];
+            return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1] + FRAIL_AMT + DESCRIPTIONS[2]
+            + DEX_AMT + DESCRIPTIONS[3] + WEAK_AMT + DESCRIPTIONS[4] + DESCRIPTIONS[5];
         } else {
-            return DESCRIPTIONS[0] + DESCRIPTIONS[2];
+            return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1] + FRAIL_AMT + DESCRIPTIONS[2]
+                    + DEX_AMT + DESCRIPTIONS[3] + WEAK_AMT + DESCRIPTIONS[4] + DESCRIPTIONS[6];
         }
 
     }
@@ -61,14 +67,14 @@ public class TrafficLight extends CustomRelic implements ClickableRelic {
     public void onUseCard(AbstractCard c, UseCardAction a) {
         if (isGreen) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, 1, false), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STR_AMT), STR_AMT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseStrengthPower(p, STR_AMT), STR_AMT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FrailPower(p, FRAIL_AMT, false), FRAIL_AMT));
         } else {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, 1), 1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, 1, false), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, DEX_AMT), DEX_AMT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseDexterityPower(p, DEX_AMT), DEX_AMT));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, WEAK_AMT, false), WEAK_AMT));
         }
     }
 
