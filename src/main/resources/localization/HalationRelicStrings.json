@@ -461,7 +461,8 @@
   "halation:ShiningIdol": {
     "NAME": "Shining Idol",
     "DESCRIPTIONS": [
-      "When you spend gold at a shop, #yUpgrade #b3 random cards."
+      "When you spend gold at a shop, #yUpgrade #b",
+      " random cards."
     ],
     "FLAVOR": "Getting used to it would be quicker than trying to work around it somehow."
   }

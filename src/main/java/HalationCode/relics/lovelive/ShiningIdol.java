@@ -21,6 +21,7 @@ public class ShiningIdol extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public static ArrayList<AbstractCard> cardsToShow = new ArrayList<>();
+    private static final int UPGRADE_AMT = 3;
 
     public ShiningIdol() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.HEAVY);
@@ -28,7 +29,7 @@ public class ShiningIdol extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + UPGRADE_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -38,7 +39,7 @@ public class ShiningIdol extends CustomRelic {
 
     @Override
     public void onSpendGold() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < UPGRADE_AMT; i++) {
             if (p.masterDeck.getUpgradableCards().isEmpty()) {
                 return;
             }
