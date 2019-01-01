@@ -366,7 +366,8 @@
   "halation:LettersToHer": {
     "NAME": "Letters to Her",
     "DESCRIPTIONS": [
-      "Obtain a new #yLetter at every future non-boss chest. For every #yLetter, shuffle one #yLetter card into your deck at the start of combat."
+      "Obtain a new #yLetter at every future non-boss chest. For every #yLetter, shuffle #b",
+      " #yLetter card into your deck at the start of combat."
     ]
   },
   "halation:PromiseList": {

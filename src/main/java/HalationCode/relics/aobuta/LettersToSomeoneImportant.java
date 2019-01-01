@@ -21,6 +21,7 @@ public class LettersToSomeoneImportant extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private static ArrayList<AbstractCard> letterCards = new ArrayList<>();
+    private static final int LETTERS_AMT = 1;
 
     public LettersToSomeoneImportant() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.MAGICAL);
@@ -33,7 +34,7 @@ public class LettersToSomeoneImportant extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + LETTERS_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -46,7 +47,7 @@ public class LettersToSomeoneImportant extends CustomRelic {
         int rng = AbstractDungeon.cardRng.random(letterCards.size() - 1);
         AbstractCard c = letterCards.get(rng);
         for (int i = 0; i < this.counter; i++) {
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c.makeCopy(), 1, true, false, false));
+            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c.makeCopy(), LETTERS_AMT, true, false, false));
         }
     }
 
