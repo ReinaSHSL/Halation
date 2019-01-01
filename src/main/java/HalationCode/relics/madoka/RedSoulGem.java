@@ -16,6 +16,7 @@ public class RedSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:RedSoulGem";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/RedSoulGem.png");
     private boolean used = false;
+    private static final int STR_AMT = 6;
 
     public RedSoulGem() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -23,7 +24,7 @@ public class RedSoulGem extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -40,7 +41,7 @@ public class RedSoulGem extends CustomRelic implements ClickableRelic {
     public void onRightClick() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && GameActionManager.turn == 1 && !this.used) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                    new StrengthPower(AbstractDungeon.player, 6), 6));
+                    new StrengthPower(AbstractDungeon.player, STR_AMT), STR_AMT));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                     new NoSkillsPower(AbstractDungeon.player, false)));
             this.used = true;
