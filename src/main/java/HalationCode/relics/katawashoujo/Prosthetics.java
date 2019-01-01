@@ -18,6 +18,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Prosthetics.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HP_LOSS = 35;
 
     public Prosthetics() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT);
@@ -25,7 +26,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_LOSS + DESCRIPTIONS[1];
     }
 
     @Override
@@ -35,7 +36,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.decreaseMaxHealth(35);
+        AbstractDungeon.player.decreaseMaxHealth(HP_LOSS);
     }
 
     @Override
