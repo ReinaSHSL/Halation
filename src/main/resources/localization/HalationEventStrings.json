@@ -82,11 +82,10 @@
   "halation:ShiningIdol": {
     "NAME": "Forgotten Altar",
     "DESCRIPTIONS": [
-      "0"
+      "You place the #yGolden #yIdol upon the altar and praise it. Memories of a distant time, a different era, barrel down upon you. The joy of idols, the joy of having an ideal to chase after, all of it, comes back to you. NL You open your eyes and see your once #yGolden #yIdol ~~shining.~~"
     ],
     "OPTIONS": [
-      "0",
-      "1"
+      "[Idolize] #rLose #rGolden #rIdol. #gObtain #gShining #gIdol"
     ]
   }
 }
