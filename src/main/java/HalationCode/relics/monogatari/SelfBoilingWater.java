@@ -19,6 +19,8 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/SelfBoilingWater.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int STR_AMT = 1;
+    private static final int LIMIT = 3;
 
     public SelfBoilingWater() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL);
@@ -26,7 +28,7 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1] + LIMIT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -45,8 +47,8 @@ public class SelfBoilingWater extends CustomRelic implements OnRemoveCardFromMas
        if (this.counter < 0) {
            this.counter = 0;
        }
-       if (this.counter < 3) {
-           this.counter++;
+       if (this.counter < LIMIT) {
+           this.counter += STR_AMT;
        }
     }
 

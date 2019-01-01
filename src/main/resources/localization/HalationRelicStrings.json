@@ -182,7 +182,9 @@
   "halation:SelfBoilingWater": {
     "NAME": "Self Boiling Water",
     "DESCRIPTIONS": [
-      "Gain #b1 #yStrength at the start of combat for every charge on this relic. Gain a charge whenever you obtain a card, up to 3. Lose #rall charges whenever you skip or remove a card."
+      "Gain #b",
+      " #yStrength at the start of combat for every charge on this relic. Gain a charge whenever you obtain a card, up to #b",
+      " . Lose #rall charges whenever you skip or remove a card."
     ],
     "FLAVOR": "I despise water that thinks that it boiled itself on its own. I despise seasons that think they cycle naturally. I despise the sun that thinks it rose on its own. Despise, despise, d-d-despise...I despise them. I despise you."
   },
