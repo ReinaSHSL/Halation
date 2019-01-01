@@ -23,6 +23,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private static boolean doTheThing = false;
+    private static final int DMG_AMT = 10;
 
     public SmartPhone() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
@@ -30,7 +31,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + DMG_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -88,7 +89,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
         if (doTheThing) {
             CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
             CardCrawlGame.sound.play("BLUNT_FAST");
-            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/10));
+            AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/DMG_AMT));
             doTheThing = false;
         }
     }
