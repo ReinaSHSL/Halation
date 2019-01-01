@@ -8,9 +8,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardSave;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -20,7 +18,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Convergence extends CustomRelic implements ClickableRelic, CustomSavable<HashMap<String, Object>> {
+public class Convergence extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:Convergence";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Convergence.png");
     private static int startHp = 0;
@@ -53,6 +51,12 @@ public class Convergence extends CustomRelic implements ClickableRelic, CustomSa
         setPlayerStats();
         ArrayList<String> emptyList = new ArrayList<String>();
         switch (AbstractDungeon.id) {
+            case Exordium.ID:
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                AbstractDungeon.scene.fadeOutAmbiance();
+                new Exordium(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                AbstractDungeon.dungeonMapScreen.open(false);
+                break;
             case TheCity.ID:
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                 AbstractDungeon.scene.fadeOutAmbiance();
@@ -63,6 +67,12 @@ public class Convergence extends CustomRelic implements ClickableRelic, CustomSa
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                 AbstractDungeon.scene.fadeOutAmbiance();
                 new TheBeyond(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
+                AbstractDungeon.dungeonMapScreen.open(false);
+                break;
+            case TheEnding.ID:
+                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                AbstractDungeon.scene.fadeOutAmbiance();
+                new TheEnding(AbstractDungeon.player, AbstractDungeon.specialOneTimeEventList);
                 AbstractDungeon.dungeonMapScreen.open(false);
                 break;
             default:
@@ -108,30 +118,30 @@ public class Convergence extends CustomRelic implements ClickableRelic, CustomSa
         }
     }
 
-    @Override
-    public HashMap<String, Object> onSave() {
-        HashMap<String, Object> statsSaved = new HashMap<>();
-        ArrayList<CardSave> cardsInDeck = new ArrayList<>();
-        for (AbstractCard c : startDeck.group) {
-            cardsInDeck.add(new CardSave(c.cardID, c.timesUpgraded, c.misc));
-        }
-        statsSaved.clear();
-        statsSaved.put("hp", startHp);
-        statsSaved.put("relics", startRelics);
-        statsSaved.put("deck", cardsInDeck);
-        statsSaved.put("gold", startGold);
-        statsSaved.put("potions", startPotions);
-        return statsSaved;
-    }
-
-    @Override
-    public void onLoad(HashMap<String, Object> li) {
-        startHp = (int)li.get("hp");
-        startRelics = (ArrayList)li.get("relics");
-        for (CardSave c : (ArrayList<CardSave>)li.get("deck")) {
-            startDeck.addToBottom(CardLibrary.getCopy(c.id, c.upgrades, c.misc));
-        }
-        startGold = (int)li.get("gold");
-        startPotions = (ArrayList<AbstractPotion>)li.get("potions");
-    }
+//    @Override
+//    public HashMap<String, Object> onSave() {
+//        HashMap<String, Object> statsSaved = new HashMap<>();
+//        ArrayList<CardSave> cardsInDeck = new ArrayList<>();
+//        for (AbstractCard c : startDeck.group) {
+//            cardsInDeck.add(new CardSave(c.cardID, c.timesUpgraded, c.misc));
+//        }
+//        statsSaved.clear();
+//        statsSaved.put("hp", startHp);
+//        statsSaved.put("relics", startRelics);
+//        statsSaved.put("deck", cardsInDeck);
+//        statsSaved.put("gold", startGold);
+//        statsSaved.put("potions", startPotions);
+//        return statsSaved;
+//    }
+//
+//    @Override
+//    public void onLoad(HashMap<String, Object> li) {
+//        startHp = (int)li.get("hp");
+//        startRelics = (ArrayList)li.get("relics");
+//        for (CardSave c : (ArrayList<CardSave>)li.get("deck")) {
+//            startDeck.addToBottom(CardLibrary.getCopy(c.id, c.upgrades, c.misc));
+//        }
+//        startGold = (int)li.get("gold");
+//        startPotions = (ArrayList<AbstractPotion>)li.get("potions");
+//    }
 }
