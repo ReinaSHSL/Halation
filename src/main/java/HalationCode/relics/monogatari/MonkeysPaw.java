@@ -17,6 +17,7 @@ public class MonkeysPaw extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/MonkeysPaw.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static int COPY_AMT = 2;
 
     public MonkeysPaw() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT);
@@ -24,7 +25,7 @@ public class MonkeysPaw extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + COPY_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -39,7 +40,7 @@ public class MonkeysPaw extends CustomRelic {
         tmp.misc = c.misc/2;
         tmp.baseBlock = c.baseBlock/2;
         AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(tmp.uuid, tmp.cost/2));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, COPY_AMT, false, false, true));
     }
     //TODO FIX THIS
 }

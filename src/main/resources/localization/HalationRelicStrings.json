@@ -130,7 +130,8 @@
   "halation:MonkeysPaw": {
     "NAME": "Monkei's Paw",
     "DESCRIPTIONS": [
-      "Whenever you play a card, add #b2 copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
+      "Whenever you play a card, add #b",
+      " copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
     ],
     "FLAVOR": "Upon closer inspection, this isn't a monkey's paw at all."
   },
