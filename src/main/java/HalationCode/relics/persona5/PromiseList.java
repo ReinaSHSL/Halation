@@ -15,6 +15,7 @@ public class PromiseList extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PromiseList.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int STR_AMT = 1;
 
     public PromiseList() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT);
@@ -22,7 +23,7 @@ public class PromiseList extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -32,7 +33,7 @@ public class PromiseList extends CustomRelic {
 
     public void atPreBattle() {
         if (this.counter > 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, STR_AMT), STR_AMT));
         }
     }
 

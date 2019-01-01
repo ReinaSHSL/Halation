@@ -373,7 +373,8 @@
   "halation:PromiseList": {
     "NAME": "Promise List",
     "DESCRIPTIONS": [
-      "Gain #b1 #yStrength for every #yQuest completed since this relic was picked up."
+      "Gain #b",
+      " #yStrength for every #yQuest completed since this relic was picked up."
     ],
     "FLAVOR":"What denies you is an illusion...a curse put upon you by the Heartless."
   },
