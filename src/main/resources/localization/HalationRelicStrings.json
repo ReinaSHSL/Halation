@@ -63,7 +63,9 @@
   "halation:Yufonium": {
     "NAME": "Yufonium",
     "DESCRIPTIONS": [
-      "Every attack you draw has its cost lowered by #b1. Deal #rhalf damage with attacks. You can only play up to #b20 cards a turn."
+      "Every attack you draw has its cost lowered by #b",
+      ". Deal #rhalf damage with attacks. You can only play up to #b",
+      " cards a turn."
     ],
     "FLAVOR": "Don't give up. Not until you've done everything in your power!"
   },

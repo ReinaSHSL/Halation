@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class Yufonium extends CustomRelic {
     public static final String ID = "halation:Yufonium";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Yufonium.png");
+    private static final int COST_REDUCTION = 1;
+    private static final int CARD_LIMIT = 20;
 
     public Yufonium() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY);
@@ -21,7 +23,7 @@ public class Yufonium extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + COST_REDUCTION + DESCRIPTIONS[1] + CARD_LIMIT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -39,7 +41,7 @@ public class Yufonium extends CustomRelic {
     @Override
     public void onCardDraw(AbstractCard c) {
         if (c.type == AbstractCard.CardType.ATTACK && c.cost > 0) {
-            AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(c.uuid, 1));
+            AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(c.uuid, COST_REDUCTION));
         }
     }
 
@@ -50,9 +52,9 @@ public class Yufonium extends CustomRelic {
 
     @Override
     public void onPlayCard(final AbstractCard card, final AbstractMonster m) {
-        if (this.counter < 20 && card.type != AbstractCard.CardType.CURSE) {
+        if (this.counter < CARD_LIMIT && card.type != AbstractCard.CardType.CURSE) {
             ++this.counter;
-            if (this.counter >= 20) {
+            if (this.counter >= CARD_LIMIT) {
                 this.flash();
             }
         }
@@ -60,9 +62,10 @@ public class Yufonium extends CustomRelic {
 
     @Override
     public boolean canPlay(final AbstractCard card) {
-        if (this.counter >= 20 && card.type != AbstractCard.CardType.CURSE) {
+        boolean retVal = super.canPlay(card);
+        if (this.counter >= CARD_LIMIT && card.type != AbstractCard.CardType.CURSE) {
             return false;
         }
-        return true;
+        return retVal;
     }
 }
