@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
 public class MonkeysPaw extends CustomRelic {
     public static final String ID = "halation:MonkeysPaw";
@@ -39,8 +41,9 @@ public class MonkeysPaw extends CustomRelic {
         tmp.misc = c.misc/2;
         tmp.block = c.block/2;
         tmp.cost = c.cost/2;
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
-        
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(tmp, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, true, false));
+        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(tmp, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, true, false));
+
     }
     //TODO FIX THIS
 }
