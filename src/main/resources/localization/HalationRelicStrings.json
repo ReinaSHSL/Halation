@@ -391,8 +391,8 @@
       " If you play #b",
       " #ySkills, then #b",
       " #yAttacks, then #b",
-      " Skill, then #b",
-      " Power, you can flee the combat."
+      " #ySkill, then #b",
+      " #yPower, you can flee the combat."
     ],
     "FLAVOR": "I feel...a gambler's spirit emanating from you."
   },
