@@ -23,6 +23,8 @@ public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public static ArrayList<AbstractCard> cardsToShow = new ArrayList<>();
+    private static int CURSE_AMT = 2;
+    private static int UPGRADE_AMT = 3;
 
     public HeavySnake() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY);
@@ -30,7 +32,7 @@ public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + CURSE_AMT + DESCRIPTIONS[1] + UPGRADE_AMT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -40,7 +42,7 @@ public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
 
     @Override
     public void atBattleStartPreDraw() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < CURSE_AMT; i++) {
             AbstractCard c = AbstractDungeon.returnRandomCurse();
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, 1, false, false, true));
         }
@@ -48,7 +50,7 @@ public class HeavySnake extends CustomRelic implements BetterOnSmithRelic {
 
     public void betterOnSmith(AbstractCard ca) {
         this.flash();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < UPGRADE_AMT; i++) {
             if (p.masterDeck.getUpgradableCards().isEmpty()) {
                 return;
             }

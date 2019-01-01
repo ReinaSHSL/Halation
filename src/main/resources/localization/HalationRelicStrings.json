@@ -121,7 +121,9 @@
   "halation:HeavySnake": {
     "NAME": "Heavy Snek",
     "DESCRIPTIONS": [
-      "Add #b3 random Curses to the bottom of your draw pile at the start of combat. Every time you smith a card, upgrade #b3 more random cards."
+      "Add #b",
+      " random Curses to the bottom of your draw pile at the start of combat. Every time you smith a card, upgrade #b",
+      " more random cards."
     ],
     "FLAVOR": "I only want one thing. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. Everything. "
   },
