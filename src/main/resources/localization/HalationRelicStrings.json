@@ -214,7 +214,8 @@
   "halation:PinkAlligatorPlush": {
     "NAME": "Pink Allygator Plush",
     "DESCRIPTIONS": [
-      "Lose #b2 HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce and stops doing damage once used."
+      "Lose #b",
+      " HP at the start of every turn. If you die, heal to full and #rkill all enemies. Can only be used #ronce and stops doing damage once used."
     ],
     "FLAVOR": "Everyone is waiting to die if you think about it...Some just have longer to wait than others."
   },

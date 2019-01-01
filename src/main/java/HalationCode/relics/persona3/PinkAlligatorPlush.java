@@ -17,6 +17,7 @@ public class PinkAlligatorPlush extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PinkAlligatorPlush.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HP_LOSS = 2;
 
     public PinkAlligatorPlush() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT);
@@ -24,7 +25,7 @@ public class PinkAlligatorPlush extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_LOSS + DESCRIPTIONS[1];
     }
 
     @Override
@@ -36,7 +37,7 @@ public class PinkAlligatorPlush extends CustomRelic {
     public void atTurnStart() {
         if (!this.usedUp) {
             flash();
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, 2, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(p, new DamageInfo(p, HP_LOSS, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
         }
     }
 
