@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.LocalizedStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,7 @@ public class Thesaurus extends CustomRelic {
     private static boolean loseRelic = false;
     private static AbstractRelic relicToRemove;
     private static AbstractRelic relicToGain = null;
+    public static boolean relicScreenOpen = false;
 
     public Thesaurus() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
@@ -56,8 +58,8 @@ public class Thesaurus extends CustomRelic {
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
         }
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-
         openRelicSelect();
+        relicScreenOpen = true;
     }
 
     private void openRelicSelect()
@@ -67,6 +69,7 @@ public class Thesaurus extends CustomRelic {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r.tier != RelicTier.SPECIAL && !r.relicId.equals(ID)) {
                 AbstractRelic re = r.makeCopy();
+                re.isSeen = true;
                 relics.add(re);
             }
         }
@@ -120,7 +123,7 @@ public class Thesaurus extends CustomRelic {
                         AbstractDungeon.shopRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case STARTER:
-                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.STARTER);
+                        relicToGain =  starterRelic();
                 }
 
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
@@ -134,11 +137,11 @@ public class Thesaurus extends CustomRelic {
         }
     }
 
-    private String starterRelic(AbstractRelic original) {
-        String relicToAdd = RelicLibrary.starterList.get(AbstractDungeon.cardRandomRng.random(RelicLibrary.starterList.size() - 1)).relicId;
+    private AbstractRelic starterRelic() {
+        AbstractRelic relicToAdd = RelicLibrary.starterList.get(AbstractDungeon.cardRandomRng.random(RelicLibrary.starterList.size() - 1));
 
-        if(relicToAdd.equals(original.relicId)) {
-            relicToAdd = starterRelic(original);
+        if(relicToAdd.relicId.equals(relicToRemove.relicId)) {
+            relicToAdd = starterRelic();
         }
 
         return relicToAdd;
@@ -159,6 +162,7 @@ public class Thesaurus extends CustomRelic {
             AbstractDungeon.player.loseRelic(relicToRemove.relicId);
             relicToGain.instantObtain();
             loseRelic = false;
+            relicScreenOpen = false;
         }
 
     }
