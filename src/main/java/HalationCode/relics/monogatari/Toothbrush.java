@@ -15,6 +15,7 @@ public class Toothbrush extends CustomRelic implements OnRemoveCardFromMasterDec
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Toothbrush.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HP_GAIN = 3;
 
     public Toothbrush() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.CLINK);
@@ -22,7 +23,7 @@ public class Toothbrush extends CustomRelic implements OnRemoveCardFromMasterDec
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_GAIN + DESCRIPTIONS[1];
     }
 
     @Override
@@ -32,6 +33,6 @@ public class Toothbrush extends CustomRelic implements OnRemoveCardFromMasterDec
 
     @Override
     public void onRemoveCardFromMasterDeck(AbstractCard c) {
-        p.increaseMaxHp(3, false);
+        p.increaseMaxHp(HP_GAIN, false);
     }
 }

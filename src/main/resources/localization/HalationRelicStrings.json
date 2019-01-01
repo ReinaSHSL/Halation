@@ -198,7 +198,8 @@
   "halation:Toothbrush": {
     "NAME": "Toothbrush",
     "DESCRIPTIONS": [
-      "Gain #b3 Max HP whenever you remove a card from your deck."
+      "Gain #b",
+      " Max HP whenever you remove a card from your deck."
     ],
     "FLAVOR": "Get your head out of the gutter."
   },
