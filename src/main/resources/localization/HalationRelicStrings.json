@@ -48,7 +48,7 @@
   "halation:PinkSoulGem": {
     "NAME": "Pink Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Deal damage equal to the charges on this relic and lose all charges. Gain charges equal to the damage you take."
+      " Deal damage equal to the charges on this relic and lose all charges. Gain charges equal to the damage you take."
     ],
     "FLAVOR": "If anyone ever tells me it’s a mistake to have hope, well then, I’ll just tell them they’re wrong. And I’ll keep telling them till they believe."
   },
