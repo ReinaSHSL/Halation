@@ -130,6 +130,6 @@ public class BottledLove extends CustomRelic implements CustomBottleRelic, Custo
 
     @Override
     public void onLoseHp(final int damageAmount) {
-       AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.card.uuid, 1));
+       AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.card.uuid, MODIFIER));
     }
 }

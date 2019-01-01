@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.BattleStartEffect;
 public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:PurpleSoulGem";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/purpleSoulGem.png");
+    private static final int STR_AMT = 2;
 
     public PurpleSoulGem()
     {
@@ -37,9 +38,8 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
     }
 
     @Override
-    public String getUpdatedDescription()
-    {
-        return DESCRIPTIONS[0];
+    public String getUpdatedDescription() {
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1];
     }
 
 
@@ -53,7 +53,7 @@ public class PurpleSoulGem extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, PurpleSoulGem.this));
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(mo, PurpleSoulGem.this));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new StrengthPower(mo, PurpleSoulGem.this.counter*2), PurpleSoulGem.this.counter*2));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new StrengthPower(mo, PurpleSoulGem.this.counter * STR_AMT), PurpleSoulGem.this.counter * STR_AMT));
             }
             isDone = true;
         }

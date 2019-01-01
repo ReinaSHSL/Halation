@@ -13,7 +13,8 @@
   "halation:PurpleSoulGem": {
     "NAME": "Purple Soul Gem",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]during [#2aecd7]combat [#2aecd7]to [#2aecd7]activate.[] Restart the battle and all enemies gain #b2 #yStrength."
+      " Restart the battle and all enemies gain #b",
+      " #yStrength."
     ],
     "FLAVOR": "If…If it’s for your sake…I don’t mind being locked in this eternal maze."
   },
