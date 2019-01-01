@@ -18,6 +18,7 @@ public class Sonsunser extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private ArrayList<AbstractCard> attacksPlayedThisTurn = new ArrayList<>();
+    private static final int SOSUNS_AMT = 8;
 
     public Sonsunser() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
@@ -25,7 +26,7 @@ public class Sonsunser extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + SOSUNS_AMT + DESCRIPTIONS[1] + SOSUNS_AMT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -40,7 +41,7 @@ public class Sonsunser extends CustomRelic {
                 this.counter = 0;
             }
             this.counter++;
-            if (this.counter >= 8) {
+            if (this.counter >= SOSUNS_AMT) {
 
                 for (AbstractCard ca : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
                     if (ca.type == AbstractCard.CardType.ATTACK) {

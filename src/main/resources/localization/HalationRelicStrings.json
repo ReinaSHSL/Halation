@@ -244,7 +244,9 @@
   "halation:Sosunser": {
     "NAME": "Sosunser",
     "DESCRIPTIONS": [
-      "If you play #b8 attacks in one turn, play all #b8 attacks again."
+      "If you play #b",
+      " attacks in one turn, play all #b",
+      " attacks again."
     ],
     "FLAVOR": "ORAORAORAORAORAORAORAORAORA"
   },
