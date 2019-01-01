@@ -5,13 +5,12 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
 public class MonkeysPaw extends CustomRelic {
     public static final String ID = "halation:MonkeysPaw";
@@ -34,16 +33,13 @@ public class MonkeysPaw extends CustomRelic {
     }
 
     public void onUseCard(AbstractCard c, UseCardAction a) {
-        System.out.println("SHIT OVER HERE " + c);
         AbstractCard tmp = c;
-        tmp.damage = c.damage/2;
-        tmp.magicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
+        tmp.baseDamage = c.damage/2;
+        tmp.baseMagicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
         tmp.misc = c.misc/2;
-        tmp.block = c.block/2;
-        tmp.cost = c.cost/2;
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(tmp, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, true, false));
-        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(tmp, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F, true, false));
-
+        tmp.baseBlock = c.block/2;
+        AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(tmp.uuid, tmp.cost/2));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
     }
     //TODO FIX THIS
 }
