@@ -15,6 +15,7 @@ public class BlackBeret extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/BlackBeret.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static int maxHealthLimit;
 
     public BlackBeret() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
@@ -30,11 +31,19 @@ public class BlackBeret extends CustomRelic {
         return new BlackBeret();
     }
 
+    @Override
+    public void onEquip() {
+        maxHealthLimit = AbstractDungeon.player.maxHealth / 3;
+        this.counter = maxHealthLimit;
+    }
+
+    public static void maxHPChange(int i) {
+        maxHealthLimit = (AbstractDungeon.player.maxHealth + i) / 3;
+    }
 
     @Override
     public void atBattleStart() {
         if (AbstractDungeon.getCurrRoom().eliteTrigger) {
-            int maxHealthLimit = AbstractDungeon.player.maxHealth/3;
             if (AbstractDungeon.player.currentHealth <= maxHealthLimit) {
                 this.flash();
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 3), 3));

@@ -60,7 +60,8 @@ public class HalationModInitializer implements
         StartActSubscriber,
         PostUpdateSubscriber,
         EditCardsSubscriber,
-        PostCampfireSubscriber
+        PostCampfireSubscriber,
+        MaxHPChangeSubscriber
 {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
@@ -195,4 +196,11 @@ public class HalationModInitializer implements
         return true;
     }
 
+    @Override
+    public int receiveMapHPChange(int i) {
+        if (AbstractDungeon.player.hasRelic(BlackBeret.ID)) {
+            BlackBeret.maxHPChange(i);
+        }
+        return i;
+    }
 }
