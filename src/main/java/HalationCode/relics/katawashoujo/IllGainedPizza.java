@@ -14,6 +14,7 @@ public class IllGainedPizza extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/IllGainedPizza.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int GOLD_GAIN = 1;
 
     public IllGainedPizza() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT);
@@ -21,7 +22,7 @@ public class IllGainedPizza extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + GOLD_GAIN + DESCRIPTIONS[1];
     }
 
     @Override
@@ -31,7 +32,7 @@ public class IllGainedPizza extends CustomRelic {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        AbstractDungeon.player.gainGold(1);
+        AbstractDungeon.player.gainGold(GOLD_GAIN);
         return damageAmount;
     }
 

@@ -323,7 +323,8 @@
   "halation:IllGainedPizza": {
     "NAME": "Ill Gained Pizza",
     "DESCRIPTIONS": [
-      "Every time an enemy attacks you, gain #b1 #yGold."
+      "Every time an enemy attacks you, gain #b",
+      " #yGold."
     ],
     "FLAVOR": "You have to obtain the pizza stealthily. If you don't, everyone will see you. And they will ask for a slice. Everyone wants a piece. Then you're left pizzaless in an unforgiving world."
   },
