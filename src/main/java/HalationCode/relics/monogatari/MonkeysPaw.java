@@ -34,10 +34,10 @@ public class MonkeysPaw extends CustomRelic {
 
     public void onUseCard(AbstractCard c, UseCardAction a) {
         AbstractCard tmp = c;
-        tmp.baseDamage = c.damage/2;
-        tmp.baseMagicNumber = c.magicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
+        tmp.baseDamage = c.baseDamage/2;
+        tmp.baseMagicNumber = c.baseMagicNumber/2; //TODO CHAOS_NEGATIVE_MAGIC
         tmp.misc = c.misc/2;
-        tmp.baseBlock = c.block/2;
+        tmp.baseBlock = c.baseBlock/2;
         AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(tmp.uuid, tmp.cost/2));
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, 2, false, false, true));
     }
