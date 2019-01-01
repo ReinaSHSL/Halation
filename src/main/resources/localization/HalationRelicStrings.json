@@ -146,7 +146,8 @@
   "halation:NonexistentMirror": {
     "NAME": "Nonexistent Mirror",
     "DESCRIPTIONS": [
-      "The next #b2 times you obtain a card, obtain a copy of it."
+      "The next #b",
+      " times you obtain a card, obtain a copy of it."
     ],
     "FLAVOR": "\"I saw a strange man outside of Kanbaru's house today.\" NL \"When did they hang up a mirror?\""
   },

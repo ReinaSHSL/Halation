@@ -21,6 +21,7 @@ public class NonexistentMirror extends CustomRelic {
     private static ArrayList<AbstractCard> cardToAdd = new ArrayList<>();
     private static boolean addCard = false;
     private static ArrayList<AbstractCard> addedCards = new ArrayList<>();
+    private static final int COPY_AMT = 2;
 
     public NonexistentMirror() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.MAGICAL);
@@ -28,7 +29,7 @@ public class NonexistentMirror extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + COPY_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -57,7 +58,7 @@ public class NonexistentMirror extends CustomRelic {
 
     @Override
     public void onEquip() {
-        this.counter = 2;
+        this.counter = COPY_AMT;
     }
 
     public static void cardEffects() {
