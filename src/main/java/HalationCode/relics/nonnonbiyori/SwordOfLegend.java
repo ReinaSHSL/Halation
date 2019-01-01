@@ -16,6 +16,7 @@ public class SwordOfLegend extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/SwordOfLegend.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HEAL_AMT = 3;
 
     public SwordOfLegend() {
         super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY);
@@ -23,7 +24,7 @@ public class SwordOfLegend extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HEAL_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -35,9 +36,9 @@ public class SwordOfLegend extends CustomRelic {
     public void onEnterRoom(AbstractRoom r) {
         if (r instanceof MonsterRoom) {
             if (this.counter < 0) {
-                this.counter = 3;
+                this.counter = HEAL_AMT;
             } else {
-                this.counter += 3;
+                this.counter += HEAL_AMT;
             }
         }
         if (r instanceof RestRoom) {

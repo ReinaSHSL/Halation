@@ -260,7 +260,8 @@
   "halation:SwordOfLegend": {
     "NAME": "Sword of Legend",
     "DESCRIPTIONS": [
-      "Upon entering a Rest Site, heal #b3 HP for every monster room you entered since you picked this up or the last Rest Site you entered."
+      "Upon entering a Rest Site, heal #b",
+      " HP for every monster room you entered since you picked this up or the last Rest Site you entered."
     ],
     "FLAVOR": "Nyanpasu!"
   },
