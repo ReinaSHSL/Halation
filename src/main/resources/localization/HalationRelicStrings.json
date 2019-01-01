@@ -245,8 +245,8 @@
     "NAME": "Sosunser",
     "DESCRIPTIONS": [
       "If you play #b",
-      " attacks in one turn, play all #b",
-      " attacks again."
+      " #yAttacks in one turn, play all #b",
+      " #yAttacks again."
     ],
     "FLAVOR": "ORAORAORAORAORAORAORAORAORA"
   },
