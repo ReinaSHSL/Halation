@@ -14,6 +14,7 @@ public class PapillonHeart extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/PapillonHeart.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int TURNS = 4;
 
     public PapillonHeart() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.CLINK);
@@ -21,7 +22,7 @@ public class PapillonHeart extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + TURNS + DESCRIPTIONS[1];
     }
 
     @Override
@@ -35,7 +36,7 @@ public class PapillonHeart extends CustomRelic {
             this.counter = 0;
         }
         counter++;
-        if (this.counter >= 4) {
+        if (this.counter >= TURNS) {
             this.counter = 0;
             AbstractDungeon.actionManager.addToBottom(new OrgiaModeAction());
         }
