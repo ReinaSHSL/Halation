@@ -41,7 +41,7 @@ public class PinkAlligatorPlushPatch {
                 if (!AbstractDungeon.player.getRelic(PenguinHat.ID).usedUp) {
                     ArrayList<AbstractPlayer> charPool = new ArrayList<>();
                     int currentMaxHp = AbstractDungeon.player.maxHealth;
-                    int currentHp = AbstractDungeon.player.maxHealth / 10;
+                    int currentHp = AbstractDungeon.player.maxHealth / PenguinHat.HP_AMOUNT;
                     int currentGold = AbstractDungeon.player.gold;
                     int masterHandSize = AbstractDungeon.player.masterHandSize;
                     int gameHandSize = AbstractDungeon.player.gameHandSize;

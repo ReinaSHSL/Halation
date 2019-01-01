@@ -14,6 +14,7 @@ public class PenguinHat extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public static AbstractPlayer revivedClass = null;
+    public static final int HP_AMOUNT = 20;
 
     public PenguinHat() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
@@ -21,7 +22,7 @@ public class PenguinHat extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_AMOUNT + DESCRIPTIONS[1];
     }
 
     @Override
