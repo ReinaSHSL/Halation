@@ -21,6 +21,8 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private boolean usedThisCombat = false;
+    private static final int DMG_PERCENT = 25;
+    private static final int CONSOLATION_DMG = 2;
 
     public VictoryRuler() {
         super(ID, IMG, RelicTier.RARE, LandingSound.CLINK);
@@ -28,7 +30,7 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + DMG_PERCENT + DESCRIPTIONS[1] + CONSOLATION_DMG + DESCRIPTIONS[2];
     }
 
     @Override
@@ -54,7 +56,7 @@ public class VictoryRuler extends CustomRelic implements ClickableRelic {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, m.maxHealth/4, DamageInfo.DamageType.NORMAL)));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(otherM, new DamageInfo(p, m.maxHealth/4, DamageInfo.DamageType.NORMAL)));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, 2, DamageInfo.DamageType.NORMAL)));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, CONSOLATION_DMG, DamageInfo.DamageType.NORMAL)));
         }
     }
 
