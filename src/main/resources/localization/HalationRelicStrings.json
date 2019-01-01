@@ -138,7 +138,8 @@
   "halation:LostSnail": {
     "NAME": "No Longer Lost Snayl",
     "DESCRIPTIONS": [
-      "Upon entering a #y? room, there is a #b40% all connected rooms become a #y? room."
+      "Upon entering a #y? room, there is a #b",
+      " % all connected rooms become a #y? room."
     ],
     "FLAVOR": "I'm sure there's a reason that, even after I stopped being lost, I stayed here. I won't leave until I know what that reason is."
   },

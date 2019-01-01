@@ -21,6 +21,7 @@ public class LostSnail extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/LostSnail.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int ROLL_CHANCE = 40;
 
     public LostSnail() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.FLAT);
@@ -28,7 +29,7 @@ public class LostSnail extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + ROLL_CHANCE + DESCRIPTIONS + 1;
     }
 
     @Override
@@ -39,7 +40,7 @@ public class LostSnail extends CustomRelic {
     public void onEnterRoom(final AbstractRoom room) {
         if (room instanceof EventRoom) {
             int roll = AbstractDungeon.mapRng.random(99);
-            if (roll < 39) {
+            if (roll < ROLL_CHANCE - 1) {
                 ArrayList<MapRoomNode> visibleMapNodes = (ArrayList<MapRoomNode>) ReflectionHacks.getPrivate(AbstractDungeon.dungeonMapScreen, DungeonMapScreen.class, "visibleMapNodes");
                 for (final MapRoomNode n : visibleMapNodes) {
                     if (n.y == AbstractDungeon.getCurrMapNode().y+1 && !(n.room instanceof MonsterRoomBoss)) {
