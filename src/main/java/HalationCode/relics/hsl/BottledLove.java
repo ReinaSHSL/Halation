@@ -6,6 +6,7 @@ import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -129,6 +130,6 @@ public class BottledLove extends CustomRelic implements CustomBottleRelic, Custo
 
     @Override
     public void onLoseHp(final int damageAmount) {
-        card.baseDamage++;
+       AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.card.uuid, 1));
     }
 }
