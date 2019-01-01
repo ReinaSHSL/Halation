@@ -16,6 +16,8 @@ public class WeightlessCrab extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/WeightlessCrab.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static int CURSE_DRAW_AMT = 3;
+    private static int INTANGIBLE_AMT = 1;
 
     public WeightlessCrab() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.FLAT);
@@ -43,9 +45,9 @@ public class WeightlessCrab extends CustomRelic {
         if (c.type == AbstractCard.CardType.CURSE) {
             this.counter++;
         }
-        if (this.counter >= 3) {
+        if (this.counter >= CURSE_DRAW_AMT) {
             this.counter = 0;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, INTANGIBLE_AMT), INTANGIBLE_AMT));
         }
     }
 }

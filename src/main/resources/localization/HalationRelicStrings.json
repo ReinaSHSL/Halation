@@ -96,7 +96,9 @@
   "halation:WeightlessCrab": {
     "NAME": "Weightless Krab",
     "DESCRIPTIONS": [
-      "For every #b3 Curses you draw, gain #b1 Intangible."
+      "For every #b",
+      " Curses you draw, gain #b",
+      " Intangible."
     ],
     "FLAVOR": "I am not a friend of justice. I am an enemy of evil."
   },
