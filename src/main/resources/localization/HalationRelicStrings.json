@@ -299,7 +299,8 @@
   "halation:BlackBeret": {
     "NAME": "Black Beret",
     "DESCRIPTIONS": [
-      "At the start of Elite combats, if you have less than #b30% Max HP, gain #b3 #yIntangible. "
+      "At the start of Elite combats, if you have less than #b30% Max HP, gain #b",
+      " #yIntangible."
     ],
     "FLAVOR": "Can you face your fears?"
   },

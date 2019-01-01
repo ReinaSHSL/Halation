@@ -16,6 +16,7 @@ public class BlackBeret extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private static int maxHealthLimit;
+    private static final int INTANGIBLE_AMT = 3;
 
     public BlackBeret() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
@@ -23,7 +24,7 @@ public class BlackBeret extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + INTANGIBLE_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -46,7 +47,7 @@ public class BlackBeret extends CustomRelic {
         if (AbstractDungeon.getCurrRoom().eliteTrigger) {
             if (AbstractDungeon.player.currentHealth <= maxHealthLimit) {
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, 3), 3));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new IntangiblePlayerPower(AbstractDungeon.player, INTANGIBLE_AMT), INTANGIBLE_AMT));
             }
         }
     }
