@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class Trompette extends CustomRelic {
     public static final String ID = "halation:Trompette";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Trompette.png");
+    private static final int HEAL_AMT = 10;
 
     public Trompette() {
         super(ID, IMG, RelicTier.RARE, LandingSound.CLINK);
@@ -18,7 +19,7 @@ public class Trompette extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HEAL_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -46,7 +47,7 @@ public class Trompette extends CustomRelic {
     public void onVictory()
     {
         if (pulse) {
-            AbstractDungeon.player.heal(10);
+            AbstractDungeon.player.heal(HEAL_AMT);
         }
         pulse = false;
     }

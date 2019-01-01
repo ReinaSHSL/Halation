@@ -72,7 +72,8 @@
   "halation:Trompette": {
     "NAME": "Trompette",
     "DESCRIPTIONS": [
-      "If you play only attacks in a combat, heal 10 HP."
+      "If you play only attacks in a combat, heal #b",
+      " HP."
     ],
     "FLAVOR": "You really do have an awful personality."
   },
