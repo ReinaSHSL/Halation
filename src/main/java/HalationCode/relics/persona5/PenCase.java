@@ -23,6 +23,7 @@ public class PenCase extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public static boolean secondOption = false;
+    private static final int REST_AMT = 2;
 
     public PenCase() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
@@ -30,7 +31,7 @@ public class PenCase extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + REST_AMT + DESCRIPTIONS[1];
     }
 
     @Override
