@@ -22,6 +22,7 @@ public class BottledLove extends CustomRelic implements CustomBottleRelic, Custo
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/bottledLove.png");
     private boolean cardSelected = true;
     private AbstractCard card = null;
+    private static final int MODIFIER = 1;
 
     public BottledLove()
     {
@@ -35,9 +36,8 @@ public class BottledLove extends CustomRelic implements CustomBottleRelic, Custo
     }
 
     @Override
-    public String getUpdatedDescription()
-    {
-        return DESCRIPTIONS[0];
+    public String getUpdatedDescription() {
+        return DESCRIPTIONS[0] + MODIFIER  + DESCRIPTIONS[1];
     }
 
     public AbstractCard getCard()
@@ -116,7 +116,7 @@ public class BottledLove extends CustomRelic implements CustomBottleRelic, Custo
 
     private void setDescriptionAfterLoading()
     {
-        description = FontHelper.colorString(card.name, "y") + DESCRIPTIONS[2];
+        description = FontHelper.colorString(card.name, "y") + DESCRIPTIONS[3] + MODIFIER + DESCRIPTIONS[4];
         tips.clear();
         tips.add(new PowerTip(name, description));
         initializeTips();

@@ -2,9 +2,11 @@
   "halation:BottledLove": {
     "NAME": "Bottled Love",
     "DESCRIPTIONS": [
-      "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by 1 for the combat.",
+      "Upon pickup, choose a card. Upon taking damage, that card's damage is increased by #b",
+      " for the combat.",
       "Choose a card for ",
-      " will increase in damage by 1 upon taking damage."
+      " will increase in damage by #b",
+      " upon taking damage."
     ],
     "FLAVOR": "The world outside is filled with impurities. People I hate. People in my way. Liars. Dirty people. I need to exterminate all risks."
   },
