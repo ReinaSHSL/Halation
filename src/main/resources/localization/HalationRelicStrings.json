@@ -88,7 +88,8 @@
   "halation:EternalFortune": {
     "NAME": "Eternal Fortune",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by 3. Occasionally run into more #yEternal #yFortune."
+      "Upon pickup, raise your Max HP by #b",
+      " 3. Occasionally run into more #yEternal #yFortune."
     ],
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   },

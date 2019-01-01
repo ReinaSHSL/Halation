@@ -13,6 +13,7 @@ public class EternalFortune extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/EternalFortune.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HP_GAIN = 3;
 
     public EternalFortune() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.FLAT);
@@ -20,7 +21,7 @@ public class EternalFortune extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_GAIN + DESCRIPTIONS[1];
     }
 
     @Override
@@ -38,7 +39,7 @@ public class EternalFortune extends CustomRelic {
             this.counter = 0;
         }
         this.counter++;
-        p.increaseMaxHp(3, true);
+        p.increaseMaxHp(HP_GAIN, true);
     }
 
     @Override
