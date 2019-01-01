@@ -307,7 +307,8 @@
   "halation:Risk": {
     "NAME": "Risk",
     "DESCRIPTIONS": [
-      "Upon pickup lose [E] . Play the first #b2 Attacks or Skills you play each turn twice. If you play an Attack or Skill, you cannot play the other type in the same turn."
+      "Upon pickup lose [E] . Play the first #b",
+      " Attacks or Skills you play each turn twice. If you play an Attack or Skill, you cannot play the other type in the same turn."
     ],
     "FLAVOR": "The oldest game known to man, upon which the fate of nations has been known to rest: Rock, Paper, Scissors."
   },

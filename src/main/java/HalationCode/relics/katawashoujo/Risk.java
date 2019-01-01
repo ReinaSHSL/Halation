@@ -24,6 +24,7 @@ public class Risk extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Risk.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int ECHO_AMT = 2;
 
     public Risk() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.SOLID);
@@ -31,7 +32,7 @@ public class Risk extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + ECHO_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -57,7 +58,7 @@ public class Risk extends CustomRelic {
     }
 
     public void onVictory() {
-        this.counter = 2;
+        this.counter = ECHO_AMT;
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
