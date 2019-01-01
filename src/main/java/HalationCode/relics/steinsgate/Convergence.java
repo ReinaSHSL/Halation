@@ -28,6 +28,7 @@ public class Convergence extends CustomRelic implements ClickableRelic {
     private static ArrayList<AbstractPotion> startPotions = new ArrayList<>();
     private static boolean relicChange = false;
     private static boolean normalActChange = true;
+    private static final int HP_LOSS = 20;
 
     public Convergence() {
         super(ID, IMG, AbstractRelic.RelicTier.SHOP, LandingSound.FLAT);
@@ -35,7 +36,7 @@ public class Convergence extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HP_LOSS + DESCRIPTIONS[1];
     }
 
     @Override
@@ -101,7 +102,7 @@ public class Convergence extends CustomRelic implements ClickableRelic {
         for (AbstractCard c : startDeck.group) {
             AbstractDungeon.player.masterDeck.addToBottom(c);
         }
-        AbstractDungeon.player.decreaseMaxHealth(20);
+        AbstractDungeon.player.decreaseMaxHealth(HP_LOSS);
     }
 
     public static void relicBullshit() {

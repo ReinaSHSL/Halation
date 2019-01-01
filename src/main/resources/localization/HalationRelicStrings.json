@@ -55,7 +55,8 @@
   "halation:Convergence": {
     "NAME": "Convergence",
     "DESCRIPTIONS": [
-      "[#2aecd7]Right [#2aecd7]click [#2aecd7]to [#2aecd7]activate.[] Reset your health, deck, gold, and relics to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #b20 Max Health."
+      " Reset your health, deck, gold, and relics to as they were at the start of the act. Generate a new version of the current act and start from the beginning. Lose #b",
+      " Max HP."
     ],
     "FLAVOR": "I will never lose, not to you, nor to fate! That is my choice."
   },
