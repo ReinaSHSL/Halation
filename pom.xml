@@ -47,7 +47,7 @@
             <artifactId>InfiniteSpire</artifactId>
             <version>1.0.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/../lib/InfiniteSpire.jar</systemPath>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1610128058/InfiniteSpire.jar</systemPath>
         </dependency>
     </dependencies>
 
