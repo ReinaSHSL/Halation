@@ -110,7 +110,7 @@ public class StarCompass extends CustomRelic implements ClickableRelic {
                     e.printStackTrace();
                 }
             } else {
-                AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f, "Oops, I dropped it. Oh well.", true));
+                AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 2.0f, DESCRIPTIONS[1], true));
                 loseRelic = true;
             }
         }
