@@ -388,7 +388,11 @@
   "halation:KoshaPiece": {
     "NAME": "Kosha Piece",
     "DESCRIPTIONS": [
-      " If you play #b3 #ySkills, then #b3 #yAttacks, then #b1 Skill, then #b1 Power, you can flee the combat."
+      " If you play #b",
+      " #ySkills, then #b",
+      " #yAttacks, then #b",
+      " Skill, then #b",
+      " Power, you can flee the combat."
     ],
     "FLAVOR": "I feel...a gambler's spirit emanating from you."
   },

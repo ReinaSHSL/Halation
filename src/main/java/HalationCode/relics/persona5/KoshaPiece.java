@@ -22,6 +22,10 @@ public class KoshaPiece extends CustomRelic implements ClickableRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
     private static CardType[] CODE = {CardType.SKILL, CardType.SKILL, CardType.SKILL, CardType.ATTACK, CardType.ATTACK, CardType.ATTACK, CardType.SKILL, CardType.POWER};
     //SSSAAASP
+    private static final int SKILL_1 = 3;
+    private static final int ATTACK_1 = 3;
+    private static final int SKILL_2 = 1;
+    private static final int POWER_1 = 1;
 
     public KoshaPiece() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.CLINK);
@@ -30,7 +34,7 @@ public class KoshaPiece extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + SKILL_1 + DESCRIPTIONS[1] + ATTACK_1 + DESCRIPTIONS[2] + SKILL_2 + DESCRIPTIONS[3] + POWER_1 + DESCRIPTIONS[4];
     }
 
     @Override
