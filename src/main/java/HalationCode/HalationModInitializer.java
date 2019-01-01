@@ -177,6 +177,7 @@ public class HalationModInitializer implements
         if (AbstractDungeon.player.hasRelic(Jellyphish.ID)) Jellyphish.fuckmeintheASS();
         if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) SmartPhone.morePostUpdateBullshit();
         if (AbstractDungeon.player.hasRelic(ShiningIdol.ID)) ShiningIdol.cardEffects();
+        if (AbstractDungeon.player.hasRelic(Thesaurus.ID)) Thesaurus.moreRelicBullshit();
     }
 
     @Override

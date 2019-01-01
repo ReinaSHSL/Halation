@@ -30,6 +30,9 @@ public class Thesaurus extends CustomRelic {
     private boolean relicSelected = true;
     private RelicSelectScreen relicSelectScreen;
     private boolean fakeHover = false;
+    private static boolean loseRelic = false;
+    private static AbstractRelic relicToRemove;
+    private static AbstractRelic relicToGain = null;
 
     public Thesaurus() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.HEAVY);
@@ -62,7 +65,7 @@ public class Thesaurus extends CustomRelic {
         relicSelected = false;
         ArrayList<AbstractRelic> relics = new ArrayList<>();
         for (AbstractRelic r : AbstractDungeon.player.relics) {
-            if (r.tier != RelicTier.SPECIAL) {
+            if (r.tier != RelicTier.SPECIAL && !r.relicId.equals(ID)) {
                 AbstractRelic re = r.makeCopy();
                 relics.add(re);
             }
@@ -93,35 +96,33 @@ public class Thesaurus extends CustomRelic {
             if (relicSelectScreen.doneSelecting()) {
                 relicSelected = true;
                 AbstractRelic relic = relicSelectScreen.getSelectedRelics().get(0);
-                AbstractRelic relicToRemove = AbstractDungeon.player.getRelic(relic.relicId);
-                AbstractDungeon.player.loseRelic(relicToRemove.relicId);
-                String relicToGain = null;
+                relicToRemove = AbstractDungeon.player.getRelic(relic.relicId);
+                loseRelic = true;
                 switch (relic.tier) {
                     case COMMON:
-                        relicToGain = AbstractDungeon.commonRelicPool.get(0);
-                        AbstractDungeon.commonRelicPool.remove(0);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.COMMON);
+                        AbstractDungeon.commonRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case UNCOMMON:
-                        relicToGain = AbstractDungeon.uncommonRelicPool.get(0);
-                        AbstractDungeon.commonRelicPool.remove(0);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.UNCOMMON);
+                        AbstractDungeon.uncommonRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case RARE:
-                        relicToGain = AbstractDungeon.rareRelicPool.get(0);
-                        AbstractDungeon.commonRelicPool.remove(0);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.RARE);
+                        AbstractDungeon.rareRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case BOSS:
-                        relicToGain = AbstractDungeon.bossRelicPool.get(0);
-                        AbstractDungeon.commonRelicPool.remove(0);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.BOSS);
+                        AbstractDungeon.bossRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case SHOP:
-                        relicToGain = AbstractDungeon.shopRelicPool.get(0);
-                        AbstractDungeon.commonRelicPool.remove(0);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.SHOP);
+                        AbstractDungeon.shopRelicPool.removeIf(id ->  id.equals(relicToGain.relicId));
                         break;
                     case STARTER:
-                        relicToGain = starterRelic(relicToRemove);
+                        relicToGain =  AbstractDungeon.returnRandomRelic(RelicTier.STARTER);
                 }
 
-                AbstractDungeon.effectsQueue.add(0, new ObtainRelicLater(relicToGain));
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             } else {
                 relicSelectScreen.update();
@@ -151,6 +152,15 @@ public class Thesaurus extends CustomRelic {
         if (!relicSelected && !fakeHover) {
             relicSelectScreen.render(sb);
         }
+    }
+
+    public static void moreRelicBullshit() {
+        if (loseRelic) {
+            AbstractDungeon.player.loseRelic(relicToRemove.relicId);
+            relicToGain.instantObtain();
+            loseRelic = false;
+        }
+
     }
 
 
