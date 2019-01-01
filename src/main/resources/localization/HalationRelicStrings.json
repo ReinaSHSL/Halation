@@ -105,7 +105,9 @@
   "halation:TwoAmDonut": {
     "NAME": "2 AM Donut",
     "DESCRIPTIONS": [
-      "If you do not play any attacks, at the end of your turn gain #b1 #yStrength up to #b4 times a combat."
+      "If you do not play any attacks, at the end of your turn gain #b",
+      " #yStrength up to #b",
+      " times a combat."
     ],
     "FLAVOR": "KA KA KA"
   },

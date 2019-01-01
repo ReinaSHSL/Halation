@@ -17,6 +17,8 @@ public class TwoAmDonut extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/TwoAmDonut.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int STR_AMT = 1;
+    private static final int USAGE_LIMIT = 4;
 
     public TwoAmDonut() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.HEAVY);
@@ -24,7 +26,7 @@ public class TwoAmDonut extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + STR_AMT + DESCRIPTIONS[1] + USAGE_LIMIT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -62,12 +64,12 @@ public class TwoAmDonut extends CustomRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        if (pulse && this.counter < 4) {
+        if (pulse && this.counter < USAGE_LIMIT) {
             if (this.counter < 0) {
                 this.counter = 0;
             }
             this.counter ++;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, STR_AMT), STR_AMT));
         }
     }
 
