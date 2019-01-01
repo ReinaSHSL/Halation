@@ -15,6 +15,8 @@ public class DogTag extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/DogTag.png");
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
+    private static final int HEALING_REDUC = 1;
+    private static final int ENERGY = 1;
 
     public DogTag() {
         super(ID, IMG, RelicTier.SHOP, LandingSound.CLINK);
@@ -22,7 +24,7 @@ public class DogTag extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + HEALING_REDUC + DESCRIPTIONS[1] + ENERGY + DESCRIPTIONS[2];
     }
 
     @Override
@@ -33,8 +35,8 @@ public class DogTag extends CustomRelic {
     @Override
     public int onPlayerHeal(int healAmt) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-            return healAmt - 1;
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(ENERGY));
+            return healAmt - HEALING_REDUC;
         }
         return healAmt;
     }

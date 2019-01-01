@@ -399,7 +399,9 @@
   "halation:DogTag": {
     "NAME": "Dog Tag",
     "DESCRIPTIONS": [
-      "All in combat healing is reduced by #y1. Upon healing, gain #b1 #yEnergy."
+      "All in combat healing is reduced by #y",
+      " . Upon healing, gain #b",
+      " #yEnergy."
     ],
     "FLAVOR": "You have a lot of faith in me. Thank you, my little guinea pig."
   },
