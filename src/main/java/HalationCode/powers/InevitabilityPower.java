@@ -27,12 +27,6 @@ public class InevitabilityPower extends AbstractPower {
     }
 
     @Override
-    public void onInitialApplication() {
-        int newHealth = this.owner.maxHealth/10;
-        int healthDifference = this.owner.maxHealth - newHealth;
-        AbstractDungeon.player.decreaseMaxHealth(healthDifference);
-    }
-    @Override
     public float atDamageReceive(final float damage, final DamageInfo.DamageType damageType) {
        return 0;
     }

@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 public class BlueSoulGem extends CustomRelic implements ClickableRelic {
     public static final String ID = "halation:BlueSoulGem";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/BlueSoulGem.png");
+    private static final int USAGE_LIMIT = 2;
+    private static final int NEW_HEALTH_AMT = 10;
 
     public BlueSoulGem() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);
@@ -21,7 +23,7 @@ public class BlueSoulGem extends CustomRelic implements ClickableRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return CLICKABLE_DESCRIPTIONS()[0] + DESCRIPTIONS[0] + NEW_HEALTH_AMT + DESCRIPTIONS[1] + USAGE_LIMIT + DESCRIPTIONS[2];
     }
 
     @Override
@@ -31,7 +33,7 @@ public class BlueSoulGem extends CustomRelic implements ClickableRelic {
 
     @Override
     public void onEquip() {
-        this.counter = 2;
+        this.counter = USAGE_LIMIT;
     }
 
     @Override
@@ -43,6 +45,9 @@ public class BlueSoulGem extends CustomRelic implements ClickableRelic {
                 }
             }
             flash();
+            int newHealth = AbstractDungeon.player.maxHealth / NEW_HEALTH_AMT;
+            int healthDifference = AbstractDungeon.player.maxHealth - newHealth;
+            AbstractDungeon.player.decreaseMaxHealth(healthDifference);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player,
                     AbstractDungeon.player, new InevitabilityPower(AbstractDungeon.player, 1), 1));
             this.counter--;
