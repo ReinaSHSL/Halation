@@ -17,6 +17,7 @@ public class AfternoonTea extends CustomRelic {
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     private boolean firstTurn;
+    private static final int REGEN_AMT = 5;
 
     public AfternoonTea() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT);
@@ -25,7 +26,7 @@ public class AfternoonTea extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + REGEN_AMT + DESCRIPTIONS[1];
     }
 
     @Override
@@ -53,7 +54,7 @@ public class AfternoonTea extends CustomRelic {
                 this.pulse = false;
                 this.counter = -1;
                 this.flash();
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RegenPower(AbstractDungeon.player, 5), 5));
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RegenPower(AbstractDungeon.player, REGEN_AMT), REGEN_AMT));
                 AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             }
             this.firstTurn = false;
