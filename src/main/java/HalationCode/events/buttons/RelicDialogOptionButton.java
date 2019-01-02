@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -68,7 +69,7 @@ public class RelicDialogOptionButton extends LargeDialogOptionButton {
             }
 
             this.r.currentY = this.y;
-            this.r.renderTip(sb);
+            TipHelper.queuePowerTips((float)InputHelper.mX - 350.0F * Settings.scale, Settings.HEIGHT/3F, r.tips);
         }
     }
 

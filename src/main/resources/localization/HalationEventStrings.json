@@ -56,14 +56,14 @@
   "halation:HikoboshiSama": {
     "NAME": "Tanabata",
     "DESCRIPTIONS": [
-      "You come across a ~~weeping~~ God laying on the floor. NL \"I miss her, I miss her so much. My ~~precious~~ #gOrihime-sama... \" NL Too awkward to confront a mourning god you try to move on with your life but... NL \" @You@ @there!@ Do you know where my Orihime-sama is?\"",
+      "You come across a ~weeping~ God laying on the floor. NL \"I miss her, I miss her so much. My ~precious~ #gOrihime-sama... \" NL Too awkward to confront a mourning god you try to move on with your life but... NL \" @You@ @there!@ Do you know where my #gOrihime-sama is?\"",
       "You present what you found on your journey - #yOrihime-sama in the form of a #ystar. NL \"My @#rLove!@ \" NL The once-mourning god glows from head to toe, becoming a star of his own. He darts into your pocket and @#rBURNS@. You bear the pain, with new lovers in tow.",
       "Sensing a moment of weakness, you take out your weapon. In his moment of weakness, the mourning god doesn't seem to notice you at all. Bringing down the fury of the Spire upon him, he lays on the ground, unable to move. As you stand over his body, he dissolves into stardust, ~~invigorating~~ you. A piercing wail can be heard somewhere in the distance, almost as if another is mourning."
     ],
     "OPTIONS": [
       "[Give] #rLose #r",
-      " #rMax #rHP. #gObtain #yOrihime #yAnd #yHikoboshi.",
-      "[Kill] #gObtain #yRandom #yEnergy #yRelic. #rObtain #rCelestial #rTears.",
+      " #rMax #rHP. #gObtain #gOrihime #gAnd #gHikoboshi.",
+      "[Kill] #gObtain #gRandom #gEnergy #gRelic. #rObtain #rCelestial #rTears.",
       "[Leave]"
     ]
   },
