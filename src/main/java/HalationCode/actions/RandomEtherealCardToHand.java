@@ -21,9 +21,14 @@ public class RandomEtherealCardToHand extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             if (this.isRare) {
                 AbstractCard c = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE, AbstractDungeon.cardRng).makeStatEquivalentCopy();
-                c.isEthereal = true;
-                c.exhaust = true;
-                c.rawDescription = c.rawDescription + " NL Ethereal. NL Exhaust.";
+                if (!c.isEthereal) {
+                    c.isEthereal = true;
+                    c.rawDescription = c.rawDescription + " NL Ethereal.";
+                }
+               if (!c.exhaust) {
+                   c.exhaust = true;
+                   c.rawDescription = c.rawDescription + " NL Exhaust.";
+               }
                 c.initializeDescription();
                 AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
@@ -34,9 +39,14 @@ public class RandomEtherealCardToHand extends AbstractGameAction {
             }
             else {
                 AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat().makeStatEquivalentCopy();
-                c.isEthereal = true;
-                c.exhaust = true;
-                c.rawDescription = c.rawDescription + " NL Ethereal. NL Exhaust.";
+                if (!c.isEthereal) {
+                    c.isEthereal = true;
+                    c.rawDescription = c.rawDescription + " NL Ethereal.";
+                }
+                if (!c.exhaust) {
+                    c.exhaust = true;
+                    c.rawDescription = c.rawDescription + " NL Exhaust.";
+                }
                 c.initializeDescription();
                 AbstractDungeon.actionManager.addToBottom(new MakeStatEquivalentCopyBullshit(c));
                 this.tickDuration();
