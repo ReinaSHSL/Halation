@@ -131,7 +131,7 @@
     "NAME": "Monkei's Paw",
     "DESCRIPTIONS": [
       "Whenever you play a card, add #b",
-      " copies of it to the bottom of your draw pile at #rhalf power (rounded down)"
+      " copies of it to your discard pile at #rhalf power (rounded down)"
     ],
     "FLAVOR": "Upon closer inspection, this isn't a monkey's paw at all."
   },
@@ -425,7 +425,7 @@
   "halation:CatFaceCupcake": {
     "NAME": "Cat Face Cupcake",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. After the #b3",
+      "Gain [E] at the start of your turn. After the #b",
       "rd card played in a turn, all cards played will be #rremoved from your deck and #rpurged."
     ],
     "FLAVOR": "It's just a better Velvet Choker."

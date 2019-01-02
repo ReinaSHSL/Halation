@@ -4,6 +4,7 @@ import HalationCode.tools.TextureLoader;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -40,7 +41,6 @@ public class MonkeysPaw extends CustomRelic {
         tmp.misc = c.misc/2;
         tmp.baseBlock = c.baseBlock/2;
         AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(tmp.uuid, tmp.cost/2));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(tmp, COPY_AMT, false, false, true));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardActionAction(tmp, COPY_AMT));
     }
-    //TODO FIX THIS
 }
