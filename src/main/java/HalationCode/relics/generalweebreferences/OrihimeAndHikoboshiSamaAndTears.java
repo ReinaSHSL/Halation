@@ -36,17 +36,15 @@ public class OrihimeAndHikoboshiSamaAndTears extends CustomRelic {
             img = TextureLoader.getTexture("HalationImages/relics/OrihimeAndHikoboshiSama.png");
             try {
                 Field targetField = AbstractRelic.class.getDeclaredField("name");
-
                 Field modifiersField = Field.class.getDeclaredField("modifiers");
                 modifiersField.setAccessible(true);
                 modifiersField.setInt(targetField, targetField.getModifiers() & ~Modifier.FINAL);
-
                 targetField.setAccessible(true);
                 targetField.set(this, DESCRIPTIONS[0]);
+                this.tier = RelicTier.SPECIAL;
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             flavorText = DESCRIPTIONS[5];
             description = DESCRIPTIONS[3];
             tips.clear();
@@ -58,13 +56,12 @@ public class OrihimeAndHikoboshiSamaAndTears extends CustomRelic {
             img = TextureLoader.getTexture("HalationImages/relics/CelestialTears.png");
             try {
                 Field targetField = AbstractRelic.class.getDeclaredField("name");
-
                 Field modifiersField = Field.class.getDeclaredField("modifiers");
                 modifiersField.setAccessible(true);
                 modifiersField.setInt(targetField, targetField.getModifiers() & ~Modifier.FINAL);
-
                 targetField.setAccessible(true);
                 targetField.set(this, DESCRIPTIONS[1]);
+                this.tier = RelicTier.SPECIAL;
             } catch (Exception e) {
                 e.printStackTrace();
             }
