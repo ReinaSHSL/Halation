@@ -41,6 +41,6 @@ public class MonkeysPaw extends CustomRelic {
         tmp.misc = c.misc/2;
         tmp.baseBlock = c.baseBlock/2;
         AbstractDungeon.actionManager.addToBottom(new ReduceCostAction(tmp.uuid, tmp.cost/2));
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardActionAction(tmp, COPY_AMT));
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(tmp, COPY_AMT));
     }
 }
