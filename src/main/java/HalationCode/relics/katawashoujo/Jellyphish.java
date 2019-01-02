@@ -1,6 +1,8 @@
 package HalationCode.relics.katawashoujo;
 
+import HalationCode.relics.ddlc.Thesaurus;
 import HalationCode.tools.TextureLoader;
+import basemod.abstracts.CustomBottleRelic;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.SuperRareRelic;
@@ -14,7 +16,7 @@ import com.megacrit.cardcrawl.powers.ConfusionPower;
 import com.megacrit.cardcrawl.powers.EntanglePower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
@@ -66,6 +68,10 @@ public class Jellyphish extends CustomRelic {
     @Override
     public void atPreBattle() {
         this.flash();
+        getRelic();
+    }
+
+    public static void getRelic() {
         //            ⠀⠀⠀⣀⣶⣀
         //⠀⠀⠀⠒⣛⣭
         //⠀⠀⠀⣀⠿⣿⣶
@@ -253,6 +259,21 @@ public class Jellyphish extends CustomRelic {
         //⠀⠒⠿⠛⠉⠿⣿
         //⠀⠀⠀⠀⠀⣀⣿⣿
         //⠀⠀⠀⠀⣶⠿⠿⠛
+        if (
+                        ______.relicId.equals(BottledFlame.ID)
+                        || ______.relicId.equals(BottledLightning.ID)
+                        || ______.relicId.equals(BottledTornado.ID)
+                        || ______.relicId.equals(Astrolabe.ID)
+                        || ______.relicId.equals(TinyHouse.ID)
+                        || ______.relicId.equals(Orrery.ID)
+                        || ______.relicId.equals(PandorasBox.ID)
+                        || ______.relicId.equals("Kintsugi")
+                        || ______ instanceof CustomBottleRelic
+                        || ______.relicId.equals(Thesaurus.ID)
+                        || ______.relicId.equals(EmptyCage.ID)
+        ) {
+            getRelic();
+        }
         __ = true;
     }
 
@@ -266,9 +287,6 @@ public class Jellyphish extends CustomRelic {
             System.out.println("IF IT CRASHES HERE BLACKLIST THIS FUCKING RELIC:　" + ______.relicId);
             ______.instantObtain();
             __ = false;
-            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMPLETE) {
-                AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMBAT;
-            }
         }
         if (___________) {
             AbstractDungeon.player.loseRelic(______.relicId);
