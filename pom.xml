@@ -66,6 +66,7 @@
                         <configuration>
                             <target>
                                 <copy file="target/Halation.jar" tofile="C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\mods\Halation.jar" />
+                                <copy file="target/Halation.jar" tofile="C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\Halation\content\Halation.jar" />
                             </target>
                         </configuration>
                         <goals>
