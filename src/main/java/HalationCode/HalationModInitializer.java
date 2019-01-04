@@ -121,7 +121,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new IllGainedPizza(), RelicType.SHARED);
         BaseMod.addRelic(new Jellyphish(), RelicType.SHARED);
         BaseMod.addRelic(new OrihimeAndHikoboshiSamaAndTears(), RelicType.SHARED);
-        //BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
+        BaseMod.addRelic(new QuantumPhysicsTextbook(), RelicType.SHARED);
         BaseMod.addRelic(new SmartPhone(), RelicType.SHARED);
         BaseMod.addRelic(new LettersToSomeoneImportant(), RelicType.SHARED);
         BaseMod.addRelic(new ForbiddenBikini(), RelicType.SHARED);

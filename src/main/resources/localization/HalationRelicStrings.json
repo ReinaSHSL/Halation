@@ -351,7 +351,7 @@
   "halation:QuantumPhysicsTextbook": {
     "NAME": "Quantum Physics Textbook",
     "DESCRIPTIONS": [
-      "You may now also select rooms connected to a randomly chosen room on the same level."
+      "You may now also select rooms connected to a randomly chosen room on the same level starting from the next floor."
     ],
     "FLAVOR": "Something something entanglement, something something teleportation."
   },

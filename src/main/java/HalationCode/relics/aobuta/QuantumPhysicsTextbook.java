@@ -33,9 +33,4 @@ public class QuantumPhysicsTextbook extends CustomRelic {
     public AbstractRelic makeCopy() {
         return new QuantumPhysicsTextbook();
     }
-
-    @Override
-    public void onEquip() {
-       AbstractDungeon.getCurrMapNode().isConnectedTo(QuantumMapNodeField.quantumPhysicsNode.get(CardCrawlGame.dungeon));
-    }
 }
