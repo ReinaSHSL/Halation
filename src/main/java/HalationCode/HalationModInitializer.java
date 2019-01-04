@@ -101,7 +101,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new PlatinumPhoenix(), RelicType.SHARED);
         BaseMod.addRelic(new TrafficLight(), RelicType.SHARED);
         BaseMod.addRelic(new SelfBoilingWater(), RelicType.SHARED);
-        BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
+        //BaseMod.addRelic(new RainbowClouds(), RelicType.SHARED);
         BaseMod.addRelic(new Toothbrush(), RelicType.SHARED);
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
         BaseMod.addRelic(new PinkAlligatorPlush(), RelicType.SHARED);

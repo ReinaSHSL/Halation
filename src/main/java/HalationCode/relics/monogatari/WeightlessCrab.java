@@ -25,7 +25,7 @@ public class WeightlessCrab extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0];
+        return DESCRIPTIONS[0] + CURSE_DRAW_AMT + DESCRIPTIONS[1] + INTANGIBLE_AMT + DESCRIPTIONS[2];
     }
 
     @Override

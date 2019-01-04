@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>Halation</groupId>
     <artifactId>Halation</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
     <name>Halation!</name>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>12-20-2018</SlayTheSpire.version>
+        <SlayTheSpire.version>01-03-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.6.3</ModTheSpire.version>
     </properties>
 

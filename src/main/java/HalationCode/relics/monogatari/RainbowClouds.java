@@ -36,7 +36,7 @@ public class RainbowClouds extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom r) {
         if (AbstractDungeon.getCurrRoom().eliteTrigger) {
-            this.handSize = AbstractDungeon.player.masterHandSize;
+            handSize = AbstractDungeon.player.masterHandSize;
             AbstractDungeon.player.masterHandSize = 0;
         }
     }
