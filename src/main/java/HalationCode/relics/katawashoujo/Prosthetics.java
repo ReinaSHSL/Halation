@@ -44,6 +44,7 @@ public class Prosthetics extends CustomRelic implements OnReceivePowerRelic {
         if (p.type == AbstractPower.PowerType.DEBUFF) {
             this.flash();
             if (m instanceof AbstractMonster) {
+                p.owner = m;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, p, p.amount));
             }
             return false;
