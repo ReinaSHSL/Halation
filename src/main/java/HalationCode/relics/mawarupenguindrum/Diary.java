@@ -74,7 +74,11 @@ public class Diary extends CustomRelic implements CustomSavable<String> {
         if (pickBoss && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             try {
                 pickBoss = false;
-                DiaryChoiceCard selected = (DiaryChoiceCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+                DiaryChoiceCard selected = null;
+                if (AbstractDungeon.gridSelectScreen.selectedCards.get(0) instanceof DiaryChoiceCard) {
+                    selected = (DiaryChoiceCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+                }
+                if (selected == null) return;
                 AbstractDungeon.bossKey = selected.name;
                 pickedBoss = selected.name;
                 Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
@@ -93,10 +97,6 @@ public class Diary extends CustomRelic implements CustomSavable<String> {
         return 100;
     }
 
-    public static void newAct() {
-        AbstractDungeon.player.getRelic(Diary.ID).onEquip();
-    }
-
     @Override
     public String onSave() {
         return pickedBoss;
@@ -108,7 +108,9 @@ public class Diary extends CustomRelic implements CustomSavable<String> {
             AbstractDungeon.bossKey = s;
             Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
             setBoss.setAccessible(true);
-            setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
+            if (AbstractDungeon.bossKey != null) {
+                setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
+            }
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }

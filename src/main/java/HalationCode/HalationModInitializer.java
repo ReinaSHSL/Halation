@@ -159,9 +159,6 @@ public class HalationModInitializer implements
     @Override
     public void receiveStartAct() {
         Convergence.updateStats();
-        if (AbstractDungeon.player.hasRelic(Diary.ID)) {
-            Diary.newAct();
-        }
         if (AbstractDungeon.id.equals(TheBeyond.ID)) {
             AbstractDungeon.rareRelicPool.remove(OrihimeAndHikoboshiSamaAndTears.ID);
         }

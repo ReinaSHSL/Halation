@@ -222,7 +222,7 @@
   "halation:Diary": {
     "NAME": "Diary",
     "DESCRIPTIONS": [
-      "Upon pick up, and at the start of every act, pick the boss of the act."
+      "Upon pick up, pick the boss of the act."
     ],
     "FLAVOR": "DESTIIIIIIIIIIIIIIIINY"
   },
@@ -237,7 +237,7 @@
   "halation:Komachan": {
     "NAME": "Komachan",
     "DESCRIPTIONS": [
-      " The next room you can go to becomes a Rest Site. Can only be used #ronce."
+      " The next room you can go to, other than bosses, becomes a Rest Site. Can only be used #ronce."
     ],
     "FLAVOR": "Koma-chan always said to be prepared!"
   },
