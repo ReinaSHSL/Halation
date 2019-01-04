@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     public static final String ID = "halation:SmartPhone";
@@ -24,6 +25,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
     private static boolean doTheThing = false;
     private static final int DMG_AMT = 10;
+    private static boolean isCombat = false;
 
     public SmartPhone() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.CLINK);
@@ -69,10 +71,10 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
 
     @Override
     public void onObtainCard(AbstractCard c) {
-        if (SmartPhonePatch.smartSkip || SmartPhonePatch.smartBowl) {
+        if (SmartPhonePatch.smartSkip || SmartPhonePatch.smartBowl && isCombat) {
             doTheThing = true;
         }
-        if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl) {
+        if (!SmartPhonePatch.smartSkip && !SmartPhonePatch.smartBowl && isCombat) {
             if (!c.cardID.equals(SmartPhonePatch.smartCard.cardID)) {
                 doTheThing = true;
             }
@@ -81,8 +83,14 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
     }
 
     @Override
-    public void onVictory() {
+    public void atPreBattle() {
+        isCombat = true;
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom r) {
         this.flash();
+        isCombat = false;
     }
 
     public static void morePostUpdateBullshit() {

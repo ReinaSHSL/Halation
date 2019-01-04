@@ -29,7 +29,7 @@ public class PickDeckAction extends AbstractGameAction {
                     SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
                     AbstractDungeon.player.drawPile.clear();
                     for (AbstractCard c : r.secondDeck.group) {
-                        AbstractDungeon.player.drawPile.addToRandomSpot(c);
+                        AbstractDungeon.player.drawPile.addToRandomSpot(c.makeSameInstanceOf());
                     }
                 }
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();

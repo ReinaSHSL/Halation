@@ -94,7 +94,7 @@ public class SimulatedSpirePatch {
     public static class AddToNeow {
         public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
                 if (category == 3) {
-                    __result.add(new NeowRewardDef(SIMULATED_SPIRE, "#rLose #ryour #rstarting #rRelic. #gObtain #ySimulated #ySpire"));
+                    __result.add(new NeowRewardDef(SIMULATED_SPIRE, "]#rLose #ryour #rstarting #rRelic. #gObtain #ySimulated #ySpire["));
                 }
                 return __result;
         }
