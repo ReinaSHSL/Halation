@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>Halation</groupId>
     <artifactId>Halation</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <name>Halation!</name>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

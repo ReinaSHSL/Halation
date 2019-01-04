@@ -37,6 +37,10 @@ public class PeacePiece extends CustomRelic {
     }
 
     public void atTurnStartPostDraw() {
+        if (this.counter < 0) {
+            this.counter = 0;
+        }
+        this.flash();
         this.counter++;
         if (this.counter >= 3) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NoDamagePower(p)));

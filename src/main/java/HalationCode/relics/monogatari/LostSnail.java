@@ -29,7 +29,7 @@ public class LostSnail extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + ROLL_CHANCE + DESCRIPTIONS + 1;
+        return DESCRIPTIONS[0] + ROLL_CHANCE + DESCRIPTIONS[1];
     }
 
     @Override
