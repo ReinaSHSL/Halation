@@ -68,7 +68,6 @@ public class SimulatedSpire extends CustomRelic implements CustomSavable<List<Ca
 
     @Override
     public void onLoad(List<CardSave> cardSaves) {
-        BaseMod.addTopPanelItem(simulatedSpireButton);
         for (CardSave s : cardSaves) {
             this.secondDeck.addToBottom(CardLibrary.getCopy(s.id, s.upgrades, s.misc));
         }

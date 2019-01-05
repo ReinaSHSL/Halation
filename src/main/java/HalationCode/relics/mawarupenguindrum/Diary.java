@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Diary extends CustomRelic implements CustomSavable<String> {
+public class Diary extends CustomRelic {
     public static final String ID = "halation:Diary";
     private static final Texture IMG = TextureLoader.getTexture("HalationImages/relics/Diary.png");
     private AbstractPlayer p = AbstractDungeon.player;
@@ -95,24 +95,5 @@ public class Diary extends CustomRelic implements CustomSavable<String> {
     @Override
     public int getPrice() {
         return 100;
-    }
-
-    @Override
-    public String onSave() {
-        return pickedBoss;
-    }
-
-    @Override
-    public void onLoad(String s) {
-        try {
-            AbstractDungeon.bossKey = s;
-            Method setBoss = AbstractDungeon.class.getDeclaredMethod("setBoss", String.class);
-            setBoss.setAccessible(true);
-            if (AbstractDungeon.bossKey != null) {
-                setBoss.invoke(CardCrawlGame.dungeon, AbstractDungeon.bossKey);
-            }
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
     }
 }
