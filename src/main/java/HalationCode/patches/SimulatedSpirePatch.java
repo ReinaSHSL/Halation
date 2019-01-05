@@ -76,7 +76,7 @@ public class SimulatedSpirePatch {
             if (IsSimulatedSpireField.isSimulatedSpireReward.get(c)) {
                 if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) {
                     SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
-                    r.secondDeck.addToBottom(c);
+                    r.secondDeck.addToTop(c);
                     for (AbstractRelic re : AbstractDungeon.player.relics) {
                         re.onMasterDeckChange();
                     }
