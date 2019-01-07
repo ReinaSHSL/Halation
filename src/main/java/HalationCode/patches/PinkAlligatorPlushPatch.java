@@ -50,6 +50,7 @@ public class PinkAlligatorPlushPatch {
                     int damagedThisCombat = AbstractDungeon.player.damagedThisCombat;
                     int cardsPlayedThisTurn = AbstractDungeon.player.cardsPlayedThisTurn;
                     int maxOrbs = AbstractDungeon.player.maxOrbs;
+                    int maxEnergy = AbstractDungeon.player.energy.energyMaster;
                     ArrayList<AbstractOrb> playerOrbs = new ArrayList<>(AbstractDungeon.player.orbs);
                     ArrayList<AbstractCard> playerDeck = new ArrayList<>(AbstractDungeon.player.masterDeck.group);
                     ArrayList<AbstractRelic> playerRelics = new ArrayList<>(AbstractDungeon.player.relics);
@@ -86,6 +87,7 @@ public class PinkAlligatorPlushPatch {
                     AbstractDungeon.player.healthBarRevivedEvent();
                     AbstractDungeon.player.chosenClass = charToBecome.chosenClass;
                     EnergyPanel.addEnergy(currentEnergy);
+                    AbstractDungeon.player.energy.energyMaster = maxEnergy;
                     AbstractDungeon.player.loseRandomRelics(1);
                     int relicIndex = 0;
                     for (AbstractPower po : currentPowers) {

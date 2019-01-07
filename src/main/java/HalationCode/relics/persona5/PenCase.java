@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.CoffeeDripper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.CampfireUI;
 import com.megacrit.cardcrawl.rooms.RestRoom;
@@ -45,6 +46,10 @@ public class PenCase extends CustomRelic {
     }
 
     public static boolean ContinueCampfire() {
+        if (AbstractDungeon.player.hasRelic(CoffeeDripper.ID) && secondOption) {
+            secondOption = false;
+            return false;
+        }
         if(PenCasePatch.SetBool.shouldStop && secondOption) {
             AbstractCampfireOption rest = null;
             ((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();

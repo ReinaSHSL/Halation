@@ -106,7 +106,7 @@ public class HalationModInitializer implements
         BaseMod.addRelic(new PapillonHeart(), RelicType.SHARED);
         BaseMod.addRelic(new PinkAlligatorPlush(), RelicType.SHARED);
         BaseMod.addRelic(new Diary(), RelicType.SHARED);
-        BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
+        //BaseMod.addRelic(new PenguinHat(), RelicType.SHARED);
         BaseMod.addRelic(new Komachan(), RelicType.SHARED);
         BaseMod.addRelic(new Sonsunser(), RelicType.SHARED);
         BaseMod.addRelic(new Gekota(), RelicType.BLUE);
