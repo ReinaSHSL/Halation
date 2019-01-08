@@ -37,5 +37,8 @@ public class Pancakes extends CustomRelic {
         AbstractDungeon.player.heal(healthToHeal);
     }
 
-
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.currentHealth < AbstractDungeon.player.maxHealth * 0.3;
+    }
 }

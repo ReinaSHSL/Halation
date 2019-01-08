@@ -34,7 +34,7 @@ public class PinkAlligatorPlushPatch {
     )
     public static SpireReturn Insert(AbstractPlayer __instance, DamageInfo info) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !__instance.hasRelic(MarkOfTheBloom.ID)) {
-            if (__instance.hasRelic(PinkAlligatorPlush.ID)) {
+            if (__instance.hasRelic(PinkAlligatorPlush.ID) && !__instance.getRelic(PinkAlligatorPlush.ID).usedUp) {
                 PinkAlligatorPlush.onDeath();
                 return SpireReturn.Return(null);
             } else if (__instance.hasRelic(PenguinHat.ID)) {

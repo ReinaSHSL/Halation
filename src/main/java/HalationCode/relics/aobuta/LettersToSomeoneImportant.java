@@ -44,9 +44,9 @@ public class LettersToSomeoneImportant extends CustomRelic {
 
     @Override
     public void atBattleStartPreDraw() {
-        int rng = AbstractDungeon.cardRng.random(letterCards.size() - 1);
-        AbstractCard c = letterCards.get(rng);
         for (int i = 0; i < this.counter; i++) {
+            int rng = AbstractDungeon.cardRng.random(letterCards.size() - 1);
+            AbstractCard c = letterCards.get(rng);
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c.makeCopy(), LETTERS_AMT, true, false, false));
         }
     }
