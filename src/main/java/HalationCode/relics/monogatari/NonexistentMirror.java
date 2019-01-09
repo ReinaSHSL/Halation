@@ -39,7 +39,7 @@ public class NonexistentMirror extends CustomRelic {
 
     @Override
     public void onObtainCard(AbstractCard c) {
-        if (!this.usedUp && addedCards.size() > 0)  {
+        if (!this.usedUp && addedCards.size() > 0 && this.counter > 0)  {
             if (c != addedCards.get(0)) {
                 cardToAdd.add(c.makeStatEquivalentCopy());
                 addCard = true;

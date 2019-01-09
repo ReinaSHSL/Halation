@@ -89,7 +89,7 @@
     "NAME": "Eternal Fortune",
     "DESCRIPTIONS": [
       "Upon pickup, raise your Max HP by #b",
-      " 3. Occasionally run into more #yEternal #yFortune."
+      ". Occasionally run into more #yEternal #yFortune."
     ],
     "FLAVOR": "A favorite among Spire Dwellers. They grow everywhere and are said to bless any ascender with good luck."
   },
@@ -426,7 +426,7 @@
     "NAME": "Cat Face Cupcake",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. After the #b",
-      "rd card played in a turn, all cards played will be #rremoved from your deck and #rpurged."
+      "rd card played in a turn, all cards played will be #rremoved from your deck and #rpurged. #rYOU #rWILL #rNEVER #rSEE #rTHIS #rCARD #rAGAIN. #rBE #rVERY #rCAREFUL!!"
     ],
     "FLAVOR": "It's just a better Velvet Choker."
   },

@@ -25,6 +25,9 @@ public class PenCase extends CustomRelic {
     private GameActionManager am = AbstractDungeon.actionManager;
     public static boolean secondOption = false;
     private static final int REST_AMT = 2;
+    private static AbstractCampfireOption rest = null;
+    private static boolean removeRest = false;
+    private static ArrayList<AbstractCampfireOption> campfireButtons;
 
     public PenCase() {
         super(ID, IMG, RelicTier.RARE, LandingSound.FLAT);
@@ -51,17 +54,16 @@ public class PenCase extends CustomRelic {
             return false;
         }
         if(PenCasePatch.SetBool.shouldStop && secondOption) {
-            AbstractCampfireOption rest = null;
             ((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI.reopen();
             ((RestRoom)AbstractDungeon.getCurrRoom()).phase = AbstractRoom.RoomPhase.INCOMPLETE;
-            ArrayList<AbstractCampfireOption> campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI, CampfireUI.class, "buttons");
+            campfireButtons = (ArrayList<AbstractCampfireOption>) ReflectionHacks.getPrivate(((RestRoom)AbstractDungeon.getCurrRoom()).campfireUI, CampfireUI.class, "buttons");
             for (AbstractCampfireOption o : campfireButtons) {
                 if (o instanceof RestOption) {
                     rest = o;
                 }
             }
             if (rest != null) {
-                campfireButtons.remove(rest);
+                removeRest = true;
             }
             PenCasePatch.SetBool.shouldStop = false;
             secondOption = false;
@@ -79,5 +81,12 @@ public class PenCase extends CustomRelic {
             return false;
         }
        return true;
+    }
+
+    public static void postUpdateBS() {
+        if (removeRest) {
+            campfireButtons.remove(rest);
+            removeRest = false;
+        }
     }
 }

@@ -98,6 +98,7 @@ public class SmartPhone extends CustomRelic implements OnSkipCardRelic {
             CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.MED, false);
             CardCrawlGame.sound.play("BLUNT_FAST");
             AbstractDungeon.player.damage(new DamageInfo(null, AbstractDungeon.player.maxHealth/DMG_AMT));
+            SmartPhonePatch.smartCard = null;
             doTheThing = false;
         }
     }

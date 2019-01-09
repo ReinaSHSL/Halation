@@ -1,9 +1,11 @@
 package HalationCode.ui;
 
 import HalationCode.HalationModInitializer;
+import HalationCode.actions.PickDeckAction;
 import HalationCode.patches.SimulatedSpirePatch;
 import HalationCode.relics.ddlc.SimulatedSpire;
 import HalationCode.tools.TextureLoader;
+import basemod.ReflectionHacks;
 import basemod.TopPanelItem;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.select.GridCardSelectScreen;
 import com.megacrit.cardcrawl.ui.panels.TopPanel;
 
 import java.lang.reflect.InvocationTargetException;
@@ -27,11 +30,17 @@ public class SimulatedSpireButton extends TopPanelItem {
 
     @Override
     protected void onClick() {
+        SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
         if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.GRID) {
+            if (PickDeckAction.isPickingDeck) {
+                ReflectionHacks.setPrivate(AbstractDungeon.gridSelectScreen, GridCardSelectScreen.class, "targetGroup", r.secondDeck);
+                AbstractDungeon.overlayMenu.cancelButton.show("Return");
+                return;
+            }
             AbstractDungeon.closeCurrentScreen();
             return;
         }
-        SimulatedSpire r = (SimulatedSpire)AbstractDungeon.player.getRelic(SimulatedSpire.ID);
+
         AbstractDungeon.gridSelectScreen.open(r.secondDeck, 999, "Second Deck", false, false, false, false);
         AbstractDungeon.overlayMenu.cancelButton.show("Return");
     }

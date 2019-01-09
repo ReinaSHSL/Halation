@@ -176,6 +176,7 @@ public class HalationModInitializer implements
         if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) SmartPhone.morePostUpdateBullshit();
         if (AbstractDungeon.player.hasRelic(ShiningIdol.ID)) ShiningIdol.cardEffects();
         if (AbstractDungeon.player.hasRelic(Thesaurus.ID)) Thesaurus.moreRelicBullshit();
+        if (AbstractDungeon.player.hasRelic(PenCase.ID)) PenCase.postUpdateBS();
     }
 
     @Override

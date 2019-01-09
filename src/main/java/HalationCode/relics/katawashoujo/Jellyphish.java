@@ -271,6 +271,7 @@ public class Jellyphish extends CustomRelic {
                         || ______ instanceof CustomBottleRelic
                         || ______.relicId.equals(Thesaurus.ID)
                         || ______.relicId.equals(EmptyCage.ID)
+                        || ______.relicId.equals(CallingBell.ID)
         ) {
             getRelic();
         }
