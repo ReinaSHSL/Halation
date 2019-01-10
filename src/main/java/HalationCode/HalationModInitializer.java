@@ -61,7 +61,8 @@ public class HalationModInitializer implements
         PostUpdateSubscriber,
         EditCardsSubscriber,
         PostCampfireSubscriber,
-        MaxHPChangeSubscriber
+        MaxHPChangeSubscriber,
+        PostDeathSubscriber
 {
     private static final String MODNAME = "Halation";
     private static final String AUTHOR = "Reina";
@@ -200,5 +201,10 @@ public class HalationModInitializer implements
             BlackBeret.maxHPChange(i);
         }
         return i;
+    }
+
+    @Override
+    public void receivePostDeath() {
+        if (AbstractDungeon.player.hasRelic(SimulatedSpire.ID)) BaseMod.removeTopPanelItem(SimulatedSpire.simulatedSpireButton);
     }
 }

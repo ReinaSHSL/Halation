@@ -27,7 +27,7 @@ public class SimulatedSpire extends CustomRelic implements CustomSavable<List<Ca
     private AbstractPlayer p = AbstractDungeon.player;
     private GameActionManager am = AbstractDungeon.actionManager;
     public CardGroup secondDeck = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-    private SimulatedSpireButton simulatedSpireButton = new SimulatedSpireButton();
+    public static SimulatedSpireButton simulatedSpireButton = new SimulatedSpireButton();
 
     public SimulatedSpire() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.MAGICAL);

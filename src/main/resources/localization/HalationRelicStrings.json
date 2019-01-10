@@ -114,7 +114,7 @@
   "halation:IncompleteEncyclopedia": {
     "NAME": "Incomplete Encyclopedia",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. You can no longer see enemy health."
+      "Gain [E] at the start of your turn. You can no longer see healthbars."
     ],
     "FLAVOR": "I don't know everything. I only know what I know."
   },
