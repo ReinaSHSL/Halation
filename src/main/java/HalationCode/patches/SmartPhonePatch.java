@@ -15,43 +15,43 @@ public class SmartPhonePatch{
     public static boolean smartBowl = false;
     public static AbstractCard smartCard;
     private static int rng;
-	
-	@SpirePatch(
-	        clz = RewardItem.class,
-	        method = SpirePatch.CONSTRUCTOR,
-	        paramtypez = {}
-	)
-	public static class SmartPhonePatchMain {
-	
-	    public static void Postfix(RewardItem __instance) {
-	        if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) {
-	            if (AbstractDungeon.player.hasRelic(SingingBowl.ID)) {
-	                rng = AbstractDungeon.cardRng.random(__instance.cards.size()) + 1;
-	            }
-	            rng = AbstractDungeon.cardRng.random(__instance.cards.size());
-	            if (rng == __instance.cards.size()) {
-	                smartSkip = true;
-	            } else if (rng == __instance.cards.size() + 1) {
-	                smartBowl = true;
-	            } else {
-	                smartCard = __instance.cards.get(rng);
-	            }
-	        }
-	    }
-	}
-	    
+    
+    @SpirePatch(
+            clz = RewardItem.class,
+            method = SpirePatch.CONSTRUCTOR,
+            paramtypez = {}
+    )
+    public static class SmartPhonePatchMain {
+    
+        public static void Postfix(RewardItem __instance) {
+            if (AbstractDungeon.player.hasRelic(SmartPhone.ID)) {
+                if (AbstractDungeon.player.hasRelic(SingingBowl.ID)) {
+                    rng = AbstractDungeon.cardRng.random(__instance.cards.size()) + 1;
+                }
+                rng = AbstractDungeon.cardRng.random(__instance.cards.size());
+                if (rng == __instance.cards.size()) {
+                    smartSkip = true;
+                } else if (rng == __instance.cards.size() + 1) {
+                    smartBowl = true;
+                } else {
+                    smartCard = __instance.cards.get(rng);
+                }
+            }
+        }
+    }
+        
     @SpirePatch(
             clz = AbstractDungeon.class,
             method = "nextRoomTransition",
             paramtypez = {SaveFile.class}
     )
     public static class SmartPhonePatchSetInBattle {
-    	
-    	public static void Prefix(AbstractDungeon __instance, SaveFile savefile) {
-    		AbstractRelic relic = AbstractDungeon.player.getRelic(SmartPhone.ID);
-    		if (relic != null){
-    			relic.onEnterRoom(AbstractDungeon.nextRoom.getRoom());
-    		}
-    	}
+        
+        public static void Prefix(AbstractDungeon __instance, SaveFile savefile) {
+            AbstractRelic relic = AbstractDungeon.player.getRelic(SmartPhone.ID);
+            if (relic != null){
+                relic.onEnterRoom(AbstractDungeon.nextRoom.getRoom());
+            }
+        }
     }
 }
